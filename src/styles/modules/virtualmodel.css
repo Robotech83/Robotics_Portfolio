@@ -1,0 +1,629 @@
+/* ===================== VIRTUAL MODEL PAGE STYLING ===================== */
+/* Main container with dark gradient background */
+.virtual-model-top {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
+  padding: 15px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===================== HEADER STYLING ===================== */
+/* Top navigation bar containing back button, title, and reset */
+.vm-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px 25px;
+  background: rgba(26, 26, 46, 0.9);
+  border-radius: 12px;
+  border: 1px solid rgba(76, 201, 240, 0.2);
+}
+
+/* Center-aligned title section */
+.header-center-top {
+  text-align: center;
+}
+
+/* Main page title with gradient text effect */
+.header-center-top h1 {
+  font-size: 2rem;
+  margin: 0;
+  background: linear-gradient(90deg, #00ffc8, #4cc9f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.5px;
+}
+
+/* Model name display below title */
+.model-name-display-top {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 8px 0 0;
+  font-family: 'Courier New', monospace;
+}
+
+/* Back button styling */
+.back-btn-top {
+  padding: 10px 20px;
+  background: rgba(0, 255, 200, 0.1);
+  border: 1px solid rgba(0, 255, 200, 0.3);
+  color: #00ffc8;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+/* Reset button styling */
+.reset-btn-top {
+  padding: 10px 20px;
+  background: rgba(255, 65, 108, 0.1);
+  border: 1px solid rgba(255, 65, 108, 0.3);
+  color: #ff416c;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+/* Button hover effects */
+.back-btn-top:hover {
+  background: rgba(0, 255, 200, 0.2);
+  transform: translateX(-3px);
+  box-shadow: 0 4px 15px rgba(0, 255, 200, 0.2);
+}
+
+.reset-btn-top:hover {
+  background: rgba(255, 65, 108, 0.2);
+  transform: translateX(3px);
+  box-shadow: 0 4px 15px rgba(255, 65, 108, 0.2);
+}
+
+/* ===================== MAIN VIEWER SECTION ===================== */
+/* Container for the entire viewer area */
+.main-viewer-section {
+  margin-bottom: 25px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* 3D viewer container with neon border */
+.viewer-container-top {
+  height: 500px; /* Fixed height for consistent layout */
+  border: 3px solid #00ffc8;
+  background: #000;
+  position: relative;
+}
+
+/* Statistics bar below viewer */
+.viewer-stats-top {
+  background: rgba(26, 26, 46, 0.95);
+  padding: 15px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border: 1px solid rgba(76, 201, 240, 0.2);
+  border-top: none;
+}
+
+/* Grid layout for statistics */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* Individual statistic card */
+.stat-card {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Statistic label (uppercase text) */
+.stat-label-top {
+  color: #4cc9f0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+/* Statistic value display */
+.stat-value-top {
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ===================== MAIN LAYOUT ===================== */
+/* Two-column layout for controls and guide */
+.vm-layout-top {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 25px;
+}
+
+/* ===================== CONTROLS PANEL ===================== */
+/* Left panel containing tabbed controls */
+.vm-controls-top {
+  background: rgba(26, 26, 46, 0.9);
+  border-radius: 12px;
+  border: 1px solid rgba(76, 201, 240, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Tab navigation bar */
+.control-tabs-top {
+  display: flex;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(76, 201, 240, 0.2);
+}
+
+/* Individual tab button */
+.tab-btn-top {
+  flex: 1;
+  padding: 15px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  border-bottom: 3px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Tab icon styling */
+.tab-icon {
+  font-size: 1.2rem;
+}
+
+/* Tab hover effect */
+.tab-btn-top:hover {
+  color: #4cc9f0;
+  background: rgba(76, 201, 240, 0.1);
+}
+
+/* Active tab styling */
+.tab-btn-top.active {
+  color: #00ffc8;
+  border-bottom-color: #00ffc8;
+  background: rgba(0, 255, 200, 0.05);
+}
+
+/* Tab content area */
+.tab-content-top {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  max-height: 400px; /* Limit height for scrolling */
+}
+
+/* Individual tab panel */
+.tab-panel-top {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Control section grouping */
+.control-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Section headers */
+.control-section h4 {
+  color: #4cc9f0;
+  margin: 0 0 15px 0;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(76, 201, 240, 0.3);
+  padding-bottom: 10px;
+}
+
+/* Sub-section headers */
+.control-section h5 {
+  color: #b0b0b0;
+  margin: 0 0 10px 0;
+  font-size: 0.95rem;
+}
+
+/* Control group container */
+.control-group-top {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Slider control wrapper */
+.slider-control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Slider header with label and value */
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider-header label {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.slider-header .slider-value {
+  color: #00ffc8;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  background: rgba(0, 255, 200, 0.1);
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+/* Range input styling */
+.slider-control input[type="range"] {
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #1a1a2e, #00ffc8);
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+/* Custom slider thumb */
+.slider-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #4cc9f0;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: all 0.2s ease;
+}
+
+.slider-control input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #00ffc8;
+}
+
+/* Vector controls (X, Y, Z sliders) */
+.vector-controls-top {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Individual axis control */
+.axis-control {
+  display: grid;
+  grid-template-columns: 25px 1fr 50px;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Axis label (X, Y, Z) */
+.axis-label {
+  color: #ff416c;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+  background: rgba(255, 65, 108, 0.1);
+  padding: 4px;
+  border-radius: 4px;
+}
+
+/* Axis value display */
+.axis-value {
+  color: #00ffc8;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  text-align: right;
+  min-width: 40px;
+}
+
+/* Model import section */
+.model-import-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Import button */
+.import-btn-top {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #00ffc8, #4cc9f0);
+  color: #1a1a2e;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.import-btn-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 255, 200, 0.4);
+}
+
+/* File format hint */
+.file-hint {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+
+/* ===================== DISPLAY TAB STYLING ===================== */
+/* Grid layout for toggle switches */
+.toggle-grid-top {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* Individual toggle item */
+.toggle-item-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e0e0e0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.toggle-item-top:hover {
+  background: rgba(0, 255, 200, 0.1);
+  border-color: rgba(0, 255, 200, 0.3);
+  transform: translateY(-2px);
+}
+
+.toggle-item-top input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #00ffc8;
+  cursor: pointer;
+}
+
+/* ===================== LIGHTING TAB STYLING ===================== */
+/* Color picker section */
+.color-picker-top {
+  margin-top: 20px;
+}
+
+.color-picker-top label {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Color picker row with input and value */
+.color-picker-row-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.color-input-top {
+  width: 50px;
+  height: 40px;
+  border: 2px solid #4cc9f0;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.color-value-top {
+  color: #00ffc8;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 12px;
+  border-radius: 6px;
+  flex: 1;
+}
+
+/* ===================== GUIDE PANEL ===================== */
+/* Right panel with user guide and tips */
+.vm-guide-top {
+  background: rgba(26, 26, 46, 0.9);
+  border-radius: 12px;
+  border: 1px solid rgba(76, 201, 240, 0.2);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Guide section */
+.guide-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.guide-section h3 {
+  color: #4cc9f0;
+  margin: 0;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(76, 201, 240, 0.3);
+  padding-bottom: 10px;
+}
+
+/* Guide content */
+.guide-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual guide item */
+.guide-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.guide-icon {
+  font-size: 1.2rem;
+  background: rgba(0, 255, 200, 0.1);
+  padding: 8px;
+  border-radius: 6px;
+  min-width: 40px;
+  text-align: center;
+}
+
+.guide-item div {
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.guide-item strong {
+  color: #00ffc8;
+}
+
+/* Tips list */
+.tips-list {
+  margin: 0;
+  padding-left: 20px;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.tips-list li {
+  margin-bottom: 10px;
+}
+
+.tips-list li:last-child {
+  margin-bottom: 0;
+}
+
+.tips-list strong {
+  color: #4cc9f0;
+}
+
+/* Current settings display */
+.current-settings {
+  margin-top: auto; /* Push to bottom of guide panel */
+}
+
+.settings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-item span:first-child {
+  color: #b0b0b0;
+  font-size: 0.85rem;
+}
+
+.setting-item span:last-child {
+  color: #00ffc8;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ===================== RESPONSIVE DESIGN ===================== */
+/* Tablet and smaller desktop */
+@media (max-width: 1024px) {
+  .vm-layout-top {
+    grid-template-columns: 1fr;
+  }
+  
+  .viewer-container-top {
+    height: 400px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .vm-header-top {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .control-tabs-top {
+    flex-direction: column;
+  }
+  
+  .toggle-grid-top {
+    grid-template-columns: 1fr;
+  }
+  
+  .viewer-container-top {
+    height: 350px;
+  }
+  
+  .back-btn-top,
+  .reset-btn-top {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .axis-control {
+    grid-template-columns: 25px 1fr 40px;
+  }
+}

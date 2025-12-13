@@ -1,0 +1,106 @@
+/* ------------------------------------------------------ */
+/* ROBOT STUDIO — Parent page for VirtualModel + Movement */
+/* ------------------------------------------------------ */
+
+.robotstudio-wrapper {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 1rem 2rem;
+  background: #050013;
+  color: #00ffc8;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  position: relative;
+}
+
+/* Header text */
+.robotstudio-header {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.robotstudio-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #00ffc8;
+  text-shadow: 0 0 15px #00ffc8, 0 0 30px #00ffc8;
+}
+
+.robotstudio-subtitle {
+  margin-top: 0.25rem;
+  color: #9afff0;
+  opacity: 0.8;
+  font-size: 1rem;
+}
+
+/* Layout Grid */
+.robotstudio-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 1.5rem;
+  height: calc(100vh - 140px);
+}
+
+/* Left panel */
+.robotstudio-left {
+  overflow-y: auto;
+  padding: 1rem;
+
+  border: 2px solid #00ffc8;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.4);
+  box-shadow: 0 0 20px #00ffc8;
+  backdrop-filter: blur(10px);
+}
+
+/* Right panel */
+.robotstudio-right {
+  border: 2px solid #00ffc8;
+  border-radius: 12px;
+
+  background: #0a0020;
+  overflow: hidden;
+
+  box-shadow: 0 0 20px #00ffc8 inset, 0 0 30px #00ffc8;
+}
+/* ---------------------------------------------- */
+/*   NEON CYAN GLOW SCROLLBARS (RobotStudio Only) */
+/* ---------------------------------------------- */
+
+.robotstudio-left::-webkit-scrollbar,
+.robotstudio-right::-webkit-scrollbar {
+  width: 10px;
+}
+
+.robotstudio-left::-webkit-scrollbar-track,
+.robotstudio-right::-webkit-scrollbar-track {
+  background: #050013; /* dark space */
+  border-radius: 10px;
+}
+
+.robotstudio-left::-webkit-scrollbar-thumb,
+.robotstudio-right::-webkit-scrollbar-thumb {
+  background: #00ffc8; /* neon cyan */
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ffc8, 0 0 20px #00ffc8;
+}
+
+.robotstudio-left::-webkit-scrollbar-thumb:hover,
+.robotstudio-right::-webkit-scrollbar-thumb:hover {
+  background: #00ffd5;
+  box-shadow: 0 0 15px #00ffd5, 0 0 30px #00ffd5;
+}
+
+/* Firefox support */
+.robotstudio-left {
+  scrollbar-width: thin;
+  scrollbar-color: #00ffc8 #050013;
+}
+
+.robotstudio-right {
+  scrollbar-width: thin;
+  scrollbar-color: #00ffc8 #050013;
+}

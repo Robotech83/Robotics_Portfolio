@@ -1,0 +1,86 @@
+/* ------------------------------------------------------ */
+/* Dashboard Stylesheet                                   */
+/* ------------------------------------------------------ */
+
+.dashboard-section {
+  padding: 3rem;
+  margin: 2rem auto;
+  border-radius: 15px;
+  border: 2px solid #00ffc8; /* Neon cyan border */
+  background: #050013; /* Dark terminal background */
+  box-shadow: 0 0 20px #00ffc8, inset 0 0 10px #00ffc8; /* Glow effect */
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Section Title — Neon + subtle RGB gradient animation */
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #00ffc8, #ff00ff, #00ffff);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rgbShift 6s linear infinite;
+  text-shadow: 0 0 6px #00ffc8, 0 0 12px rgba(255,0,255,0.3);
+}
+
+@keyframes rgbShift {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
+/* Grid for modules */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Individual module card */
+.module-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #00ffc8; /* Neon border */
+  background: rgba(0,0,0,0.3); /* Semi-transparent terminal style */
+  color: #00ffc8;
+  font-weight: bold;
+  box-shadow: 0 0 10px #00ffc8, inset 0 0 6px #00ffc8;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover effect: Neon glow + slight RGB pulse */
+.module-card:hover {
+  background: rgba(0,255,255,0.15);
+  color: #000;
+  box-shadow: 0 0 25px #00ffc8, 0 0 50px rgba(255,0,255,0.4);
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* Optional neon pulse for section border */
+.dashboard-section::before {
+  content: '';
+  position: absolute;
+  top: -4px; left: -4px; right: -4px; bottom: -4px;
+  border: 2px solid #00ffc8;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #00ffc8, 0 0 30px rgba(255,0,255,0.2);
+  pointer-events: none;
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  from { box-shadow: 0 0 10px #00ffc8, 0 0 20px rgba(255,0,255,0.2); }
+  to   { box-shadow: 0 0 25px #00ffc8, 0 0 50px rgba(255,0,255,0.4); }
+}

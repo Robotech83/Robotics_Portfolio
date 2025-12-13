@@ -1,0 +1,68 @@
+/* Projects.css
+   RGB Hacker-Tech style
+   Animated rainbow gradients, hologram glow, cyber grid
+*/
+
+.projects-section {
+  padding: 3rem;
+  margin: 2rem auto;
+  border-radius: 15px;
+  border: 2px solid #00ffc8; /* Added neon border */
+  box-shadow: 0 0 20px #00ffc8, inset 0 0 10px #00ffc8; /* Glow effect */
+  background: linear-gradient(180deg, rgba(5,0,19,0.7), rgba(5,0,19,0.45));
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section Title — RGB gradient animated */
+.section-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff00ff);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rgbShift 6s linear infinite;
+}
+
+@keyframes rgbShift {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
+/* Grid for projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+/* Project card style */
+.project-card {
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.05);
+  background: rgba(0,0,0,0.35);
+  color: #00ffc8;
+  box-shadow: 0 0 8px #00ffc8, 0 0 20px rgba(255,0,255,0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-height: 140px;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card hover effect — hologram glow */
+.project-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  background: rgba(0,255,255,0.15);
+  box-shadow: 0 0 16px #00ffc8, 0 0 40px rgba(255,0,255,0.4);
+  color: #000;
+}

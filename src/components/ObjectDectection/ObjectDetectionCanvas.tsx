@@ -1,0 +1,87 @@
+import React, { useEffect, useRef, useState } from "react";
+import * as cocoSsd from "@tensorflow-models/coco-ssd";
+import "@tensorflow/tfjs";
+
+interface DetectorProps {
+  title: string;
+  highlightColor?: string;
+}
+
+export default function ObjectDetectionCanvas({
+  title,
+  highlightColor = "#00ffc8",
+}: DetectorProps) {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  const [model, setModel] = useState<cocoSsd.ObjectDetection | null>(null);
+
+  // Load model
+  useEffect(() => {
+    cocoSsd.load().then((loadedModel) => {
+      setModel(loadedModel);
+      console.log("Model Loaded");
+    });
+  }, []);
+
+  // Start webcam
+  useEffect(() => {
+    if (navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then((stream) => {
+          if (videoRef.current) {
+            videoRef.current.srcObject = stream;
+          }
+        })
+        .catch((err) => console.error(err));
+    }
+  }, []);
+
+  // Detect objects continuously
+  useEffect(() => {
+    const interval = setInterval(() => {
+      detectFrame();
+    }, 200);
+
+    return () => clearInterval(interval);
+  }, [model]); // <-- Added dependency array with model
+
+  const detectFrame = async () => {
+    if (!model || !canvasRef.current || !videoRef.current) return;
+
+    const predictions = await model.detect(videoRef.current);
+
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    canvas.width = videoRef.current.videoWidth;
+    canvas.height = videoRef.current.videoHeight;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    predictions.forEach((pred) => {
+      const [x, y, w, h] = pred.bbox;
+
+      ctx.strokeStyle = highlightColor;
+      ctx.lineWidth = 3;
+      ctx.strokeRect(x, y, w, h);
+
+      ctx.fillStyle = highlightColor;
+      ctx.font = "18px monospace";
+      ctx.fillText(`${pred.class} (${Math.round(pred.score * 100)}%)`, x, y - 5);
+    });
+  };
+
+  return (
+    <div className="detect-page">
+      <h1 className="detect-title">{title}</h1>
+
+      <div className="detect-wrapper">
+        <video ref={videoRef} autoPlay className="video-feed" />
+        <canvas ref={canvasRef} className="overlay-canvas" />
+      </div>
+    </div>
+  );
+}

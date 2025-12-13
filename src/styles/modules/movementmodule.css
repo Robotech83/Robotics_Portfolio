@@ -1,0 +1,11 @@
+.movement-module { padding: 1rem; color: #00ffc8; background: #050013; border-radius: 12px; border: 2px solid #00ffc8; }
+.mm-title { font-size: 1.25rem; margin-bottom: .5rem; }
+.mm-topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom: .75rem; }
+.tabs button { margin-right:6px; padding:6px 10px; border-radius:8px; background:transparent; color:inherit; border:1px solid rgba(0,255,200,.08); }
+.tabs button.active { background: rgba(0,255,200,.12); box-shadow:0 0 10px #00ffc8; }
+.btn { padding:8px 12px; border-radius:8px; border:1px solid #00ffc8; background:transparent; color:#00ffc8; }
+.btn.ghost { background:transparent; opacity:.7; }
+.panel { padding:10px 6px; }
+.quick-actions button { margin-right:8px; }
+.preset-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:10px; }
+.preset-card { border:1px solid rgba(0,255,200,.12); padding:8px; border-radius:8px; background:rgba(0,0,0,.4); }

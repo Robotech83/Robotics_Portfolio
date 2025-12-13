@@ -1,0 +1,52 @@
+/* ------------------------------------------------------ */
+/* Skills Stylesheet — Deep-Space Robotics               */
+/* ------------------------------------------------------ */
+
+.skills-section {
+  padding: 3rem;
+  margin: 2rem auto;
+  border-radius: 15px;
+  border: 2px solid #00ffc8; 
+  background: #050013; 
+  box-shadow: 0 0 20px #00ffc8, inset 0 0 10px #00ffc8; 
+  position: relative;
+  overflow: visible;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #00ffc8;
+  text-shadow: 0 0 6px #00ffc8, 0 0 12px #00ffc8;
+}
+
+.skills-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skill-chip {
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 2px solid #00ffc8;
+  background: #050013;
+  color: #00ffc8;
+  font-weight: bold;
+  box-shadow: 0 0 10px #00ffc8, inset 0 0 6px #00ffc8;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-chip:hover {
+  background: #00ffc8;
+  color: #000;
+  box-shadow: 0 0 25px #00ffc8, 0 0 50px #00ffc8;
+  transform: scale(1.05);
+}

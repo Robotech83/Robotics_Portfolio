@@ -1,0 +1,353 @@
+/* ------------------------------------------------------ */
+/* AI Assistant Page — Cyber Neon Theme                   */
+/* ------------------------------------------------------ */
+
+.aiassistant-page {
+  padding: 2rem;
+  color: #00ffc8;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+
+/* -------------------------------------- */
+/* Back Button                            */
+/* -------------------------------------- */
+
+.back-btn-top {
+  background: transparent;
+  border: 2px solid #00ffc8;
+  color: #00ffc8;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #00ffc8;
+}
+
+.back-btn-top:hover {
+  background: #00ffc8;
+  color: black;
+  box-shadow: 0 0 20px #00ffc8;
+}
+
+/* -------------------------------------- */
+/* Header Section                         */
+/* -------------------------------------- */
+
+.ai-header {
+  text-align: center;
+}
+
+.ai-title {
+  font-size: 3rem;
+  text-shadow: 0 0 12px #00ffc8;
+}
+
+.ai-subtitle {
+  max-width: 850px;
+  margin: 0.8rem auto 2rem;
+  color: #bafff2;
+  opacity: 0.85;
+}
+
+/* -------------------------------------- */
+/* Demo Section                           */
+/* -------------------------------------- */
+
+.ai-demo-section {
+  margin-top: 2rem;
+}
+
+.ai-demo-card {
+  background: rgba(5, 0, 25, 0.7);
+  border: 2px solid #00ffc8;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 0 20px #00ffc8;
+  margin-bottom: 2rem;
+}
+
+.ai-demo-card h2 {
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 8px #00ffc8;
+}
+
+/* -------------------------------------- */
+/* Assistant Window                       */
+/* -------------------------------------- */
+
+.ai-assistant-container {
+  margin-top: 1.2rem;
+}
+
+.assistant-window {
+  border: 2px solid #00ffc8;
+  border-radius: 14px;
+  padding: 1rem;
+  background: rgba(0, 10, 20, 0.9);
+  box-shadow: 0 0 22px #00ffc8;
+}
+
+/* Header bar */
+
+.assistant-header {
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(0, 255, 200, 0.4);
+  margin-bottom: 0.8rem;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.header-left h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* -------------------------------------- */
+/* Listening / Speaking Indicators        */
+/* -------------------------------------- */
+
+.listening-indicator,
+.speaking-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  margin-left: 1rem;
+  color: #00ffc8;
+}
+
+.pulse-ring {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #00ffc8;
+  box-shadow: 0 0 10px #00ffc8;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); opacity: 0.7; }
+  to   { transform: scale(1.3); opacity: 1; }
+}
+
+/* -------------------------------------- */
+/* Messages Container                     */
+/* -------------------------------------- */
+
+.messages-container {
+  height: 320px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 1rem;
+  scrollbar-width: thin;
+}
+
+.message {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* User bubble */
+
+.user-message .message-content {
+  align-self: flex-end;
+  background: #00ffc8;
+  color: black;
+  padding: 0.7rem;
+  border-radius: 10px 10px 0 10px;
+  max-width: 70%;
+  box-shadow: 0 0 10px #00ffc8;
+}
+
+/* AI bubble */
+
+.ai-message .message-content {
+  align-self: flex-start;
+  background: rgba(0, 255, 200, 0.1);
+  border: 1px solid #00ffc8;
+  color: #00ffc8;
+  padding: 0.7rem;
+  border-radius: 10px 10px 10px 0;
+  max-width: 70%;
+  box-shadow: 0 0 10px #00ffc8;
+}
+
+.message-sender {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-bottom: 0.2rem;
+}
+
+/* -------------------------------------- */
+/* Input Bar                              */
+/* -------------------------------------- */
+
+.input-area {
+  border-top: 1px solid rgba(0, 255, 200, 0.4);
+  padding-top: 1rem;
+}
+
+.input-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.input-form input {
+  flex: 1;
+  background: black;
+  color: #00ffc8;
+  border: 2px solid #00ffc8;
+  padding: 0.6rem;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.send-btn {
+  background: #00ffc8;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 0 0.8rem;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.send-btn:hover {
+  background: white;
+}
+
+/* -------------------------------------- */
+/* Control Buttons                        */
+/* -------------------------------------- */
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.voice-btn,
+.speak-btn,
+.clear-btn {
+  background: transparent;
+  border: 2px solid #00ffc8;
+  color: #00ffc8;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.voice-btn:hover,
+.speak-btn:hover,
+.clear-btn:hover {
+  background: #00ffc8;
+  color: black;
+  box-shadow: 0 0 14px #00ffc8;
+}
+
+.voice-btn.active {
+  background: #00ffc8;
+  color: black;
+}
+
+/* Tech Badge */
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+/* -------------------------------------- */
+/* Feature Cards                          */
+/* -------------------------------------- */
+
+.ai-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: rgba(0, 15, 25, 0.7);
+  padding: 1rem;
+  border: 2px solid #00ffc8;
+  border-radius: 14px;
+  box-shadow: 0 0 12px #00ffc8;
+}
+
+/* -------------------------------------- */
+/* Tech Demo Section                      */
+/* -------------------------------------- */
+
+.tech-demo {
+  margin-top: 3rem;
+}
+
+.tech-demo h3 {
+  margin-bottom: 1rem;
+}
+
+.tech-tags {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.tech-tag {
+  padding: 0.4rem 0.7rem;
+  border: 1px solid #00ffc8;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.code-example {
+  background: rgba(0, 10, 20, 0.7);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 2px solid #00ffc8;
+  box-shadow: 0 0 15px #00ffc8;
+}
+
+pre {
+  white-space: pre-wrap;
+  font-size: 0.85rem;
+  color: #00ffc8;
+}
+
+/* -------------------------------------- */
+/* Responsive                             */
+/* -------------------------------------- */
+
+@media (max-width: 700px) {
+  .messages-container {
+    height: 260px;
+  }
+
+  .ai-title {
+    font-size: 2.4rem;
+  }
+
+  .assistant-window {
+    padding: 0.7rem;
+  }
+}

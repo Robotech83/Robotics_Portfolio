@@ -1,0 +1,68 @@
+/* ------------------------------------------------------ */
+/*  GLOBAL STYLES — COLORS, THEMES, RESETS                */
+/* ------------------------------------------------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: #000;
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+/* -------------------------------------- */
+/* THEME VARIABLES                        */
+/* -------------------------------------- */
+
+.app.dark {
+  --bg: #050505;
+  --text: #e0ffe4;
+  --neon: #00ff9d;
+  --neon-glow: 0 0 10px #00ff9d, 0 0 20px #00ff9d;
+  --rgb-text: linear-gradient(90deg, #ff00ff, #00ffff, #00ff00);
+}
+
+.app.light {
+  --bg: #f6f8ff;
+  --text: #0c0c0c;
+  --neon: #00b36b;
+  --neon-glow: 0 0 8px #00d88d;
+  --rgb-text: linear-gradient(90deg, #0077ff, #00ffaa);
+}
+
+.app {
+  background: var(--bg);
+  transition: background 0.5s ease, color 0.3s ease;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* -------------------------------------- */
+/* GLOW UTILITIES                         */
+/* -------------------------------------- */
+
+.neon-text {
+  color: var(--neon);
+  text-shadow: var(--neon-glow);
+}
+
+.rgb-text {
+  background: var(--rgb-text);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* -------------------------------------- */
+/* SECTION SPACING                        */
+/* -------------------------------------- */
+
+section {
+  padding: 80px 20px;
+  position: relative;
+  z-index: 5; /* Always above the animated background */
+}

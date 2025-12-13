@@ -1,0 +1,54 @@
+/* LabNotebook.css
+   Cyber-Neon Terminal style
+   Terminal log vibe, green glow, pulse animation
+*/
+
+.lab-section {
+  padding: 3rem;
+  margin: 2rem auto;
+  border-radius: 15px;
+  border: 2px solid #00ffc8;
+  background: #050013;
+  box-shadow: 0 0 20px #00ffc8, inset 0 0 10px #00ffc8;
+  position: relative;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.6rem;
+  color: #00ffc8;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 6px #00ffc8, 0 0 12px #00ffc8;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.note-card {
+  border: 2px solid #00ffc8;
+  border-radius: 12px;
+  background: #050013;
+  padding: 1rem;
+  cursor: pointer;
+  color: #00ffc8;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00ffc8, inset 0 0 6px #00ffc8;
+}
+
+.note-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00ffc8, 0 0 50px #00ffc8;
+}
+
+.note-card.expanded {
+  background: #00ffc8;
+  color: #000;
+  box-shadow: 0 0 35px #00ffc8, 0 0 70px #00ffc8;
+}
+
+.note-card h3 {
+  margin-bottom: 0.5rem;
+}
