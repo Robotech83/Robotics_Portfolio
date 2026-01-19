@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import ThreeDScene from '../../components/modelviewer/ThreeDScene';
 import '../../styles/modules/virtualmodel.css';
 import { ControlHubButton } from '../../components/ControlHubButton';
