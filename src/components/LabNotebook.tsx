@@ -8,7 +8,7 @@ interface Note {
 
 export function LabNotebook() {
   const notes: Note[] = [
-    { title: "Servo Wiring", details: "Diagrams for Arduino Mega → PCA9685 wiring." },
+    { title: "", details: "Diagrams for Arduino Mega → PCA9685 wiring." },
     { title: "Pi → Arduino Comm", details: "Serial communication setup between Raspberry Pi and Arduino." },
     { title: "Face Recognition Pipeline", details: "How camera input is processed and analyzed for detection." },
     { title: "Power Distribution", details: "Battery setup, voltage regulation, and distribution notes." },
