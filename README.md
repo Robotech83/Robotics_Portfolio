@@ -1,73 +1,94 @@
-# React + TypeScript + Vite
+# 🤖 Sonny — Offline Humanoid Robotics Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Status:** Prototype / Active Development  
+**Focus:** Robotics Systems • Embedded Software • Perception • Human–Robot Interaction
 
-Currently, two official plugins are available:
+This repository contains my **robotics portfolio and digital twin environment**, built to design, test, and demonstrate an **offline humanoid robot** named **Sonny**.  
+The project emphasizes **real-world robotics workflows**: partial hardware, debugging under constraints, simulation-first development, and modular system design.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🧠 Project Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Sonny is an **offline humanoid robotics platform** designed to explore how perception, voice interaction, motion control, and diagnostics work together in a real robot system.
 
-## Expanding the ESLint configuration
+The portfolio serves as:
+- a **digital twin** for hardware-in-progress
+- a **control interface** similar to internal robotics dashboards
+- a **proof-of-knowledge** artifact for robotics and embedded systems roles
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🧩 System Architecture
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Core Subsystems
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Perception**
+  - Face detection and tracking
+  - Real-time object detection (TensorFlow.js / COCO-SSD)
+  - Task-specific perception modules:
+    - Clothing detection (folding tasks)
+    - Kitchenware detection (dish handling tasks)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Voice & Interaction**
+  - Wake-word system
+  - Offline speech recognition
+  - Text-to-speech output
+  - Command training and routing
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Motion & Control**
+  - Joint-based motion control
+  - Servo angle computation
+  - Serial communication to embedded controllers
+  - Kinematics visualization (in progress)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Digital Twin & Simulation**
+  - 3D humanoid model viewer
+  - Virtual arm studio
+  - Simulation-first workflow when hardware is unavailable
+
+- **System & Diagnostics**
+  - CPU / memory monitoring
+  - Network and power modules
+  - System health and fault-handling UI
+
+---
+
+## 🖥️ Technologies Used
+
+- **Languages:** Python, TypeScript, JavaScript  
+- **Frontend:** React, Vite, Three.js  
+- **Robotics & Embedded:** Raspberry Pi, Arduino, Servo Control, Serial Communication  
+- **Perception & AI:** OpenCV, TensorFlow.js, COCO-SSD  
+- **3D & Simulation:** GLTF (.glb), Blender (source assets kept separate)  
+- **Tooling:** Git, Git LFS, Linux
+
+---
+
+## 📊 System Status
+
+This project is intentionally transparent about development state.
+
+- ✅ Face detection & object detection working
+- ✅ Offline voice pipeline functional
+- 🟡 Motion control limited by current hardware availability
+- 🟡 Kinematics tools actively iterating
+- ⏸ Some physical components pending repair or redesign
+
+A full system status overview is available inside the portfolio UI.
+
+---
+
+## 🎯 Development Philosophy
+
+This project prioritizes **engineering realism over cosmetic completeness**.
+
+Hardware failures, incomplete assemblies, and limited resources are treated as part of the design process. When hardware is unavailable, development continues through simulation, modular testing, and virtual tools.
+
+---
+
+## 🚀 Running the Project Locally
+
+```bash
+npm install
+npm run dev
