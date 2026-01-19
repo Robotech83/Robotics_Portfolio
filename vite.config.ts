@@ -3,5 +3,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/Robotics_portfolio/",
+  base: "/Robotics_portfolio",
 });
