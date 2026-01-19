@@ -1,9 +1,9 @@
+import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, PerspectiveCamera, Environment } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera, Environment, useGLTF } from "@react-three/drei";
 
 import Floor from "./Floor";
 import GridHelper from "./GridHelper";
-import SonnyModel from "./SonnyModel"; // Make sure this path is correct
 
 interface ThreeDSceneProps {
   viewerSettings: {
@@ -21,25 +21,42 @@ interface ThreeDSceneProps {
   modelPosition: { x: number; y: number; z: number };
 }
 
+function Sonny({
+  modelScale,
+  modelRotation,
+  modelPosition,
+}: {
+  modelScale: number;
+  modelRotation: { x: number; y: number; z: number };
+  modelPosition: { x: number; y: number; z: number };
+}) {
+  // ✅ Correct GitHub Pages-safe path (uses Vite base automatically)
+  const modelUrl = `${import.meta.env.BASE_URL}models/Sonny.glb`;
+
+  const { scene } = useGLTF(modelUrl);
+
+  return (
+    <primitive
+      object={scene}
+      scale={modelScale}
+      rotation={[modelRotation.x, modelRotation.y, modelRotation.z]}
+      position={[modelPosition.x, modelPosition.y, modelPosition.z]}
+    />
+  );
+}
+
 export default function ThreeDScene({
   viewerSettings,
   modelScale,
   modelRotation,
-  modelPosition
+  modelPosition,
 }: ThreeDSceneProps) {
-
   return (
     <Canvas shadows={viewerSettings.showShadows}>
       <color attach="background" args={[viewerSettings.backgroundColor]} />
 
       <PerspectiveCamera makeDefault position={[5, 3, 5]} fov={60} />
-      <OrbitControls
-        enablePan
-        enableZoom
-        enableRotate
-        maxDistance={20}
-        minDistance={2}
-      />
+      <OrbitControls enablePan enableZoom enableRotate maxDistance={20} minDistance={2} />
 
       <ambientLight intensity={viewerSettings.ambientLightIntensity} />
       <directionalLight
@@ -53,15 +70,19 @@ export default function ThreeDScene({
       <Floor />
       {viewerSettings.showGrid && <GridHelper />}
 
-      {/* -- Sonny Here -- */}
-      <SonnyModel
-        scale={modelScale}
-        rotation={modelRotation}
-        position={modelPosition}
-        wireframe={viewerSettings.wireframe}
-      />
+      {/* ✅ Sonny loaded correctly */}
+      <Suspense fallback={null}>
+        <Sonny
+          modelScale={modelScale}
+          modelRotation={modelRotation}
+          modelPosition={modelPosition}
+        />
+      </Suspense>
 
       {viewerSettings.showAxes && <axesHelper args={[3]} />}
     </Canvas>
   );
 }
+
+// Optional: helps Drei cache the model
+useGLTF.preload(`${import.meta.env.BASE_URL}models/Sonny.glb`);
