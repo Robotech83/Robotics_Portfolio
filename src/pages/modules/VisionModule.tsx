@@ -27,7 +27,7 @@ export default function VisionModule() {
   });
 
   // State for object detection results
-  const [detectedObjects, setDetectedObjects] = useState([
+  const [detectedObjects, _setDetectedObjects] = useState([
     { id: 1, label: "person", confidence: 0.95, x: 120, y: 80, width: 60, height: 120 },
     { id: 2, label: "cup", confidence: 0.87, x: 300, y: 200, width: 40, height: 50 },
     { id: 3, label: "keyboard", confidence: 0.92, x: 150, y: 250, width: 200, height: 40 },

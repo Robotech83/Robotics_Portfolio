@@ -1,11 +1,7 @@
 // ModelViewer.tsx
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
-import React, { Suspense, useState, useRef } from "react";
+import { useRef, useState } from "react";
 
 // Import Components
-import Floor from "../../components/modelviewer/Floor";
-import GridHelper from "../../components/modelviewer/GridHelper";
 import ModelImportSection from "../../components/modelviewer/ModelImportSection";
 import ThreeDScene from "../../components/modelviewer/ThreeDScene";
 
@@ -53,7 +49,7 @@ export default function ModelViewer() {
     y: 25,   // Rotation around Y-axis in degrees (-30 faces slightly left)
     z: 0      // Rotation around Z-axis in degrees
   });
-  const [modelPosition, setModelPosition] = useState({
+  const [modelPosition, _setModelPosition] = useState({
     x: -1.5,  // X position in world space
     y: -1.4,  // Y position (negative = below ground plane)
     z: 0      // Z position (depth)

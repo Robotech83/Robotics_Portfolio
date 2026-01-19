@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ThreeDScene from '../../components/modelviewer/ThreeDScene';
 import '../../styles/modules/virtualmodel.css';
@@ -17,9 +17,6 @@ interface ViewerSettings {
 }
 
 export default function VirtualModel() {
-  // Initialize navigation hook for programmatic routing
-  const navigate = useNavigate();
-  
   // Create a ref for the hidden file input element
   const fileInputRef = useRef<HTMLInputElement>(null!);
   

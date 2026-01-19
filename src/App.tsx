@@ -8,7 +8,7 @@ import { LabNotebook } from "./components/LabNotebook";
 import { ContactTerminal } from "./components/ContactTerminal";
 import FloatingAboutButton from "./components/FloatingAboutButton";
 import ScrollToTop from "./components/ScrollToTop";
-import RobotPersonalitySelector from "./components/RobotPersonalitySelector";
+
 
 
 // Importing pages
