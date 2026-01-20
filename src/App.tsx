@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 // Importing components
 import Hero from "./components/Hero";
 import  Dashboard from "./components/Dashboard";
@@ -35,7 +35,7 @@ import CommandTrainerPage from "./pages/voicemodule/CommandTrainer";
 
 function App() {
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <Routes>
 
@@ -79,7 +79,7 @@ function App() {
         <Route path="/voice/tts" element={<SpeechOutputPage />} />
         <Route path="/voice/commands" element={<CommandTrainerPage />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 

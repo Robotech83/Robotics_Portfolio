@@ -30,10 +30,9 @@ function Sonny({
   modelRotation: { x: number; y: number; z: number };
   modelPosition: { x: number; y: number; z: number };
 }) {
-  // ✅ Correct GitHub Pages-safe path (uses Vite base automatically)
-  const modelUrl = `${import.meta.env.BASE_URL}models/Sonny.glb`;
-
-  const { scene } = useGLTF(modelUrl);
+  // ✅ GitHub Pages safe path (adds /Robotics_Portfolio/ automatically)
+  const url = `${import.meta.env.BASE_URL}models/Sonny.glb`;
+  const { scene } = useGLTF(url);
 
   return (
     <primitive
@@ -70,7 +69,7 @@ export default function ThreeDScene({
       <Floor />
       {viewerSettings.showGrid && <GridHelper />}
 
-      {/* ✅ Sonny loaded correctly */}
+      {/* ✅ Load model properly */}
       <Suspense fallback={null}>
         <Sonny
           modelScale={modelScale}
@@ -84,5 +83,5 @@ export default function ThreeDScene({
   );
 }
 
-// Optional: helps Drei cache the model
+// Optional preload
 useGLTF.preload(`${import.meta.env.BASE_URL}models/Sonny.glb`);
