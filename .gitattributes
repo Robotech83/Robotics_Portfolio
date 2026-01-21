@@ -4,4 +4,5 @@
 *.obj filter=lfs diff=lfs merge=lfs -text
 *.fbx filter=lfs diff=lfs merge=lfs -text
 *.stl filter=lfs diff=lfs merge=lfs -text
+models/Sonny.glb -filter -diff -merge -text
 public/models/Sonny.glb !text !filter !merge !diff
