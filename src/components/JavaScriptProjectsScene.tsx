@@ -1,4 +1,4 @@
-import "../../styles/jsProjectsScene.css";
+import "../styles/jsProjectsScene.css";
 
 type JsProject = {
   title: string;
