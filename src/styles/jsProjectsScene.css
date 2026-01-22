@@ -1,0 +1,192 @@
+/* Fullscreen overlay */
+.jsSceneOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+/* Click-out backdrop */
+.jsSceneBackdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(6px);
+}
+
+/* Window */
+.jsSceneWindow {
+  position: relative;
+  width: min(1050px, 92vw);
+  max-height: 86vh;
+  margin: 6vh auto 0;
+  background: #050013;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Reuse your neon-border / neon-hover naming if you already have it globally */
+.neon-border {
+  border: 2px solid #00ffc8;
+  box-shadow: 0 0 20px #00ffc8, inset 0 0 10px #00ffc8;
+}
+
+/* Header */
+.jsSceneHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid rgba(0, 255, 200, 0.25);
+}
+
+.jsSceneTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.jsSceneSubtitle {
+  color: #d1d1d1;
+  font-size: 0.95rem;
+}
+
+.jsSceneClose {
+  border: 2px solid #00ffc8;
+  background: transparent;
+  color: #00ffc8;
+  border-radius: 12px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  font-weight: 900;
+  transition: 0.25s ease;
+}
+.jsSceneClose:hover {
+  background: #00ffc8;
+  color: #000;
+  box-shadow: 0 0 25px #00ffc8;
+}
+
+/* Body */
+.jsSceneBody {
+  padding: 1.2rem;
+  overflow: auto; /* ✅ scroll inside overlay */
+  max-height: calc(86vh - 70px);
+}
+
+.jsSceneGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.jsSceneCard {
+  border: 2px solid #00ffc8;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 1rem;
+  box-shadow: 0 0 12px rgba(0, 255, 200, 0.35);
+  transition: 0.25s ease;
+}
+
+.neon-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px #00ffc8, 0 0 50px rgba(0, 255, 200, 0.35);
+}
+
+.jsCardTop {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.jsCardTitle {
+  margin: 0;
+  color: #00ffc8;
+  font-size: 1.25rem;
+  text-shadow: 0 0 8px rgba(0, 255, 200, 0.6);
+}
+
+.jsCardTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.jsTag {
+  border: 1px solid rgba(0, 255, 200, 0.55);
+  color: #00ffc8;
+  border-radius: 999px;
+  padding: 0.2rem 0.5rem;
+  font-weight: 800;
+  font-size: 0.75rem;
+  background: rgba(0, 255, 200, 0.07);
+}
+
+.jsCardDesc {
+  color: #d1d1d1;
+  margin: 0.8rem 0 1rem;
+  line-height: 1.5;
+}
+
+.jsCardActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.jsBtn {
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid #00ffc8;
+  color: #00ffc8;
+  background: transparent;
+  padding: 0.55rem 0.75rem;
+  border-radius: 12px;
+  font-weight: 900;
+  transition: 0.25s ease;
+}
+.jsBtn:hover {
+  background: #00ffc8;
+  color: #000;
+  box-shadow: 0 0 25px #00ffc8;
+}
+
+.jsBtn.secondary {
+  border-color: rgba(0, 255, 200, 0.65);
+  opacity: 0.95;
+}
+
+.jsHint {
+  color: rgba(209, 209, 209, 0.8);
+  font-size: 0.9rem;
+}
+
+.jsSceneFooter {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(0, 255, 200, 0.25);
+  color: rgba(209, 209, 209, 0.9);
+  font-size: 0.95rem;
+}
+
+/* RGB title (same vibe as your other sections) */
+.rgb-gradient {
+  background: linear-gradient(90deg, #ff00ff, #00ffc8, #00ff00);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rgbShift 6s linear infinite;
+}
+
+@keyframes rgbShift {
+  0% { background-position: 0% }
+  50% { background-position: 100% }
+  100% { background-position: 0% }
+}
+
+@media (max-width: 900px) {
+  .jsSceneGrid {
+    grid-template-columns: 1fr;
+  }
+}
