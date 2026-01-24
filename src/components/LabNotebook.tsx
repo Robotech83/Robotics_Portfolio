@@ -1,35 +1,98 @@
-import { useState } from 'react';
-import '../styles/labnotebook.css';
+// src/components/LabNotebook.tsx
+// Robotics Lab Notebook section
+// Purpose: show short, structured "engineering log" entries on the homepage.
 
-interface Note {
+import "../styles/labnotebook.css";
+
+type LabEntry = {
   title: string;
-  details: string;
-}
+  goal: string;
+  issue: string;
+  outcome: string;
+  takeaway: string;
+};
 
 export function LabNotebook() {
-  const notes: Note[] = [
-    { title: "", details: "Diagrams for Arduino Mega → PCA9685 wiring." },
-    { title: "Pi → Arduino Comm", details: "Serial communication setup between Raspberry Pi and Arduino." },
-    { title: "Face Recognition Pipeline", details: "How camera input is processed and analyzed for detection." },
-    { title: "Power Distribution", details: "Battery setup, voltage regulation, and distribution notes." },
+  // Keep entries short + skimmable (homepage-friendly).
+  // You can add more later without changing the layout.
+  const entries: LabEntry[] = [
+    {
+      title: "Virtual Robot Arm — Forward Kinematics",
+      goal: "Build a 5-DOF virtual arm using nested transforms.",
+      issue: "Adding wrist joints caused collapse/disappearing geometry.",
+      outcome: "Rebuilt one joint at a time with primitives to verify hierarchy.",
+      takeaway: "FK depends on transform order as much as math.",
+    },
+    {
+      title: "Skills Section — Navigation Redesign",
+      goal: "Make Skills clearer without bloating the homepage.",
+      issue: "Too much embedded content created clutter/confusion.",
+      outcome: "Converted Skills into navigation launchers for dedicated pages.",
+      takeaway: "Good UX often means moving detail out, not adding more.",
+    },
+    {
+      title: "JavaScript Projects — Documentation Cleanup",
+      goal: "Make vanilla JS projects look intentional + professional.",
+      issue: "Inconsistent/minimal READMEs weakened project presentation.",
+      outcome: "Standardized READMEs and added clear demo + repo links.",
+      takeaway: "Documentation can level up a project instantly.",
+    },
   ];
-
-  const [expanded, setExpanded] = useState<number | null>(null);
 
   return (
     <section className="lab-section" id="lab">
-      <h2 className="section-title">Robotics Lab Notebook</h2>
-      <div className="notes-grid">
-        {notes.map((note, index) => (
-          <div 
-            key={note.title} 
-            className={`note-card ${expanded === index ? "expanded" : ""}`}
-            onClick={() => setExpanded(expanded === index ? null : index)}
-          >
-            <h3>{note.title}</h3>
-            {expanded === index && <p>{note.details}</p>}
-          </div>
-        ))}
+      <div className="lab-header">
+        <h2 className="lab-title">Robotics Lab Notebook</h2>
+        <p className="lab-subtitle">
+          Short experiment logs — what I tried, what broke, what I learned.
+        </p>
+      </div>
+
+      <div className="lab-panel neon-border">
+        <div className="lab-panel-topbar">
+          <span className="lab-dot red" />
+          <span className="lab-dot yellow" />
+          <span className="lab-dot green" />
+          <span className="lab-path">~/robotics/lab-notebook</span>
+        </div>
+
+        <div className="lab-entries">
+          {entries.map((e) => (
+            <article key={e.title} className="lab-entry">
+              <div className="lab-entry-title">
+                <span className="prompt">&gt;</span> {e.title}
+              </div>
+
+              <div className="lab-entry-grid">
+                <div className="lab-row">
+                  <span className="lab-label">GOAL</span>
+                  <span className="lab-value">{e.goal}</span>
+                </div>
+
+                <div className="lab-row">
+                  <span className="lab-label warn">ISSUE</span>
+                  <span className="lab-value">{e.issue}</span>
+                </div>
+
+                <div className="lab-row">
+                  <span className="lab-label ok">OUTCOME</span>
+                  <span className="lab-value">{e.outcome}</span>
+                </div>
+
+                <div className="lab-row">
+                  <span className="lab-label tip">TAKEAWAY</span>
+                  <span className="lab-value">{e.takeaway}</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="lab-footer">
+          <span className="prompt">&gt;</span> status:{" "}
+          <span className="lab-status">ACTIVE</span>{" "}
+          <span className="lab-muted">(adding entries weekly)</span>
+        </div>
       </div>
     </section>
   );

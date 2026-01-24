@@ -11,6 +11,8 @@ import ScrollToTop from "./components/ScrollToTop";
 
 
 
+
+
 // Importing pages
 import ControlHub from "./pages/ControlHub";
 import AboutMe from "./pages/AboutMe";
@@ -27,6 +29,10 @@ import VoiceModule from "./pages/modules/VoiceModule";
 import WakeWordPage from "./pages/voicemodule/WakeWord";
 import SpeechOutputPage from "./pages/voicemodule/SpeechOutput";
 import CommandTrainerPage from "./pages/voicemodule/CommandTrainer";
+
+import JSProjectsPage from "./pages/JSProjectsPage";
+import SkillPlaceholderPage from "./pages/SkillPlaceholderPage";
+
 
 
 
@@ -50,6 +56,7 @@ function App() {
               <Skills />
               <LabNotebook />
               <ContactTerminal />
+              
 
               <FloatingAboutButton />
             </>
@@ -78,6 +85,69 @@ function App() {
         <Route path="/voice/wakeword" element={<WakeWordPage />} />
         <Route path="/voice/tts" element={<SpeechOutputPage />} />
         <Route path="/voice/commands" element={<CommandTrainerPage />} />
+
+          {/* JavaScript Projects Page */}
+        <Route path="/js-projects" element={<JSProjectsPage />} />
+        {/* Skill Placeholder Pages */}
+        <Route
+  path="/python-projects"
+  element={
+    <SkillPlaceholderPage
+      title="Python Projects"
+      description="Automation, robotics scripting, and system tooling projects."
+    />
+  }
+/>
+
+<Route
+  path="/arduino-projects"
+  element={
+    <SkillPlaceholderPage
+      title="Arduino Projects"
+      description="Embedded systems, servo control, and hardware prototyping."
+    />
+  }
+/>
+
+<Route
+  path="/linux-projects"
+  element={
+    <SkillPlaceholderPage
+      title="Linux Projects"
+      description="System setup, automation, and robotics environment tooling."
+    />
+  }
+/>
+
+<Route
+  path="/bash-projects"
+  element={
+    <SkillPlaceholderPage
+      title="Bash Projects"
+      description="Automation scripts and developer workflow tools."
+    />
+  }
+/>
+
+<Route
+  path="/robotics-projects"
+  element={
+    <SkillPlaceholderPage
+      title="Robotics Projects"
+      description="Kinematics, simulation, and robot control systems."
+    />
+  }
+/>
+
+<Route
+  path="/vision-projects"
+  element={
+    <SkillPlaceholderPage
+      title="Machine Vision Projects"
+      description="Object detection, face tracking, and vision pipelines."
+    />
+  }
+/>
       </Routes>
     </>
   );

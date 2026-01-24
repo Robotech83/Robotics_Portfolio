@@ -89,7 +89,6 @@
 }
 
 .neon-hover:hover {
-  transform: translateY(-2px);
   box-shadow: 0 0 25px #00ffc8, 0 0 50px rgba(0, 255, 200, 0.35);
 }
 

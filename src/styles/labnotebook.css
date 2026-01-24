@@ -1,7 +1,6 @@
-/* LabNotebook.css
-   Cyber-Neon Terminal style
-   Terminal log vibe, green glow, pulse animation
-*/
+/* ------------------------------------------------------ */
+/* Lab Notebook Styles — Cyber-Neon Terminal Log Panel     */
+/* ------------------------------------------------------ */
 
 .lab-section {
   padding: 3rem;
@@ -11,44 +10,182 @@
   background: #050013;
   box-shadow: 0 0 20px #00ffc8, inset 0 0 10px #00ffc8;
   position: relative;
+  overflow: hidden;
+}
+
+/* Header */
+.lab-header {
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-.section-title {
+.lab-title {
   font-size: 2.6rem;
+  font-weight: 700;
   color: #00ffc8;
-  margin-bottom: 2rem;
   text-shadow: 0 0 6px #00ffc8, 0 0 12px #00ffc8;
+  margin: 0;
 }
 
-.notes-grid {
+.lab-subtitle {
+  margin: 0.75rem auto 0;
+  max-width: 760px;
+  color: #d1d1d1;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* Panel container */
+.lab-panel {
+  margin-top: 1.5rem;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 2px solid #00ffc8;
+  box-shadow: 0 0 18px #00ffc8, inset 0 0 10px rgba(0, 255, 200, 0.35);
+  overflow: hidden;
+}
+
+/* Topbar (terminal chrome) */
+.lab-panel-topbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(0, 255, 200, 0.35);
+  background: rgba(5, 0, 19, 0.9);
+}
+
+.lab-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.9;
+}
+
+.lab-dot.red {
+  background: #ff4d4d;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
+}
+.lab-dot.yellow {
+  background: #ffd24d;
+  box-shadow: 0 0 10px rgba(255, 210, 77, 0.55);
+}
+.lab-dot.green {
+  background: #4dff88;
+  box-shadow: 0 0 10px rgba(77, 255, 136, 0.55);
+}
+
+.lab-path {
+  margin-left: 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 0.95rem;
+  color: rgba(0, 255, 200, 0.85);
+}
+
+/* Entries list */
+.lab-entries {
+  padding: 1.25rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
 }
 
-.note-card {
-  border: 2px solid #00ffc8;
+/* Single entry card */
+.lab-entry {
   border-radius: 12px;
-  background: #050013;
+  border: 1px solid rgba(0, 255, 200, 0.35);
+  background: rgba(5, 0, 19, 0.55);
+  box-shadow: inset 0 0 10px rgba(0, 255, 200, 0.18);
   padding: 1rem;
-  cursor: pointer;
+}
+
+/* Title line */
+.lab-entry-title {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
   color: #00ffc8;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px #00ffc8, inset 0 0 6px #00ffc8;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 10px rgba(0, 255, 200, 0.35);
 }
 
-.note-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #00ffc8, 0 0 50px #00ffc8;
+.prompt {
+  color: rgba(0, 255, 200, 0.9);
 }
 
-.note-card.expanded {
-  background: #00ffc8;
-  color: #000;
-  box-shadow: 0 0 35px #00ffc8, 0 0 70px #00ffc8;
+/* Grid of labeled rows */
+.lab-entry-grid {
+  display: grid;
+  gap: 0.65rem;
 }
 
-.note-card h3 {
-  margin-bottom: 0.5rem;
+.lab-row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.lab-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.8px;
+  color: rgba(0, 255, 200, 0.85);
+  opacity: 0.95;
+}
+
+.lab-label.warn {
+  color: rgba(255, 210, 77, 0.9);
+}
+
+.lab-label.ok {
+  color: rgba(77, 255, 136, 0.9);
+}
+
+.lab-label.tip {
+  color: rgba(160, 120, 255, 0.9);
+}
+
+.lab-value {
+  color: rgba(209, 209, 209, 0.95);
+  line-height: 1.45;
+}
+
+/* Footer line */
+.lab-footer {
+  padding: 0.85rem 1rem;
+  border-top: 1px solid rgba(0, 255, 200, 0.35);
+  background: rgba(5, 0, 19, 0.9);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  color: rgba(0, 255, 200, 0.85);
+}
+
+.lab-status {
+  color: rgba(77, 255, 136, 0.95);
+  text-shadow: 0 0 10px rgba(77, 255, 136, 0.25);
+}
+
+.lab-muted {
+  color: rgba(209, 209, 209, 0.7);
+}
+
+
+
+/* Responsive */
+@media (max-width: 640px) {
+  .lab-section {
+    padding: 2rem 1.25rem;
+  }
+
+  .lab-row {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-label {
+    opacity: 0.85;
+  }
 }
