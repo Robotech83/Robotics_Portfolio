@@ -36,13 +36,9 @@
 .neon-border {
   border: 2px solid #00ffc8;
   box-shadow: 0 0 20px #00ffc8, inset 0 0 10px #00ffc8;
-  animation: pulse 2s infinite alternate;
 }
 
-@keyframes pulse {
-  from { box-shadow: 0 0 15px #00ffc8, inset 0 0 8px #00ffc8; }
-  to   { box-shadow: 0 0 30px #00ffc8, inset 0 0 15px #00ffc8; }
-}
+
 
 /* RGB gradient text */
 .rgb-gradient {
