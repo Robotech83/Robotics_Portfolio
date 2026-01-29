@@ -44,9 +44,9 @@
   transition: box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
 }
 
-/* Hover — NO movement */
+/* Hover — NO movement 
 .skill-button:hover {
   background: #00ffc8;
   color: #000;
   box-shadow: 0 0 30px #00ffc8, 0 0 60px rgba(0, 255, 200, 0.6);
-}
+} */

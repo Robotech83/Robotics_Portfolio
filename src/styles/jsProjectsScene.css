@@ -145,6 +145,11 @@
   font-weight: 900;
   transition: 0.25s ease;
 }
+.jsBtn:hover {
+  background: #00ffc8;
+  color: #000;
+  box-shadow: 0 0 25px #00ffc8;
+}
 
 .jsBtn.secondary {
   border-color: rgba(0, 255, 200, 0.65);
