@@ -152,7 +152,7 @@ export default function ArduinoProjectsPage() {
             <div className="card-top">
               <div className="card-status">
                 <span className={`status-pill ${p.status}`}>
-                  {p.status === "featured" ? "FEATURED" : "IN PROGRESS"}
+                  {p.status === "featured" ? "FEATURED" : p.status === "in-progress" ? "IN PROGRESS" : "COMPLETED"}
                 </span>
               </div>
 
