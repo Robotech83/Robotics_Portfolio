@@ -16,8 +16,8 @@ import ScrollToTop from "./components/ScrollToTop";
 // Importing pages
 import ControlHub from "./pages/ControlHub";
 import AboutMe from "./pages/AboutMe";
-import VirtualModel from "./pages/modules/VirtualModel";
-//import RobotStudio from "./pages/RobotStudio";
+//import VirtualModel from "./pages/modules/VirtualModel";
+import RobotStudio from "./pages/RobotStudio";
 import AIAssistantPage from "./pages/AIAssistant";
 import ObjectScanner from "./pages/ObjectScanner";
 
@@ -70,10 +70,8 @@ function App() {
         {/* Control Hub */}
         <Route path="/control-hub" element={<ControlHub />} />
         {/* Virtual Model Viewer */}
-        <Route path="/virtual-model" element={<VirtualModel />} />
-        {/* Robot Studio */}
-       <Route
-  path="/robot-studio"
+ <Route
+  path="/virtual-model"
   element={
     <UnderConstruction
       title="Virtual Robot Studio"
@@ -85,8 +83,9 @@ function App() {
       ]}
     />
   }
-/>
-
+/> 
+         {/* Robot Studio */}
+        <Route path="/robotstudio" element={<RobotStudio />} />
         {/* AI Assistant */}
         <Route path="/AIAssistant" element={<AIAssistantPage />} />
         {/* About Me Page */}
