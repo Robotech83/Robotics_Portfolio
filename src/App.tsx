@@ -17,7 +17,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import ControlHub from "./pages/ControlHub";
 import AboutMe from "./pages/AboutMe";
 import VirtualModel from "./pages/modules/VirtualModel";
-import RobotStudio from "./pages/RobotStudio";
+//import RobotStudio from "./pages/RobotStudio";
 import AIAssistantPage from "./pages/AIAssistant";
 import ObjectScanner from "./pages/ObjectScanner";
 
