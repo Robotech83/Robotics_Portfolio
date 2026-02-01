@@ -1,0 +1,78 @@
+/* ------------------------------------------------------ */
+/* Under Construction Page — Neon Terminal                */
+/* ------------------------------------------------------ */
+
+.uc-page {
+  min-height: 100vh;
+  background: #050013;
+  color: #d1d1d1;
+  padding: 3rem 1.25rem;
+}
+
+.uc-panel {
+  max-width: 900px;
+  margin: 4rem auto 0 auto;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 2px solid #00ffc8;
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.45), inset 0 0 10px rgba(0, 255, 200, 0.25);
+}
+
+.uc-terminal {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  color: rgba(0, 255, 200, 0.9);
+  margin-bottom: 1.25rem;
+}
+
+.prompt {
+  font-weight: 800;
+  margin-right: 0.25rem;
+}
+
+.uc-title {
+  margin: 0;
+  font-size: 2.4rem;
+  color: #00ffc8;
+  text-shadow: 0 0 8px rgba(0, 255, 200, 0.45);
+}
+
+.uc-description {
+  margin-top: 0.75rem;
+  max-width: 720px;
+  line-height: 1.55;
+  opacity: 0.95;
+}
+
+.uc-status {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0, 255, 200, 0.35);
+}
+
+.uc-status-title {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  color: rgba(0, 255, 200, 0.9);
+  margin-bottom: 0.75rem;
+}
+
+.uc-status ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  line-height: 1.6;
+}
+
+.uc-footer {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0, 255, 200, 0.35);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
+
+.uc-active {
+  color: rgba(77, 255, 136, 0.95);
+  font-weight: 800;
+}

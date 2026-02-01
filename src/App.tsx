@@ -33,6 +33,8 @@ import CommandTrainerPage from "./pages/voicemodule/CommandTrainer";
 import JSProjectsPage from "./pages/JSProjectsPage";
 import SkillPlaceholderPage from "./pages/SkillPlaceholderPage";
 import ArduinoProjectsPage from "./pages/ArduinoProjectsPage";
+import UnderConstruction from "./pages/UnderConstruction";
+
 
 
 
@@ -70,7 +72,21 @@ function App() {
         {/* Virtual Model Viewer */}
         <Route path="/virtual-model" element={<VirtualModel />} />
         {/* Robot Studio */}
-        <Route path="/robotstudio" element={<RobotStudio />} />
+       <Route
+  path="/robot-studio"
+  element={
+    <UnderConstruction
+      title="Virtual Robot Studio"
+      description="An interactive robotics simulator for kinematics and control. This module is currently being refactored for stability and clarity."
+      status={[
+        "UI layout and routing complete",
+        "Kinematics logic in progress",
+        "3D scene stability under active development",
+      ]}
+    />
+  }
+/>
+
         {/* AI Assistant */}
         <Route path="/AIAssistant" element={<AIAssistantPage />} />
         {/* About Me Page */}
