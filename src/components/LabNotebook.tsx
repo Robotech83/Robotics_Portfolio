@@ -37,6 +37,13 @@ export function LabNotebook() {
       outcome: "Standardized READMEs and added clear demo + repo links.",
       takeaway: "Documentation can level up a project instantly.",
     },
+    {
+      title: "Arduion Projects Page — Initial Setup",
+      goal: "Create a dedicated page to showcase Arduino projects.",
+      issue: "Needed a clear, engaging layout for hardware projects.",
+      outcome: "Built a new page with project cards, images, and links.",
+      takeaway: "Specialized pages help highlight different skill sets.",
+    },
   ];
 
   return (

@@ -32,6 +32,8 @@ import CommandTrainerPage from "./pages/voicemodule/CommandTrainer";
 
 import JSProjectsPage from "./pages/JSProjectsPage";
 import SkillPlaceholderPage from "./pages/SkillPlaceholderPage";
+import ArduinoProjectsPage from "./pages/ArduinoProjectsPage";
+
 
 
 
@@ -98,16 +100,9 @@ function App() {
     />
   }
 />
+        {/* Arduino Projects Page */}
+      <Route path="/arduino-projects" element={<ArduinoProjectsPage />} />
 
-<Route
-  path="/arduino-projects"
-  element={
-    <SkillPlaceholderPage
-      title="Arduino Projects"
-      description="Embedded systems, servo control, and hardware prototyping."
-    />
-  }
-/>
 
 <Route
   path="/linux-projects"

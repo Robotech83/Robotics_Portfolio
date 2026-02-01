@@ -40,13 +40,12 @@
   font-weight: 700;
   cursor: pointer;
 
-  box-shadow: 0 0 14px #00ffc8, inset 0 0 8px rgba(0, 255, 200, 0.6);
-  transition: box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+  
 }
 
-/* Hover — NO movement 
+/* Hover — NO movement */
 .skill-button:hover {
   background: #00ffc8;
   color: #000;
   box-shadow: 0 0 30px #00ffc8, 0 0 60px rgba(0, 255, 200, 0.6);
-} */
+} 
