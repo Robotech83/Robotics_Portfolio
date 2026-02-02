@@ -107,8 +107,11 @@ function App() {
         <Route path="/voice/tts" element={<SpeechOutputPage />} />
         <Route path="/voice/commands" element={<CommandTrainerPage />} />
 
+        {/* SKILL PAGES */  }
+
           {/* JavaScript Projects Page */}
         <Route path="/js-projects" element={<JSProjectsPage />} />
+
         {/* Skill Placeholder Pages */}
         <Route
   path="/python-projects"
@@ -159,6 +162,15 @@ function App() {
     <SkillPlaceholderPage
       title="Machine Vision Projects"
       description="Object detection, face tracking, and vision pipelines."
+    />
+  }
+/>
+<Route
+  path="/react-projects"
+  element={
+    <SkillPlaceholderPage
+      title="React Projects"
+      description="Frontend web development projects using React and TypeScript."
     />
   }
 />
