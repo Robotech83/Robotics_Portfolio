@@ -100,9 +100,7 @@ export default function ArduinoProjectsPage() {
   return (
     <div className="arduino-page">
       {/* Back Button */}
-      <button className="back-btn-top" onClick={() => navigate("/")}>
-        ← Back
-      </button>
+     <button onClick={() => navigate(-1)}>← Back</button>
 
       {/* Header */}
       <header className="arduino-header">

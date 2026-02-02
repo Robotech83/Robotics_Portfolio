@@ -5,7 +5,7 @@
  * Reached via the Skills → JavaScript button.
  */
 
-import { BackButton } from "../components/BackButton";
+import { useNavigate } from "react-router-dom";  
 import "../styles/jsProjectsScene.css";
 
 type JsProject = {
@@ -18,6 +18,7 @@ type JsProject = {
 
 
 
+  
 const JS_PROJECTS: JsProject[] = [
   {
     title: "JS To-Do List",
@@ -50,6 +51,7 @@ const JS_PROJECTS: JsProject[] = [
 ];
 
 export default function JSProjectsPage() {
+  const navigate = useNavigate();
   return (
     <div className="jsScenePage">
       <header className="jsSceneHeader neon-border">
@@ -98,7 +100,7 @@ export default function JSProjectsPage() {
             </div>
           ))}
         </div>
-        <BackButton />
+        <button onClick={() => navigate(-1)}>← Back</button>
 
         <footer className="jsSceneFooter">
           These projects use **vanilla JavaScript** — no frameworks.
