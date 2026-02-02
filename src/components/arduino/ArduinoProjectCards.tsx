@@ -1,4 +1,4 @@
-import type { ArduinoProject } from "../../types/arduino";
+import type { ArduinoProject } from "./types/arduino";
 import { StatusPill } from "./StatusPill";
 import { WiringPreview } from "./WiringPreview";
 import { SkillChips } from "./SkillChips";

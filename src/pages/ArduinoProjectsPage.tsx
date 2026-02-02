@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "../styles/arduinoprojects.css";
 
 import { arduinoProjects } from "../components/arduino/data/arduinoProjects";
-import type { FilterValue } from "../components/arduino/ProjectsFilterBar";
+import type { FilterValue } from "../components/arduino/types/arduino";
+
 
 import { ArduinoHeader } from "../components/arduino/ArduinoHeader";
 import { ProjectsFilterBar } from "../components/arduino/ProjectsFilterBar";
