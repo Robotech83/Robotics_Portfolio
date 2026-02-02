@@ -12,4 +12,4 @@ export type ArduinoProject = {
   status: ArduinoProjectStatus;
 };
 
-export type FilterValue = "all" | "featured" | "in-progress";
+export type FilterValue = "all" | "featured" | "in-progress"| "completed";
