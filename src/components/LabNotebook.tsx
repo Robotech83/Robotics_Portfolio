@@ -38,12 +38,28 @@ export function LabNotebook() {
       takeaway: "Documentation can level up a project instantly.",
     },
     {
-      title: "Arduion Projects Page — Initial Setup",
-      goal: "Create a dedicated page to showcase Arduino projects.",
-      issue: "Needed a clear, engaging layout for hardware projects.",
-      outcome: "Built a new page with project cards, images, and links.",
-      takeaway: "Specialized pages help highlight different skill sets.",
-    },
+  title: "Arduino Projects Page — Initial Setup",
+  goal: "Create a dedicated page to showcase Arduino and hardware projects.",
+  issue: "Hardware projects did not fit well within general portfolio sections.",
+  outcome: "Built a new Arduino Projects page with structured cards, status indicators, and room for wiring images and demos.",
+  takeaway: "Dedicated pages make hardware work clearer and more credible.",
+},
+
+    {
+  title: "JavaScript Projects Page — Component Refactor",
+  goal: "Refactor JSProjectsPage into reusable components without changing the UI.",
+  issue: "Single-file page mixed data, layout, and card rendering (hard to maintain/extend).",
+  outcome: "Split into header/grid/card/actions/tags/footer components + moved data/types into dedicated files.",
+  takeaway: "Consistent page architecture makes adding new projects faster and safer.",
+},
+  {
+  title: "Arduino Projects Page — Component Split + TS Fix",
+  goal: "Break ArduinoProjectsPage into components and make it scalable for more hardware projects.",
+  issue: "Build failed due to importing FilterValue from a component instead of the shared types file.",
+  outcome: "Moved projects into data/, centralized types/, created card/grid/filter components, and fixed imports to use types/arduino.",
+  takeaway: "Import types from the types folder, not component files (prevents TS export errors).",
+},
+
   ];
 
   return (

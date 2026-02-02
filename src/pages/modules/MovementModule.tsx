@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../../styles/modules/movementmodule.css";
+import { BackButton } from "../../components/BackButton";
 //import { Link, Route } from "react-router-dom";
 
 
@@ -180,7 +181,7 @@ export default function MovementModule() {
       <div className="mm-footer">
         <small>Advanced Robotics Panel — Movement controls & presets</small>
       </div>
-   
+   <BackButton />
 
 
 
