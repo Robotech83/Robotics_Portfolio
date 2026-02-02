@@ -1,4 +1,4 @@
-import type { export FilterValue } from "./types/arduino";
+import type { FilterValue } from "./types/arduino";
 
 type Props = {
   filter: FilterValue;
