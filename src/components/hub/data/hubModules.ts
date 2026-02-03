@@ -1,4 +1,4 @@
-import { Bot, Cpu, Eye, Mic, Power, Wifi, ScanSearch, Gamepad2 } from "lucide-react";
+import { Bot,  ScanSearch, Gamepad2 } from "lucide-react";
 import type { HubModule } from "../types/hub";
 
 export const hubModules: HubModule[] = [
