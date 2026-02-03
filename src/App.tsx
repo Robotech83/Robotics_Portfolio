@@ -91,7 +91,7 @@ function App() {
 
       
         {/* AI Assistant */}
-        <Route path="/AIAssistant" element={<AIAssistantPage />} />
+        <Route path="/ai-assistant" element={<AIAssistantPage />} />
         {/* About Me Page */}
         <Route path="/about" element={<AboutMe />} />
         {/* Object Scanner */}
