@@ -60,8 +60,6 @@ function App() {
               <Skills />
               <LabNotebook />
               <ContactTerminal />
-              
-
               <FloatingAboutButton />
             </>
           }
@@ -71,8 +69,6 @@ function App() {
         <Route path="/control-hub" element={<ControlHub />} />
         {/* Virtual Model Viewer */}
         <Route path="/virtual-model" element={<VirtualModel />} />
-        {/* Robot Studio */}
-
         {/* Robot Studio (Under Construction) */}
 <Route
   path="/robotstudio"

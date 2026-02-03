@@ -66,7 +66,13 @@ export function LabNotebook() {
     outcome: "Intrroduced clearer folder structure, centralized routes, and cleaned up navigation links.",
     takeaway: "A well-organized project structure simplifies future development and maintenance.",
 },
- 
+{
+  title: "Control Hub Refactor — Routing Breakage Investigation",
+  goal: "Refactor Control Hub modules and temporarily route unstable pages to Under Construction.",
+  issue: "After refactor and GitHub Pages deploy, several modules stopped working due to route mismatches.",
+  outcome: "Identified case-sensitive path mismatch between Control Hub links and App.tsx routes; Robot Studio and Object Scanner were isolated successfully, but AI Assistant route still failing.",
+  takeaway: "In React Router, paths must match exactly (case + spelling), and routing bugs can persist across deploys.",
+},
 
   ];
 
