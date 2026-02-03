@@ -1,21 +1,21 @@
-import "../styles/robotstudio.css";
- import MovementModule from "../pages/modules/MovementModule";
- import VirtualModel from "../pages/modules/VirtualModel";
- import { StudioHeader } from "../components/studio/StudioHeader";
-import { StudioLayout } from "../components/studio/StudioLayout";
+//import "../styles/robotstudio.css";
+//import MovementModule from "../pages/modules/MovementModule";
+//import VirtualModel from "../pages/modules/VirtualModel";
+//import { StudioHeader } from "../components/studio/StudioHeader";
+//import { StudioLayout } from "../components/studio/StudioLayout";
 
-//import UnderConstruction from "./UnderConstruction";
+import UnderConstruction from "./UnderConstruction";
 
 export default function RobotStudio() {
-   //When ready to re-enable:
-   return (
-     <div className="robotstudio-wrapper">
-      <StudioHeader title="Robot Studio" subtitle="Virtual InMoov Control Environment" />
-     <StudioLayout left={<MovementModule />} right={<VirtualModel />} />
-     </div>
-   );
+  // When ready to re-enable:
+   // return (
+     //<div className="robotstudio-wrapper">
+       //<StudioHeader title="Robot Studio" subtitle="Virtual InMoov Control Environment" />
+       //<StudioLayout left={<MovementModule />} right={<VirtualModel />} />
+     //</div>
+  //);
 
-  /*return (
+   return (
     <UnderConstruction
       title="Robot Studio"
       description="Paused while I fix model loading and deployment issues."
@@ -24,6 +24,6 @@ export default function RobotStudio() {
         "Next: move .glb into /public and verify GitHub Pages base path",
         "Then: re-enable Robot Studio route",
       ]}
-    />*\/
-  );*/
+    />
+  );
 }
