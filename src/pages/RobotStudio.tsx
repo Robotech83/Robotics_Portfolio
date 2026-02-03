@@ -1,6 +1,20 @@
+import "../styles/robotstudio.css";
+// import MovementModule from "../pages/modules/MovementModule";
+// import VirtualModel from "../pages/modules/VirtualModel";
+// import { StudioHeader } from "../components/studio/StudioHeader";
+// import { StudioLayout } from "../components/studio/StudioLayout";
+
 import UnderConstruction from "./UnderConstruction";
 
 export default function RobotStudio() {
+  // When ready to re-enable:
+  // return (
+  //   <div className="robotstudio-wrapper">
+  //     <StudioHeader title="Robot Studio" subtitle="Virtual InMoov Control Environment" />
+  //     <StudioLayout left={<MovementModule />} right={<VirtualModel />} />
+  //   </div>
+  // );
+
   return (
     <UnderConstruction
       title="Robot Studio"
@@ -13,3 +27,4 @@ export default function RobotStudio() {
     />
   );
 }
+
