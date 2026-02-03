@@ -17,12 +17,13 @@ export default function ControlHub() {
 
       <HubHeader
         title="Control Hub"
-        subtitle='Navigate your robotics modules. Live demos stay live. Unfinished modules route to “Under Construction” so your site never looks broken.'
+        subtitle='Navigate robotics modules. Live demos stay live. 
+        Unstable modules route to "Under Construction" pages.'
       />
 
       <ModuleGrid modules={hubModules} />
 
-      <HubFooter tip='tip: keep “in progress” modules on UnderConstruction pages until stable for GitHub Pages.' />
+      <HubFooter tip='tip: Keep pushing progress. This is a work in progress, and that’s okay!' />
     </div>
   );
 }
