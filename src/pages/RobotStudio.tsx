@@ -1,34 +1,31 @@
 import "../styles/robotstudio.css";
 
-import MovementModule from "../pages/modules/MovementModule";
-import VirtualModel from "../pages/modules/VirtualModel";
+//import MovementModule from "../pages/modules/MovementModule";
+//import VirtualModel from "../pages/modules/VirtualModel";
 
-
+//import { StudioHeader } from "../components/studio/StudioHeader";
+//import { StudioLayout } from "../components/studio/StudioLayout";
+import UnderConstruction from "./UnderConstruction";
 
 export default function RobotStudio() {
-  return (
+  {/*return (
     <div className="robotstudio-wrapper">
+      <StudioHeader
+        title="Robot Studio"
+        subtitle="Virtual InMoov Control Environment"
+      />
 
-      <div className="robotstudio-header">
-        <h1 className="robotstudio-title">Robot Studio</h1>
-        <p className="robotstudio-subtitle">Virtual InMoov Control Environment</p>
-      </div>
-      
-
-      <div className="robotstudio-layout">
-
-        {/* LEFT — Movement controls */}
-        <div className="robotstudio-left">
-          <MovementModule />
-        </div>
-
-        {/* RIGHT — 3D InMoov viewer */}
-        <div className="robotstudio-container">
-          <div className="robotstudio-right">
-            <VirtualModel />
-          </div>
-        </div>
-      </div>
+      <StudioLayout left={<MovementModule />} right={<VirtualModel />} />
     </div>
-  );
+  );*/}
+
+  <UnderConstruction
+  title="Robot Studio"
+  description="Paused while I fix model loading and deployment issues."
+  status={[
+    "Build error: model asset path failing after Vite build",
+    "Next: move .glb into /public and verify GitHub Pages base path",
+    "Then: re-enable Robot Studio route",
+  ]}
+/>
 }

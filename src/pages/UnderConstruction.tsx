@@ -4,6 +4,9 @@
 import { useNavigate } from "react-router-dom";
 import "../styles/underconstruction.css";
 
+import { BackButtonTop } from "../components/underconstruction/ui/BackButtonTop";
+import { UnderConstructionPanel } from "../components/underconstruction/UnderConstructionPanel";
+
 type Props = {
   title?: string;
   description?: string;
@@ -19,37 +22,9 @@ export default function UnderConstruction({
 
   return (
     <div className="uc-page">
-      <button className="back-btn-top" onClick={() => navigate("/")}>
-        ← Back
-      </button>
+      <BackButtonTop onClick={() => navigate("/")} />
 
-      <div className="uc-panel neon-panel">
-        <div className="uc-terminal">
-          <span className="prompt">&gt;</span> cd ~/robotics
-        </div>
-
-        <h1 className="uc-title">{title}</h1>
-        <p className="uc-description">{description}</p>
-
-        {status.length > 0 && (
-          <div className="uc-status">
-            <div className="uc-status-title">
-              <span className="prompt">&gt;</span> current_status
-            </div>
-
-            <ul>
-              {status.map((s) => (
-                <li key={s}>{s}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        <div className="uc-footer">
-          <span className="prompt">&gt;</span> status:
-          <span className="uc-active"> ACTIVE DEVELOPMENT</span>
-        </div>
-      </div>
+      <UnderConstructionPanel title={title} description={description} status={status} />
     </div>
   );
 }
