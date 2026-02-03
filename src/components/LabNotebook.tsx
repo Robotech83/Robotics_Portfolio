@@ -59,6 +59,14 @@ export function LabNotebook() {
   outcome: "Moved projects into data/, centralized types/, created card/grid/filter components, and fixed imports to use types/arduino.",
   takeaway: "Import types from the types folder, not component files (prevents TS export errors).",
 },
+  {
+    title: "Portfolio Cleanup -Routing & Structure",
+    goal: "Improve project organization and routing for better scalability.",
+    issue: "pages, routes, and links were scattered, making it hard to track what linked where.",
+    outcome: "Intrroduced clearer folder structure, centralized routes, and cleaned up navigation links.",
+    takeaway: "A well-organized project structure simplifies future development and maintenance.",
+},
+ 
 
   ];
 

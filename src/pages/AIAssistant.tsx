@@ -1,168 +1,74 @@
-// src/pages/AIAssistant.tsx
-import { useState, useRef, useEffect } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Mic, Send, Volume2 } from "lucide-react";
+import "../styles/aiassistant.css";
 
 import { getResponse } from "../components/CoreResponse";
 import { defaultPersonality } from "../components/personalities/DefaultBot";
-import { friendlyPersonality } from "../components/personalities/FriendlyBot";
-import { sarcasticPersonality } from "../components/personalities/SarcasticBot";
-import { robotButlerPersonality } from "../components/personalities/RobotButler";
 import { type PersonalityFn } from "../components/personalities/types";
 
-import "../styles/aiassistant.css";
+import { AssistantHeader } from "../components/assistant/AssistantHeader";
+import { PersonalitySelect } from "../components/assistant/PersonalitySelect";
+import { MessageList } from "../components/assistant/MessageList";
+import { ChatInput } from "../components/assistant/ChatInput";
+import { VoiceControl } from "../components/assistant/VoiceControl";
 
-declare global {
-  interface Window {
-    SpeechRecognition: any;
-    webkitSpeechRecognition: any;
-  }
-}
-
-/**
- * All personalities are FUNCTIONS.
- * Each function decides how the AI responds.
- */
-const personalityMap: Record<string, PersonalityFn> = {
-  default: defaultPersonality,
-  friendly: friendlyPersonality,
-  sarcastic: sarcasticPersonality,
-  butler: robotButlerPersonality,
-};
+import { personalityMap, personalityOptions } from "../components/assistant/data/personalities";
+import type { PersonalityKey } from "../components/assistant/types";
+import { useTextToSpeech } from "../components/assistant/hooks/useTextToSpeech";
+import { useSpeechRecognition } from "../components/assistant/hooks/useSpeechRecognition";
 
 export default function AIAssistantPage() {
   const navigate = useNavigate();
 
-  const [messages, setMessages] = useState<string[]>([
-    "AI: Hello! I'm your AI assistant.",
-  ]);
-
+  const [messages, setMessages] = useState<string[]>(["AI: Hello! I'm your AI assistant."]);
   const [inputText, setInputText] = useState("");
-  const [isListening, setIsListening] = useState(false);
-  const [isSpeaking, setIsSpeaking] = useState(false);
-  const [personalityKey, setPersonalityKey] = useState("default");
+  const [personalityKey, setPersonalityKey] = useState<PersonalityKey>("default");
 
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-
-  /** Speak text using browser TTS */
-  const speak = (text: string) => {
-    if (!window.speechSynthesis) return;
-
-    setIsSpeaking(true);
-    const utterance = new SpeechSynthesisUtterance(text);
-
-    utterance.onend = () => setIsSpeaking(false);
-    window.speechSynthesis.speak(utterance);
-  };
-
-  /** Get the active personality function */
-  const getActivePersonality = (): PersonalityFn => {
+  const activePersonality: PersonalityFn = useMemo(() => {
     return personalityMap[personalityKey] ?? defaultPersonality;
-  };
+  }, [personalityKey]);
 
-  /** Handle text submit */
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!inputText.trim()) return;
+  const { speak, isSpeaking } = useTextToSpeech();
 
-    const personalityFn = getActivePersonality();
-    const response = getResponse(inputText, personalityFn);
+  const respond = (userText: string, source: "text" | "voice") => {
+    const cleaned = userText.trim();
+    if (!cleaned) return;
+
+    const response = getResponse(cleaned, activePersonality);
 
     setMessages((prev) => [
       ...prev,
-      `You: ${inputText}`,
+      source === "voice" ? `You (voice): ${cleaned}` : `You: ${cleaned}`,
       `AI: ${response}`,
     ]);
 
     speak(response);
-    setInputText("");
   };
 
-  /** Handle voice input */
-  const startListening = () => {
-    const SpeechRecognition =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
-
-    if (!SpeechRecognition) {
-      alert("Speech recognition not supported in this browser.");
-      return;
-    }
-
-    const recognition = new SpeechRecognition();
-    recognition.lang = "en-US";
-    setIsListening(true);
-
-    recognition.onresult = (e: any) => {
-      const transcript = e.results[0][0].transcript;
-
-      const personalityFn = getActivePersonality();
-      const response = getResponse(transcript, personalityFn);
-
-      setMessages((prev) => [
-        ...prev,
-        `You (voice): ${transcript}`,
-        `AI: ${response}`,
-      ]);
-
-      speak(response);
-      setIsListening(false);
-    };
-
-    recognition.onerror = () => {
-      setIsListening(false);
-    };
-
-    recognition.start();
-  };
-
-  /** Auto-scroll chat */
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  const { startListening, isListening } = useSpeechRecognition({
+    lang: "en-US",
+    onTranscript: (t) => respond(t, "voice"),
+    onError: () => alert("Speech recognition not supported in this browser."),
+  });
 
   return (
     <div className="aiassistant-page">
-      <button onClick={() => navigate("/control-hub")}>← Control Hub</button>
+      <AssistantHeader onBack={() => navigate("/control-hub")} />
 
-      <h1>AI Assistant</h1>
+      <PersonalitySelect value={personalityKey} onChange={setPersonalityKey} options={personalityOptions} />
 
-      {/* Personality Selector */}
-      <select
-        value={personalityKey}
-        onChange={(e) => setPersonalityKey(e.target.value)}
-      >
-        <option value="default">Default</option>
-        <option value="friendly">Friendly</option>
-        <option value="sarcastic">Sarcastic</option>
-        <option value="butler">Robot Butler</option>
-      </select>
+      <MessageList messages={messages} />
 
-      {/* Messages */}
-      <div className="messages">
-        {messages.map((msg, i) => (
-          <div key={i}>{msg}</div>
-        ))}
-        <div ref={messagesEndRef} />
-      </div>
+      <ChatInput
+        value={inputText}
+        onChange={setInputText}
+        onSubmit={() => {
+          respond(inputText, "text");
+          setInputText("");
+        }}
+      />
 
-      {/* Text Input */}
-      <form onSubmit={handleSubmit}>
-        <input
-          value={inputText}
-          onChange={(e) => setInputText(e.target.value)}
-          placeholder="Say something..."
-        />
-        <button type="submit">
-          <Send size={18} />
-        </button>
-      </form>
-
-      {/* Voice Control */}
-      <button onClick={startListening} disabled={isListening}>
-        <Mic size={20} />
-      </button>
-
-      {isSpeaking && <Volume2 size={18} />}
+      <VoiceControl onListen={startListening} isListening={isListening} isSpeaking={isSpeaking} />
     </div>
   );
 }
