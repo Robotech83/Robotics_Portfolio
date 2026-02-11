@@ -73,6 +73,44 @@ export function LabNotebook() {
   outcome: "Identified case-sensitive path mismatch between Control Hub links and App.tsx routes; Robot Studio and Object Scanner were isolated successfully, but AI Assistant route still failing.",
   takeaway: "In React Router, paths must match exactly (case + spelling), and routing bugs can persist across deploys.",
 },
+{
+  title: "Desk Robot Companion — Platform Planning + Scope Reset",
+  goal: "Define a desk-scale robot head to serve as a low-risk test platform for behaviors, expressions, and future voice control before deploying to my full-size humanoid robot.",
+  issue: "Scope expanded too quickly into tooling (PlatformIO), repo structure, and long-term architecture, leading to cognitive overload and no physical build progress.",
+  outcome: "Locked core decisions (ESP32 Wroom-32, PCA9685, cardboard head, eye + jaw servos), created a GitHub plan, selected VS Code + PlatformIO, and intentionally stopped before burnout.",
+  takeaway: "Planning is progress, but mechanical build must come first; future sessions should prioritize physical milestones before software or tooling."
+},
+{
+  title: "Desk Robot Companion — Energy Check + Momentum Reset",
+  goal: "Make forward progress without forcing a full build while energy was low.",
+  issue: "Mental fatigue blocked physical construction despite having a clear plan.",
+  outcome: "Shifted focus to documentation and dev logging, clarified next minimal action, and deferred building to avoid burnout.",
+  takeaway: "Sustainable progress in robotics requires respecting energy limits and breaking work into truly minimal steps."
+},
+{
+  title: "Arduino Skills Assessment — Baseline + Study Targets",
+  goal: "Benchmark my Arduino fundamentals and identify embedded topics to focus on next.",
+  issue: "Several intermediate/advanced questions exposed gaps in timing behavior, memory types, and interrupt limitations.",
+  outcome: "Completed Fundamentals (1–15) and started Intermediate/Advanced; answered only what I was confident in and left unknowns blank to keep the baseline honest.",
+  takeaway: "I’m strong on basic Arduino usage; next growth is embedded thinking (non-blocking timing, PWM/timers, interrupts, SRAM/Flash/EEPROM).",
+},
+{
+  title: "Python Fundamentals — W3Schools Quiz Baseline",
+  goal: "Establish a baseline for Python fundamentals before deeper scripting and robotics integration.",
+  issue: "Missed several questions related to string methods, comparison operators, and collection definitions (tuple/set/dict distinctions).",
+  outcome: "Scored 17/25 (68%) on the W3Schools Python Quiz, confirming solid syntax basics with gaps in standard library usage and data structures.",
+  takeaway: "Python fundamentals are serviceable; next improvement comes from practicing core data structures and common string/logic patterns.",
+},
+{
+  title: "Project Status — Energy Reset + Platform Pivot",
+  goal: "Maintain forward momentum in robotics projects while respecting physical energy limits.",
+  issue: "Super Bowl Sunday combined with low energy from starting my cycle resulted in no build progress on the desk robot project.",
+  outcome: "Intentionally rested and decided to pivot short-term focus to an existing robotics car project using an ultrasonic sensor as ‘eyes’ for interaction and obstacle detection.",
+  takeaway: "Progress isn’t linear; choosing a project that matches current energy and readiness is better than forcing unfinished work."
+}
+
+
+
 
   ];
 
