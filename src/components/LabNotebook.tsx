@@ -107,7 +107,69 @@ export function LabNotebook() {
   issue: "Super Bowl Sunday combined with low energy from starting my cycle resulted in no build progress on the desk robot project.",
   outcome: "Intentionally rested and decided to pivot short-term focus to an existing robotics car project using an ultrasonic sensor as ‘eyes’ for interaction and obstacle detection.",
   takeaway: "Progress isn’t linear; choosing a project that matches current energy and readiness is better than forcing unfinished work."
-}
+},
+
+{
+  title: "Raspberry Pi — Miuzei 4\" HDMI Kit Recovery + Touch Debug",
+  goal: "Move my Pi to the Miuzei 4-inch HDMI screen and restore display + touch input.",
+  issue: "Touch input was dead and a wrong LCD-show driver script broke HDMI output (no signal).",
+  outcome: "Recovered by restoring a safe /boot/config.txt (HDMI output + RealVNC working again). Confirmed touchscreen is not USB-based (lsusb shows no touch device) and determined the kit uses GPIO header connections, so touch debugging needs I2C/GPIO path instead of USB drivers.",
+  takeaway: "HDMI touchscreens aren’t all USB—identify the interface first; bad display scripts can brick video, but boot partition recovery fixes it fast.",
+},
+
+{
+  title: "Sonny Vision System — Hardware-Level Camera Debug",
+  goal: "Bring CSI ribbon camera online for face recognition pipeline using Picamera2.",
+  issue: "System reported no available cameras; dmesg showed bcm2835 stack loaded but no imx/ov sensor attachment — indicating kernel could not detect physical camera.",
+  outcome: "Traced failure to hardware/driver layer instead of application code. Narrowed likely causes to CSI seating/orientation or legacy camera configuration.",
+  takeaway: "Debug embedded systems from the bottom up — hardware detection before drivers, drivers before application logic.",
+},
+
+{
+  title: "Sonny Voice System — Command Interface Documentation",
+  goal: "Formalize Sonny’s voice interface into a structured, human-readable command reference.",
+  issue: "Natural-language command matching worked, but lack of structured documentation reduced demo reliability and discoverability.",
+  outcome: "Audited command dictionary, identified wake word + grammar scope, and produced categorized documentation to align spoken interface with system capabilities.",
+  takeaway: "An interface is only complete when its capabilities are discoverable and repeatable.",
+},
+{
+  title: "Embedded Resume — Firmware-Focused Rewrite",
+  goal: "Strengthen resume for embedded/firmware roles and reduce emphasis on general AI in favor of system-level engineering.",
+  issue: "Original resume described projects well but lacked measurable metrics and firmware-specific language that recruiters look for.",
+  outcome: "Rewrote resume to emphasize distributed control architecture, I2C bus speed, PWM frequency, servo count, voltage rails, and deterministic behavior. Identified need for a small firmware-only project to anchor embedded credibility.",
+  takeaway: "Embedded resumes must highlight determinism, hardware interaction, bus protocols, and measurable system behavior—not just features."
+},
+ {
+  title: "Embedded Resume — Sonny Flagship Rewrite",
+  goal: "Reposition my resume to break into embedded systems by making Sonny (InMoov) the flagship system and emphasizing firmware + hardware integration.",
+  issue: "Previous resume bullets were too general and could read as hobby robotics instead of embedded engineering (not enough firmware language or system-level framing).",
+  outcome: "Rewrote summary, skills, and projects to present Sonny as a distributed embedded platform (ESP32/Arduino/RPi), highlighting PWM/I2C/PCA9685, mixed-voltage power rails, and integration-driven troubleshooting.",
+  takeaway: "For embedded roles, tell the story as a system: architecture, protocols, power, timing, debugging—not just features.",
+},
+
+{
+  title: "Recruiter Review — Resume Pros/Cons & Gap Targets",
+  goal: "Evaluate my resume like a senior embedded recruiter and identify what would make it harder to reject.",
+  issue: "Risk of appearing broad (robotics + AI + vision + voice) and lacking measurable metrics; firmware depth could be questioned without a standalone firmware repo.",
+  outcome: "Identified strongest signals (Sonny as a real system + automotive diagnostics + embedded keywords) and set next upgrades: add measurable specs (servo count, bus speed, PWM rate, voltage rails) and build a firmware-only project to anchor credibility.",
+  takeaway: "A single focused firmware repo + metrics can convert “interesting” into “hireable” for embedded roles.",
+},
+
+{
+  title: "Portfolio Positioning — Sonny as a System, Not a Component",
+  goal: "Replace component-style project framing (robot head) with a flagship platform narrative that communicates embedded competency.",
+  issue: "Component projects can sound like isolated builds and don’t automatically signal distributed control, constraints, or integration complexity.",
+  outcome: "Refactored project narrative around Sonny as the platform: distributed control model, controller segmentation, power management, and AI-triggered actuation as separate subsystems.",
+  takeaway: "Hiring managers remember platforms—flagship systems create a clear technical identity.",
+},
+
+{
+  title: "State Machines — Deep Dive + Paper Drafting",
+  goal: "Level up state machine understanding for embedded/robotics interviews and produce a portfolio-ready writeup.",
+  issue: "Early drafts felt too generic (summary-style) and didn’t reflect real understanding or systems-level thinking.",
+  outcome: "Reframed the paper around theory → firmware → robotics (state as memory, automata foundation, determinism/WCET, hierarchy/complexity, and architectural tradeoffs). Produced a dense PDF and exported a Word doc for editing.",
+  takeaway: "A strong technical paper should teach *why* (constraints, determinism, failure modes), not just define terms—depth comes from connecting theory to real embedded timing and robotics behavior."
+},
 
 
 
@@ -166,9 +228,9 @@ export function LabNotebook() {
         <div className="lab-footer">
           <span className="prompt">&gt;</span> status:{" "}
           <span className="lab-status">ACTIVE</span>{" "}
-          <span className="lab-muted">(adding entries weekly)</span>
+          <span className="lab-muted">(adding entries daily)</span>
         </div>
       </div>
     </section>
   );
-}
+}                   
