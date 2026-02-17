@@ -177,3 +177,34 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ================================
+   SOFT HOVER EFFECTS (Portfolio Style)
+================================ */
+
+
+/* Links inside cards */
+.js-project-card a {
+  color: #39ff14;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+
+/* Buttons */
+.js-project-card button {
+  background: #141426;
+  color: #39ff14;
+  border: 1px solid #39ff14;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.1s ease;
+}
+
+
+
