@@ -171,6 +171,22 @@ export function LabNotebook() {
   takeaway: "A strong technical paper should teach *why* (constraints, determinism, failure modes), not just define terms—depth comes from connecting theory to real embedded timing and robotics behavior."
 },
 
+{
+  title: "Sonny — Repository Cleanup & Documentation Hardening",
+  goal: "Align GitHub repository with actual working system and improve professional presentation.",
+  issue: "README overstated features (face tracking/recognition not operational) and dependencies were loosely defined.",
+  outcome: "Rewrote README to reflect current capabilities only, removed unsupported features, and created a version-pinned requirements.txt for stability.",
+  takeaway: "Clear documentation and honest feature scoping improve credibility more than unfinished features."
+},
+
+{
+  title: "Sonny — Dependency Stabilization",
+  goal: "Prevent environment breakage and improve reproducibility.",
+  issue: "Unpinned Python packages could cause inconsistent behavior across installs.",
+  outcome: "Created structured requirements.txt with pinned versions and grouped dependencies by function.",
+  takeaway: "Embedded projects require controlled environments for long-term reliability."
+},
+
 
 
 
