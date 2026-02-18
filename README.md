@@ -1,4 +1,4 @@
-# 🤖 Sonny — Offline Humanoid Robotics Portfolio
+# Robotics Portfolio
 
 **Status:** Prototype / Active Development  
 **Focus:** Robotics Systems • Embedded Software • Perception • Human–Robot Interaction
