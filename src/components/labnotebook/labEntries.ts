@@ -1,22 +1,9 @@
-// src/components/LabNotebook.tsx
-// Robotics Lab Notebook section
-// Purpose: show short, structured "engineering log" entries on the homepage.
+// All lab entries live here (easy to edit, no UI noise)
 
-import "../styles/labnotebook.css";
+import type { LabEntry } from "./types";
 
-type LabEntry = {
-  title: string;
-  goal: string;
-  issue: string;
-  outcome: string;
-  takeaway: string;
-};
-
-export function LabNotebook() {
-  // Keep entries short + skimmable (homepage-friendly).
-  // You can add more later without changing the layout.
-  const entries: LabEntry[] = [
-    {
+export const labEntries: LabEntry[] = [
+      {
       title: "Virtual Robot Arm — Forward Kinematics",
       goal: "Build a 5-DOF virtual arm using nested transforms.",
       issue: "Adding wrist joints caused collapse/disappearing geometry.",
@@ -187,66 +174,13 @@ export function LabNotebook() {
   takeaway: "Embedded projects require controlled environments for long-term reliability."
 },
 
+{
+  title: "Lab Notebook — Component Cleanup & Terminal Refactor",
+  goal: "Refactor the LabNotebook component into a cleaner, more maintainable structure with a terminal-style layout.",
+  issue: "LabNotebook had grown large and hard to reason about, mixing data, layout, and visual structure in one block.",
+  outcome: "Standardized entry structure (title, goal, issue, outcome, takeaway), added terminal topbar, prompt styling, and consistent grid rows for each field.",
+  takeaway: "Well-structured components make it easier to scale content without rewriting layout or styles."
+}
 
 
-
-  ];
-
-  return (
-    <section className="lab-section" id="lab">
-      <div className="lab-header">
-        <h2 className="lab-title">Robotics Lab Notebook</h2>
-        <p className="lab-subtitle">
-          Short experiment logs — what I tried, what broke, what I learned.
-        </p>
-      </div>
-
-      <div className="lab-panel neon-border">
-        <div className="lab-panel-topbar">
-          <span className="lab-dot red" />
-          <span className="lab-dot yellow" />
-          <span className="lab-dot green" />
-          <span className="lab-path">~/robotics/lab-notebook</span>
-        </div>
-
-        <div className="lab-entries">
-          {entries.map((e) => (
-            <article key={e.title} className="lab-entry">
-              <div className="lab-entry-title">
-                <span className="prompt">&gt;</span> {e.title}
-              </div>
-
-              <div className="lab-entry-grid">
-                <div className="lab-row">
-                  <span className="lab-label">GOAL</span>
-                  <span className="lab-value">{e.goal}</span>
-                </div>
-
-                <div className="lab-row">
-                  <span className="lab-label warn">ISSUE</span>
-                  <span className="lab-value">{e.issue}</span>
-                </div>
-
-                <div className="lab-row">
-                  <span className="lab-label ok">OUTCOME</span>
-                  <span className="lab-value">{e.outcome}</span>
-                </div>
-
-                <div className="lab-row">
-                  <span className="lab-label tip">TAKEAWAY</span>
-                  <span className="lab-value">{e.takeaway}</span>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div className="lab-footer">
-          <span className="prompt">&gt;</span> status:{" "}
-          <span className="lab-status">ACTIVE</span>{" "}
-          <span className="lab-muted">(adding entries daily)</span>
-        </div>
-      </div>
-    </section>
-  );
-}                   
+];

@@ -4,7 +4,7 @@ import Hero from "./components/Hero";
 import  Dashboard from "./components/Dashboard";
 import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
-import { LabNotebook } from "./components/LabNotebook";
+import { LabNotebook } from "./components/labnotebook/LabNotebook";
 import { ContactTerminal } from "./components/ContactTerminal";
 import FloatingAboutButton from "./components/FloatingAboutButton";
 import ScrollToTop from "./components/ScrollToTop";
