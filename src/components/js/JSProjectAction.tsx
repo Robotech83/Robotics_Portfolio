@@ -3,7 +3,7 @@ type Props = {
   githubUrl: string;
 };
 
-export function JSProjectActions({ portfolioPath, githubUrl }: Props) {
+export function JSProjectActions({ githubUrl }: Props) {
   return (
     <div className="jsProjectActions">
       <a className="jsBtn secondary" href={githubUrl} target="_blank" rel="noreferrer">
