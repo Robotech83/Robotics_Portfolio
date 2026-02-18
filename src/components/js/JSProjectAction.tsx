@@ -5,13 +5,7 @@ type Props = {
 
 export function JSProjectActions({ portfolioPath, githubUrl }: Props) {
   return (
-    <div className="jsCardActions">
-      {portfolioPath && (
-        <a className="jsBtn" href={portfolioPath}>
-          View in Portfolio →
-        </a>
-      )}
-
+    <div className="jsProjectActions">
       <a className="jsBtn secondary" href={githubUrl} target="_blank" rel="noreferrer">
         GitHub Repo →
       </a>
