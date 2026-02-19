@@ -17,7 +17,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import ControlHub from "./pages/ControlHub";
 import AboutMe from "./pages/AboutMe";
 import VirtualModel from "./pages/modules/VirtualModel";
-//import RobotStudio from "./pages/RobotStudio";
+import RobotStudio from "./pages/RobotStudio";
 import AIAssistantPage from "./pages/AIAssistant";
 import ObjectScanner from "./pages/ObjectScanner";
 
@@ -33,7 +33,7 @@ import CommandTrainerPage from "./pages/voicemodule/CommandTrainer";
 import JSProjectsPage from "./pages/JSProjectsPage";
 import SkillPlaceholderPage from "./pages/SkillPlaceholderPage";
 import ArduinoProjectsPage from "./pages/ArduinoProjectsPage";
-import UnderConstruction from "./pages/UnderConstruction";
+//import UnderConstruction from "./pages/UnderConstruction";
 
 
 
@@ -69,21 +69,10 @@ function App() {
         <Route path="/control-hub" element={<ControlHub />} />
         {/* Virtual Model Viewer */}
         <Route path="/virtual-model" element={<VirtualModel />} />
-        {/* Robot Studio (Under Construction) */}
-<Route
-  path="/robotstudio"
-  element={
-    <UnderConstruction
-      title="Robot Studio"
-      description="Robot Studio is being rebuilt for stability. This will combine movement controls + a virtual model viewer."
-      status={[
-        "Movement module UI complete",
-        "VirtualModel viewer is unstable on GitHub Pages (fix in progress)",
-        "Next: restore 3D view + presets + joint sliders",
-      ]}
-    />
-  }
-/>
+          
+          
+          {/* Robot Studio */}
+          <Route path="/robot-studio" element={<RobotStudio />} />
 
       
         {/* AI Assistant */}
