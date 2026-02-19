@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import ThreeDScene from "../../components/modelviewer/ThreeDScene";
-import "../../../styles/modules/virtualmodel.css";
+import "../../styles/modules/virtualmodel.css";
 import { ControlHubButton } from "../../components/ControlHubButton";
 
 import type { ViewerSettings, VMTabKey, RotationDeg, Vec3Number } from "../../components/virtualModel/types";
