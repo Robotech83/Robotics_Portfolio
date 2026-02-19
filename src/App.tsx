@@ -72,7 +72,7 @@ function App() {
           
           
           {/* Robot Studio */}
-          <Route path="/robot-studio" element={<RobotStudio />} />
+          <Route path="/robotstudio" element={<RobotStudio />} />
 
       
         {/* AI Assistant */}

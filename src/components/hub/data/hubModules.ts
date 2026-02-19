@@ -1,4 +1,4 @@
-import { Bot,  ScanSearch, Gamepad2 } from "lucide-react";
+import { Bot, ScanSearch, Gamepad2 } from "lucide-react";
 import type { HubModule } from "../types/hub";
 
 export const hubModules: HubModule[] = [
@@ -6,11 +6,10 @@ export const hubModules: HubModule[] = [
     id: "robot-studio",
     title: "Robot Studio",
     subtitle: "Virtual model + movement controls",
-    to: "/robotstudio",
+    to: "/robot-studio", // ✅ FIXED (must match App.tsx route)
     Icon: Gamepad2,
     status: "IN PROGRESS",
   },
-
   {
     id: "ai-assistant",
     title: "AI Assistant",
@@ -19,7 +18,6 @@ export const hubModules: HubModule[] = [
     Icon: Bot,
     status: "LIVE",
   },
- 
   {
     id: "object-scanner",
     title: "Object Scanner",
@@ -28,5 +26,4 @@ export const hubModules: HubModule[] = [
     Icon: ScanSearch,
     status: "IN PROGRESS",
   },
-
 ];
