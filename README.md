@@ -1,94 +1,113 @@
-# 🤖 Sonny — Offline Humanoid Robotics Portfolio
+🤖 Robotics & Software Engineering Portfolio
 
-**Status:** Prototype / Active Development  
-**Focus:** Robotics Systems • Embedded Software • Perception • Human–Robot Interaction
+Welcome to my personal portfolio repository.
 
-This repository contains my **robotics portfolio and digital twin environment**, built to design, test, and demonstrate an **offline humanoid robot** named **Sonny**.  
-The project emphasizes **real-world robotics workflows**: partial hardware, debugging under constraints, simulation-first development, and modular system design.
+This repo powers my live portfolio website and documents the robotics, embedded systems, and software projects I’ve built while teaching myself robotics, programming, and AI systems.
 
----
+📌 Status
 
-## 🧠 Project Overview
+Active development.
+Projects are added and improved continuously.
 
-Sonny is an **offline humanoid robotics platform** designed to explore how perception, voice interaction, motion control, and diagnostics work together in a real robot system.
+It serves as a growing collection of:
 
-The portfolio serves as:
-- a **digital twin** for hardware-in-progress
-- a **control interface** similar to internal robotics dashboards
-- a **proof-of-knowledge** artifact for robotics and embedded systems roles
+Robotics builds
 
----
+Embedded systems experiments
 
-## 🧩 System Architecture
+Web-based interfaces & dashboards
 
-### Core Subsystems
+Simulations & digital twins
 
-- **Perception**
-  - Face detection and tracking
-  - Real-time object detection (TensorFlow.js / COCO-SSD)
-  - Task-specific perception modules:
-    - Clothing detection (folding tasks)
-    - Kitchenware detection (dish handling tasks)
+Tooling, prototypes, and technical explorations
 
-- **Voice & Interaction**
-  - Wake-word system
-  - Offline speech recognition
-  - Text-to-speech output
-  - Command training and routing
+Each project emphasizes hands-on engineering, real hardware, and problem-solving rather than tutorials or toy examples.
 
-- **Motion & Control**
-  - Joint-based motion control
-  - Servo angle computation
-  - Serial communication to embedded controllers
-  - Kinematics visualization (in progress)
+🌐 Live Portfolio
 
-- **Digital Twin & Simulation**
-  - 3D humanoid model viewer
-  - Virtual arm studio
-  - Simulation-first workflow when hardware is unavailable
+👉 https://robotech83.github.io/Robotics_Portfolio
 
-- **System & Diagnostics**
-  - CPU / memory monitoring
-  - Network and power modules
-  - System health and fault-handling UI
+🧠 What You’ll Find Here
 
----
+This portfolio is organized around multiple project categories:
 
-## 🖥️ Technologies Used
+🤖 Robotics Projects
 
-- **Languages:** Python, TypeScript, JavaScript  
-- **Frontend:** React, Vite, Three.js  
-- **Robotics & Embedded:** Raspberry Pi, Arduino, Servo Control, Serial Communication  
-- **Perception & AI:** OpenCV, TensorFlow.js, COCO-SSD  
-- **3D & Simulation:** GLTF (.glb), Blender (source assets kept separate)  
-- **Tooling:** Git, Git LFS, Linux
+Humanoid robot subsystems
 
----
+Robotic head & face mechanisms
 
-## 📊 System Status
+Servo control systems
 
-This project is intentionally transparent about development state.
+Vision-based tracking
 
-- ✅ Face detection & object detection working
-- ✅ Offline voice pipeline functional
-- 🟡 Motion control limited by current hardware availability
-- 🟡 Kinematics tools actively iterating
-- ⏸ Some physical components pending repair or redesign
+Motion experiments
 
-A full system status overview is available inside the portfolio UI.
+🔌 Embedded Systems
 
----
+Arduino & Raspberry Pi projects
 
-## 🎯 Development Philosophy
+Sensor integration
 
-This project prioritizes **engineering realism over cosmetic completeness**.
+Motor & servo control
 
-Hardware failures, incomplete assemblies, and limited resources are treated as part of the design process. When hardware is unavailable, development continues through simulation, modular testing, and virtual tools.
+Serial communication pipelines
 
----
+Power regulation & wiring prototypes
 
-## 🚀 Running the Project Locally
+🖥️ Software & Interfaces
 
-```bash
-npm install
-npm run dev
+React-based dashboards
+
+Control panels
+
+Diagnostics & monitoring tools
+
+UI experiments
+
+🎮 Simulation & Visualization
+
+3D model viewers
+
+Virtual robot arms
+
+Kinematics experiments
+
+Digital twin concepts
+
+🧪 Experiments & Prototypes
+
+Small proof-of-concept builds
+
+Feature tests
+
+Early-stage ideas
+
+🛠️ Technologies & Tools
+
+Languages: Python, JavaScript, TypeScript, HTML, CSS
+
+Frontend: React, Vite, Three.js
+
+Embedded: Arduino, Raspberry Pi, ESP32
+
+Vision & AI: OpenCV, basic ML models
+
+3D Assets: glTF (.glb), Blender
+
+Version Control: Git & GitHub
+
+🎯 Purpose of This Portfolio
+
+This portfolio exists to:
+
+Demonstrate practical robotics and programming skills
+
+Show real, evolving engineering work
+
+Document learning progress and technical growth
+
+Provide recruiters and collaborators a clear view of what I can build
+
+Not everything is perfect — and that’s intentional.
+Engineering is iterative, and this portfolio reflects that journey.
