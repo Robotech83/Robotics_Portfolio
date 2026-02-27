@@ -198,4 +198,12 @@ export const labEntries: LabEntry[] = [
   takeaway: "In React + WebGL environments, layout containers must explicitly control height. Scoped CSS prevents unpredictable cross-page styling conflicts."
 },
 
+{
+  title: "SystemModule Routing & Architecture Refactor Planning",
+  goal: "Redirect Dashboard Power System navigation to SystemModule and prepare module for proper component separation.",
+  issue: "Route mismatches (robotstudio vs robot-studio) caused navigation failures. SystemModule was growing too large and relying on shared dashboard.css styling, increasing risk of cross-page layout conflicts.",
+  outcome: "Corrected route definitions in App.tsx to ensure consistent navigation behavior. Implemented back navigation inside SystemModule using useNavigate. Established plan to decompose SystemModule into smaller panel components and migrate styling into a dedicated systemmodule.css file for proper modular isolation.",
+  takeaway: "As applications grow, routing consistency and scoped styling become critical. Separating module-specific CSS and breaking large components into smaller units improves maintainability and reduces unintended side effects."
+},
+
 ];
