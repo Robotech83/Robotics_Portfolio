@@ -206,4 +206,20 @@ export const labEntries: LabEntry[] = [
   takeaway: "As applications grow, routing consistency and scoped styling become critical. Separating module-specific CSS and breaking large components into smaller units improves maintainability and reduces unintended side effects."
 },
 
+{
+  title: "Robot Arm Module — TypeScript Build Stabilization",
+  goal: "Resolve TypeScript build failures preventing portfolio deployment.",
+  issue: "JSX structure errors, improper fragment closure, and unsafe Object.entries typing caused TS compilation failures. Additionally, mismatched JointAngles types and placeholder IK logic produced type constraint violations.",
+  outcome: "Rewrote the Controls component with explicit typing for JointAngles, enforced safe casting for Object.entries mappings, and corrected JSX structure to eliminate unbalanced tag errors. Standardized KinematicsEngine return types to align with application joint definitions, ensuring successful TypeScript compilation.",
+  takeaway: "Strict TypeScript builds expose architectural inconsistencies early. Explicit typing and consistent domain models (e.g., JointAngles structure) prevent cascading runtime and deployment issues in larger React systems."
+},
+
+{
+  title: "Portfolio UX — Global WIP Banner + Homepage Navigation Improvements",
+  goal: "Improve first-impression UX and communicate active development status across the portfolio.",
+  issue: "The homepage Hero dominated the viewport, causing users to miss key sections below the fold. The site also lacked a clear indicator that modules are actively evolving, which can create confusion when pages are unfinished.",
+  outcome: "Implemented a GlobalWIPBanner component to clearly label the portfolio as under active development. Continued refining homepage navigation flow so users are guided from Hero into deeper sections (Dashboard/Projects) instead of assuming the Control Hub is the entire site.",
+  takeaway: "Small UX signals drastically change how users interpret the site. A global status banner + intentional scroll/navigation cues helps visitors explore and sets expectations for work-in-progress modules."
+},
+
 ];

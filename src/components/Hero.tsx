@@ -27,6 +27,15 @@ export default function Hero() {
       <Link to="/control-hub" className="hero-button neon-hover">
         Enter Control Hub
       </Link>
+      <button
+    className="hero-scroll-btn"
+     onClick={() => {
+    const section = document.getElementById("dashboard");
+    section?.scrollIntoView({ behavior: "smooth" });
+  }}
+>
+  ↓ Explore Dashboard
+</button>
     </section>
   );
 }
