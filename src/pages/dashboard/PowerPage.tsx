@@ -7,7 +7,7 @@ export default function PowerModule() {
 
   return (
     <div className="module-page neon-border">
-      <button className="back-btn" onClick={() => navigate("/control-hub")}>
+      <button className="back-btn" onClick={() => navigate("/")}>
         ← Back
       </button>
 

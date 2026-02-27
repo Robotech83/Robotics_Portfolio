@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import "../../styles/modules/systemmodule.css"; 
+import { useNavigate } from "react-router-dom";
+
 
 export default function SystemModule() {
   // State for system status monitoring - tracks real-time system metrics
@@ -12,6 +14,16 @@ export default function SystemModule() {
     uptime: "5d 12h 34m", // How long system has been running
     lastUpdate: new Date().toLocaleTimeString() // Last data refresh time
   });
+
+  const navigate = useNavigate();
+
+  <div className="module-page neon-border">
+      <button className="back-btn" onClick={() => navigate("/")}>
+        ← Back
+      </button>
+    </div>
+
+  
 
   // State for system diagnostics - tracks system health and issues
   const [diagnostics, setDiagnostics] = useState({

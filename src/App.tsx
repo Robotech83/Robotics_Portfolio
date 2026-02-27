@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 // Importing components
 import Hero from "./components/Hero";
 import  Dashboard from "./components/Dashboard";
@@ -17,11 +17,12 @@ import ScrollToTop from "./components/ScrollToTop";
 import ControlHub from "./pages/ControlHub";
 import AboutMe from "./pages/AboutMe";
 import VirtualModel from "./pages/modules/VirtualModel";
-import RobotStudio from "./pages/RobotStudio";
+//import RobotStudio from "./pages/RobotStudio";
 import AIAssistantPage from "./pages/AIAssistant";
 import ObjectScanner from "./pages/ObjectScanner";
 
-import PowerPage from "./pages/dashboard/PowerPage";
+//import PowerPage from "./pages/dashboard/PowerPage";
+import SystemModule from "./pages/modules/SystemModule";
 import NetworkPage from "./pages/dashboard/NetworkPage";
 import MovementModule from "./pages/modules/MovementModule";
 import VoiceModule from "./pages/modules/VoiceModule";
@@ -33,17 +34,8 @@ import CommandTrainerPage from "./pages/voicemodule/CommandTrainer";
 import JSProjectsPage from "./pages/JSProjectsPage";
 import SkillPlaceholderPage from "./pages/SkillPlaceholderPage";
 import ArduinoProjectsPage from "./pages/ArduinoProjectsPage";
-//import UnderConstruction from "./pages/UnderConstruction";
-
-import RobotArm from "./pages/RobotArm";
-
-
-
-
-
-
-
-
+import UnderConstruction from "./pages/UnderConstruction";
+import RobotArm from "./pages/RobotKinematics";
 
 
 function App() {
@@ -70,28 +62,33 @@ function App() {
 
         {/* Control Hub */}
         <Route path="/control-hub" element={<ControlHub />} />
+
         {/* Virtual Model Viewer */}
         <Route path="/virtual-model" element={<VirtualModel />} />
-          
-          
-          {/* Robot Studio */}
-          <Route path="/robotstudio" element={<RobotStudio />} />
+        
+          {/* Robot Studio (Under Construction) */}
+          <Route path="/robot-studio" element={<UnderConstruction />} />
+          <Route path="/robotstudio" element={<Navigate to="/robot-studio" replace />} />
+
           {/* Robot Arm Kinematics Demo */}
           <Route path="/robotarm" element={<RobotArm />} />
 
       
         {/* AI Assistant */}
         <Route path="/ai-assistant" element={<AIAssistantPage />} />
+        
         {/* About Me Page */}
         <Route path="/about" element={<AboutMe />} />
+        
         {/* Object Scanner */}
         <Route path="/object-scanner" element={<ObjectScanner />} />
+        
         {/* Dashboard Sub-Pages */}
-         {/* Modules */}
         <Route path="/movement-module" element={<MovementModule />} />
         <Route path="/voice-module" element={<VoiceModule />} />
-        <Route path="/power-module" element={<PowerPage />} />
+        <Route path="/power-module" element={<SystemModule />} />
         <Route path="/network-module" element={<NetworkPage />} />
+
         {/* Voice Module Sub-Pages */}
         <Route path="/voice/wakeword" element={<WakeWordPage />} />
         <Route path="/voice/tts" element={<SpeechOutputPage />} />

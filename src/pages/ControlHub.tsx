@@ -11,7 +11,7 @@ export default function ControlHub() {
 
   return (
     <div className="controlhub-page">
-      <button className="back-btn-top" onClick={() => navigate("/")}>
+      <button className="controlhub-back" onClick={() => navigate("/")}>
         ← Back
       </button>
 

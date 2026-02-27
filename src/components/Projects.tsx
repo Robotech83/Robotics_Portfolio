@@ -1,5 +1,5 @@
-
-import '../styles/project.css';
+import "../styles/project.css";
+import { Link } from "react-router-dom";
 
 export function Projects() {
   const projects = [
@@ -30,6 +30,15 @@ export function Projects() {
       <h2 className="section-title">Projects</h2>
 
       <div className="projects-grid">
+        {/* ✅ Internal Portfolio Page Card */}
+        <Link to="/robotarm" className="project-card neon-border">
+          <h3>
+            Virtual Robot Arm — FK/IK Studio <span className="badge">WIP</span>
+          </h3>
+          <p className="project-subtext">Launch interactive kinematics demo →</p>
+        </Link>
+
+        {/* External GitHub Cards */}
         {projects.map((p) => (
           <a
             key={p.name}

@@ -15,7 +15,7 @@ export default function Controls({
     setTarget({ ...target, [key]: value });
 
   return (
-    <div className="controls">
+    <div className="rk-controls">
       <h3>Mode</h3>
       <button onClick={() => setMode("FK")}>FK</button>
       <button onClick={() => setMode("IK")}>IK</button>

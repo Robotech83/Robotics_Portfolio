@@ -180,7 +180,22 @@ export const labEntries: LabEntry[] = [
   issue: "LabNotebook had grown large and hard to reason about, mixing data, layout, and visual structure in one block.",
   outcome: "Standardized entry structure (title, goal, issue, outcome, takeaway), added terminal topbar, prompt styling, and consistent grid rows for each field.",
   takeaway: "Well-structured components make it easier to scale content without rewriting layout or styles."
-}
+},
 
+{
+  title: "Virtual Robot Arm — FK/IK Mathematical Implementation",
+  goal: "Implement forward kinematics with correct transform hierarchy and begin inverse kinematics target solving.",
+  issue: "Initial joint rotations produced collapsed geometry due to improper transform ordering and undefined joint mappings. Additionally, IK target coordinates required consistent world-to-local conversion for solver stability.",
+  outcome: "Structured the arm using nested rotational groups to mirror real joint chaining (shoulder → elbow → wrist). Ensured degrees-to-radians conversion for all rotations and validated transform propagation visually. Established groundwork for inverse kinematics by mapping target coordinates into scaled scene space and preparing joint angle solving logic.",
+  takeaway: "Forward kinematics depends as much on transform order as it does on math. Small errors in joint hierarchy or unit conversion can invalidate an entire chain. Establishing a stable FK model is essential before reliable IK solving."
+},
+
+{
+  title: "Robot Kinematics Page — Layout Stabilization",
+  goal: "Create a clean two-column viewport + controls layout that fits portfolio styling.",
+  issue: "Canvas height inheritance and global CSS interference caused floating controls and broken layout alignment.",
+  outcome: "Built a scoped grid layout using rk-* class prefixes, implemented a controlled Canvas wrapper for proper height management, and added a WIP terminal-style overlay with back navigation.",
+  takeaway: "In React + WebGL environments, layout containers must explicitly control height. Scoped CSS prevents unpredictable cross-page styling conflicts."
+},
 
 ];

@@ -5,7 +5,7 @@ import "../../styles/labnotebook.css";
 
 import LabHeader from "./LabHeader";
 import LabPanel from "./LabPanel";
-import { labEntries } from "./LabEntryCard";
+import { labEntries } from "./labEntries";
 
 export function LabNotebook() {
   return (

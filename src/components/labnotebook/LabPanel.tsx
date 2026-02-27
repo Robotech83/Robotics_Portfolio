@@ -1,6 +1,6 @@
 import type { LabEntry } from "./types";
 import LabTopbar from "./LabTopbar";
-import LabEntryCard from "./LabEntrycard";
+import LabEntryCard from "./LabEntryCard";
 
 type Props = {
   entries: LabEntry[];
