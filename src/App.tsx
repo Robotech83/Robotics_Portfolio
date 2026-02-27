@@ -35,6 +35,9 @@ import SkillPlaceholderPage from "./pages/SkillPlaceholderPage";
 import ArduinoProjectsPage from "./pages/ArduinoProjectsPage";
 //import UnderConstruction from "./pages/UnderConstruction";
 
+import RobotArm from "./pages/RobotArm";
+
+
 
 
 
@@ -73,6 +76,8 @@ function App() {
           
           {/* Robot Studio */}
           <Route path="/robotstudio" element={<RobotStudio />} />
+          {/* Robot Arm Kinematics Demo */}
+          <Route path="/robotarm" element={<RobotArm />} />
 
       
         {/* AI Assistant */}
