@@ -8,6 +8,7 @@ import { LabNotebook } from "./components/labnotebook/LabNotebook";
 import { ContactTerminal } from "./components/ContactTerminal";
 import FloatingAboutButton from "./components/FloatingAboutButton";
 import ScrollToTop from "./components/ScrollToTop";
+import GlobalWIPBanner from "./components/GlobalWIPBanner";
 
 
 
@@ -41,6 +42,7 @@ import RobotArm from "./pages/RobotKinematics";
 function App() {
   return (
     <>
+      <GlobalWIPBanner />
       <ScrollToTop />
       <Routes>
 

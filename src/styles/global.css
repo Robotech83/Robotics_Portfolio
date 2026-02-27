@@ -66,3 +66,21 @@ section {
   position: relative;
   z-index: 5; /* Always above the animated background */
 }
+
+.global-wip {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 9999;
+
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  background: rgba(0, 0, 0, 0.85);
+  color: #00ff88;
+  border: 1px solid #00ff88;
+  border-radius: 8px;
+
+  backdrop-filter: blur(6px);
+}

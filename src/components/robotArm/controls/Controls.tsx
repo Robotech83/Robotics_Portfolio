@@ -1,63 +1,109 @@
+import React from "react";
+
+type Mode = "FK" | "IK";
+
+type Joints = {
+  shoulderRoll: number;
+  shoulderPitch: number;
+  elbowPitch: number;
+  wristPitch: number;
+  wristRoll: number;
+};
+
+type Props = {
+  mode?: Mode;
+  setMode?: React.Dispatch<React.SetStateAction<Mode>>;
+  joints: Joints;
+  setJoints: React.Dispatch<React.SetStateAction<Joints>>;
+
+  // Optional IK props (safe if you don't use them yet)
+  target?: { x: number; y: number; z: number };
+  setTarget?: React.Dispatch<React.SetStateAction<{ x: number; y: number; z: number }>>;
+  solveIK?: () => void;
+};
+
 export default function Controls({
+  mode,
+  setMode,
   joints,
   setJoints,
   target,
   setTarget,
-  mode,
-  setMode,
-  solveIK
-}: any) {
-
-  const updateJoint = (key: string, value: number) =>
-    setJoints({ ...joints, [key]: value });
-
-  const updateTarget = (key: string, value: number) =>
-    setTarget({ ...target, [key]: value });
+  solveIK,
+}: Props) {
+  const handleJointChange = (key: keyof Joints, v: number) => {
+    setJoints((prev) => ({ ...prev, [key]: v }));
+  };
 
   return (
     <div className="rk-controls">
-      <h3>Mode</h3>
-      <button onClick={() => setMode("FK")}>FK</button>
-      <button onClick={() => setMode("IK")}>IK</button>
+      <h3>Controls</h3>
 
-      {mode === "FK" && (
-        <>
-          <h3>Joint Angles</h3>
-          {Object.entries(joints).map(([key, value]) => (
-            <div key={key}>
-              <label>{key}</label>
-              <input
-                type="range"
-                min={-90}
-                max={90}
-                value={value as number}
-                onChange={e => updateJoint(key, +e.target.value)}
-              />
-              <span>{value}°</span>
-            </div>
-          ))}
-        </>
+      {/* Mode toggle (only shows if you passed mode props) */}
+      {mode && setMode && (
+        <div className="rk-control-row">
+          <label>Mode</label>
+          <div style={{ display: "flex", gap: 8 }}>
+            <button type="button" onClick={() => setMode("FK")}>
+              FK
+            </button>
+            <button type="button" onClick={() => setMode("IK")}>
+              IK
+            </button>
+          </div>
+        </div>
       )}
 
-      {mode === "IK" && (
-        <>
-          <h3>IK Target (mm)</h3>
+      {/* FK Sliders */}
+      {(Object.entries(joints) as [keyof Joints, number][]).map(([key, value]) => (
+        <div key={String(key)} className="rk-control-row">
+          <label>{String(key)}</label>
 
-          {["x", "y", "z"].map(axis => (
-            <div key={axis}>
+          <input
+            type="range"
+            min={-180}
+            max={180}
+            value={value}
+            onChange={(e) => handleJointChange(key, Number(e.target.value))}
+          />
+
+          <span>{value.toFixed(0)}°</span>
+        </div>
+      ))}
+
+      {/* Optional IK Target controls */}
+      {target && setTarget && (
+        <>
+          <hr />
+
+          <h4>IK Target</h4>
+
+          {(["x", "y", "z"] as const).map((axis) => (
+            <div key={axis} className="rk-control-row">
               <label>{axis.toUpperCase()}</label>
+
               <input
                 type="range"
-                min={-400}
-                max={400}
+                min={-500}
+                max={500}
                 value={target[axis]}
-                onChange={e => updateTarget(axis, +e.target.value)}
+                onChange={(e) =>
+                  setTarget((prev) => ({
+                    ...prev,
+                    [axis]: Number(e.target.value),
+                  }))
+                }
               />
-              <span>{target[axis]}</span>
+
+              <span>{target[axis].toFixed(0)}</span>
             </div>
           ))}
 
-          <button onClick={solveIK}>Solve IK</button>
+          {solveIK && (
+            <button type="button" onClick={solveIK}>
+              Solve IK
+            </button>
+          )}
         </>
       )}
     </div>
