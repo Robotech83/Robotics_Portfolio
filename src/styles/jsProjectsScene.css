@@ -28,7 +28,7 @@
   overflow: hidden;
 
   /* Hacker-tech panel background */
-  background: linear-gradient(180deg, rgba(5, 0, 19, 0.85), rgba(5, 0, 19, 0.55));
+ background: linear-gradient(180deg, rgba(5, 0, 19, 0.95), rgba(5, 0, 19, 0.85));
   border: 2px solid #00ffc8;
  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
 }
@@ -96,17 +96,15 @@
 
 /* Cards (NO hover) */
 .jsSceneCard {
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  background: rgba(0,0,0,0.35);
 }
-.jsSceneCard:hover {
-  transform: translateY(-3px);
-  background: rgba(0, 255, 200, 0.08);
-  border-color: rgba(0, 255, 200, 0.35);
 
-  /* softer glow than before */
-  box-shadow:
-    0 0 14px rgba(0, 255, 200, 0.22),
-    0 0 10px rgba(255, 0, 255, 0.10);
+.jsSceneCard:hover {
+  transform: none; /* remove movement */
+  background: rgba(0, 255, 200, 0.06);
+  border-color: rgba(0, 255, 200, 0.45);
+  box-shadow: 0 0 12px rgba(0, 255, 200, 0.18);
 }
 
 /* optional inner shimmer line (static) */
