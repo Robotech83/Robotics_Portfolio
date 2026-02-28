@@ -15,16 +15,14 @@
 }
 
 /* Section Title — Neon + subtle RGB gradient animation */
-.section-title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
+.section-title::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 220px;
+  margin: 12px auto 0;
   background: linear-gradient(90deg, #00ffc8, #ff00ff, #00ffff);
-  background-size: 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: rgbShift 6s linear infinite;
-  text-shadow: 0 0 6px #00ffc8, 0 0 12px rgba(255,0,255,0.3);
+  border-radius: 999px;
 }
 
 @keyframes rgbShift {
@@ -59,11 +57,16 @@
   align-items: center;
   justify-content: center;
 }
+.module-card h3 {
+  font-size: 1.05rem;
+  margin: 0;
+  text-shadow: 0 0 8px rgba(0, 255, 200, 0.35);
+}
 
 /* Hover effect: Neon glow + slight RGB pulse */
 .module-card:hover {
-  background: rgba(0,255,255,0.15);
-  color: #000;
+  background: rgba(0, 255, 200, 0.12);
+  color: #00ffc8; /* ✅ keep readable */
   box-shadow: 0 0 25px #00ffc8, 0 0 50px rgba(255,0,255,0.4);
   transform: translateY(-4px) scale(1.03);
 }
@@ -83,4 +86,10 @@
 @keyframes pulse {
   from { box-shadow: 0 0 10px #00ffc8, 0 0 20px rgba(255,0,255,0.2); }
   to   { box-shadow: 0 0 25px #00ffc8, 0 0 50px rgba(255,0,255,0.4); }
+}
+.module-desc {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 0.85;
 }
