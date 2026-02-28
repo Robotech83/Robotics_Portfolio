@@ -1,5 +1,4 @@
 import "../styles/project.css";
-import { Link } from "react-router-dom";
 
 export function Projects() {
   const projects = [

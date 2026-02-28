@@ -15,7 +15,7 @@
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.72);
-  backdrop-filter: blur(6px);
+  backdrop-filter: none;
 }
 
 /* Window */
@@ -30,7 +30,7 @@
   /* Hacker-tech panel background */
   background: linear-gradient(180deg, rgba(5, 0, 19, 0.85), rgba(5, 0, 19, 0.55));
   border: 2px solid #00ffc8;
-  box-shadow: 0 0 20px rgba(0, 255, 200, 0.65), inset 0 0 10px rgba(0, 255, 200, 0.35);
+ box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
 }
 
 /* Header */
@@ -70,16 +70,13 @@
 
 /* Close button (NO hover) */
 .jsSceneClose {
-  position: relative;
-  z-index: 1;
-  border: 2px solid rgba(0, 255, 200, 0.75);
-  background: rgba(0,0,0,0.25);
-  color: #00ffc8;
-  border-radius: 12px;
-  padding: 0.4rem 0.65rem;
-  cursor: pointer;
-  font-weight: 900;
-  transition: none; /* no hover animation */
+  transition: 0.2s ease;
+}
+
+.jsSceneClose:hover {
+  background: #00ffc8;
+  color: #000;
+  box-shadow: 0 0 18px rgba(0, 255, 200, 0.45);
 }
 
 /* Body */
@@ -99,20 +96,17 @@
 
 /* Cards (NO hover) */
 .jsSceneCard {
-  padding: 1.1rem;
-  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.jsSceneCard:hover {
+  transform: translateY(-3px);
+  background: rgba(0, 255, 200, 0.08);
+  border-color: rgba(0, 255, 200, 0.35);
 
-  border: 2px solid rgba(255,255,255,0.06);
-  background: rgba(0,0,0,0.35);
-  color: #00ffc8;
-
+  /* softer glow than before */
   box-shadow:
-    0 0 10px rgba(0, 255, 200, 0.35),
-    0 0 18px rgba(255, 0, 255, 0.18);
-
-  transition: none; /* no hover */
-  position: relative;
-  overflow: hidden;
+    0 0 14px rgba(0, 255, 200, 0.22),
+    0 0 10px rgba(255, 0, 255, 0.10);
 }
 
 /* optional inner shimmer line (static) */
@@ -172,21 +166,17 @@
 }
 
 .jsBtn {
-  display: inline-block;
-  text-decoration: none;
-  border: 2px solid rgba(0, 255, 200, 0.75);
-  color: #00ffc8;
-  background: rgba(0,0,0,0.2);
-  padding: 0.55rem 0.8rem;
-  border-radius: 12px;
-  font-weight: 900;
-  transition: none; /* no hover */
+  transition: 0.2s ease;
 }
 
-.jsBtn.secondary {
-  border-color: rgba(0, 255, 200, 0.45);
-  opacity: 0.95;
+.jsBtn:hover {
+  background: rgba(0, 255, 200, 0.12);
 }
+
+.jsBtn.secondary:hover {
+  background: rgba(0, 255, 200, 0.08);
+}
+
 
 .jsHint {
   color: rgba(209, 209, 209, 0.8);
