@@ -17,14 +17,6 @@ export default function SystemModule() {
 
   const navigate = useNavigate();
 
-  <div className="module-page neon-border">
-      <button className="back-btn" onClick={() => navigate("/")}>
-        ← Back
-      </button>
-    </div>
-
-  
-
   // State for system diagnostics - tracks system health and issues
   const [diagnostics, setDiagnostics] = useState({
     errors: 2,                    // Number of active errors
@@ -116,6 +108,13 @@ export default function SystemModule() {
   };
 
   return (
+  <div className="system-module">
+    <button
+      className="back-btn-top"
+      onClick={() => navigate(-1)}
+    >
+      ← Back
+    </button>
     <div className="system-module">
       <h2>System Controls</h2>
       
@@ -138,6 +137,7 @@ export default function SystemModule() {
                     className="progress-fill" 
                     style={{ width: `${systemStatus.cpu}%` }} // Dynamic width based on CPU %
                   ></div>
+                </div>
                 </div>
                 {/* Numerical CPU percentage */}
                 <span>{systemStatus.cpu.toFixed(1)}%</span>

@@ -222,4 +222,45 @@ export const labEntries: LabEntry[] = [
   takeaway: "Small UX signals drastically change how users interpret the site. A global status banner + intentional scroll/navigation cues helps visitors explore and sets expectations for work-in-progress modules."
 },
 
+{
+  title: "Portfolio Routing — Robotics Hub + Navigation Cleanup",
+  goal: "Move the Virtual Robot Arm demo into Skills → Robotics and make navigation flow match the portfolio structure.",
+  issue: "Robot Arm was showing under Projects and its back button returned to the homepage instead of the Robotics hub, breaking the intended hierarchy.",
+  outcome: "Created/used a RoboticsProjects hub page at /robotics-projects, linked Skills → Robotics to that hub, removed the Robot Arm card from Projects, and updated RobotKinematics back navigation to return to the RoboticsProjects page.",
+  takeaway: "Good portfolios have a clear information hierarchy. Skills should launch curated hubs, and project pages should navigate back to their parent hub—not to the homepage."
+},
+
+{
+  title: "Homepage UX — Scroll Guidance + Dashboard Anchor",
+  goal: "Ensure visitors discover content below the Hero and land on the Dashboard intentionally.",
+  issue: "The Hero section made the site feel like it only contained the Control Hub, and Dashboard scrolling did not work due to a missing/incorrect anchor setup.",
+  outcome: "Added a Hero scroll button to jump to the Dashboard section using scrollIntoView and fixed Dashboard.tsx structure (removed accidental double return) while ensuring the dashboard section is properly anchorable.",
+  takeaway: "Users don’t scroll unless you tell them. A simple scroll cue + correct anchors drastically improves perceived site depth."
+},
+
+{
+  title: "Dashboard UI — Readability Improvement (No Hidden Labels)",
+  goal: "Make Dashboard module buttons readable without relying on hover-only behavior.",
+  issue: "Visual effects made text clarity inconsistent and reduced immediate understanding of each module’s purpose.",
+  outcome: "Adjusted Dashboard styling so the title and module cards remain readable by default while preserving the neon aesthetic. Prepared next step to add one-line descriptions under each module card for instant clarity.",
+  takeaway: "Hover effects should enhance—not reveal—critical information. Defaults must be readable on desktop and mobile."
+},
+
+{
+  title: "Robot Arm Module — TypeScript Build Fix & Controls Stabilization",
+  goal: "Resolve TypeScript build failures blocking deployment and stabilize the Controls component.",
+  issue: "TS build errors were caused by JSX structure problems and unsafe Object.entries typing, plus mismatch between kinematics types and joint keys.",
+  outcome: "Replaced Controls.tsx with a correctly typed, build-safe implementation, normalized angle rendering, and aligned KinematicsEngine outputs with the real joint keys so npm run build succeeds.",
+  takeaway: "Strict TypeScript is a feature, not a nuisance. When models and UI disagree (JointAngles), builds fail—forcing healthier architecture."
+},
+
+{
+  title: "JS Projects Scene — Hover Behavior & Contrast Tuning",
+  goal: "Keep the hacker-tech color palette while making hover behavior calmer and the UI easier on the eyes.",
+  issue: "Hover interactions felt too aggressive and the scene background was too bright/saturated for comfortable reading.",
+  outcome: "Reduced hover movement to zero (no translate/scale), kept hover as a subtle brightness/border change, and darkened the scene window + card backgrounds to reduce neon intensity while keeping the original palette.",
+  takeaway: "Consistency beats intensity. A controlled hover and darker surfaces improve readability and perceived quality without changing the theme."
+},
+
+
 ];
