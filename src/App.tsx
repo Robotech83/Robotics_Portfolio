@@ -37,6 +37,7 @@ import SkillPlaceholderPage from "./pages/SkillPlaceholderPage";
 import ArduinoProjectsPage from "./pages/ArduinoProjectsPage";
 import UnderConstruction from "./pages/UnderConstruction";
 import RobotArm from "./pages/RobotKinematics";
+import RoboticsProjectsPage from "./pages/RoboticsProjectPage";
 
 
 function App() {
@@ -134,16 +135,8 @@ function App() {
     />
   }
 />
-
-<Route
-  path="/robotics-projects"
-  element={
-    <SkillPlaceholderPage
-      title="Robotics Projects"
-      description="Kinematics, simulation, and robot control systems."
-    />
-  }
-/>
+{/* Robotics Projects Page */}
+<Route path="/robotics-projects" element={<RoboticsProjectsPage />} />
 
 <Route
   path="/vision-projects"

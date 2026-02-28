@@ -1,0 +1,101 @@
+.robotics-page {
+  padding: 2rem;
+  color: #d1fae5;
+}
+
+.robotics-header {
+  margin-bottom: 1.5rem;
+  border-left: 3px solid #22c55e;
+  padding-left: 12px;
+}
+
+.robotics-header h2 {
+  margin: 0;
+  color: #22c55e;
+}
+
+.robotics-header p {
+  margin: 6px 0 0;
+  opacity: 0.85;
+}
+
+.robotics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.robotics-card {
+  border: 1px solid rgba(0, 255, 200, 0.35);
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.robotics-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.robotics-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #00ffc8;
+}
+
+.robotics-desc {
+  margin: 10px 0 0;
+  color: #d1fae5;
+  opacity: 0.9;
+  line-height: 1.3;
+}
+
+.robotics-actions {
+  margin-top: 14px;
+}
+
+.robotics-btn {
+  display: inline-block;
+  text-decoration: none;
+
+  border: 1px solid #00ffc8;
+  color: #00ffc8;
+  padding: 8px 12px;
+  border-radius: 10px;
+
+  transition: 0.2s ease;
+}
+
+.robotics-btn:hover {
+  background: #00ffc8;
+  color: #000;
+}
+
+.robotics-badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #facc15;
+  color: #000;
+  font-weight: 800;
+}
+.robotics-back-btn {
+  background: transparent;
+  border: 1px solid #00ffc8;
+  color: #00ffc8;
+
+  padding: 6px 12px;
+  border-radius: 8px;
+
+  cursor: pointer;
+  margin-bottom: 1rem;
+
+  transition: 0.2s ease;
+}
+
+.robotics-back-btn:hover {
+  background: #00ffc8;
+  color: #000;
+}

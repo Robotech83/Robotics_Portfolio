@@ -27,9 +27,12 @@ export default function RobotKinematics() {
   return (
     <div className="rk-page">
       <div className="rk-header">
-      <button className="rk-back" onClick={() => navigate("/")}>
-        ← Back
-      </button>
+      <button
+  className="back-btn"
+  onClick={() => navigate("/robotics-projects")}
+>
+  ← Back
+</button>
         <h1>Virtual Robot Arm — FK/IK Studio</h1>
         <p>FK is live. IK is in progress.</p>
       </div>
