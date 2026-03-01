@@ -262,5 +262,28 @@ export const labEntries: LabEntry[] = [
   takeaway: "Consistency beats intensity. A controlled hover and darker surfaces improve readability and perceived quality without changing the theme."
 },
 
+{
+  title: "SystemModule — Back Navigation Fix",
+  goal: "Add a top-level back button to SystemModule with correct routing behavior.",
+  issue: "Back button JSX was placed outside the return block, causing it not to render. Navigation previously returned to the homepage instead of the parent module context.",
+  outcome: "Moved button inside the component’s return and implemented navigate(-1) for contextual back navigation. Ensured proper positioning via systemmodule.css.",
+  takeaway: "JSX outside the return block does nothing. Navigation should respect hierarchy; contextual back navigation improves UX flow."
+},
+
+{
+  title: "Lab Notebook — Newest-First Rendering Refactor",
+  goal: "Display newest lab entries at the top without manually reordering the data file.",
+  issue: "Entries rendered oldest → newest, requiring manual array reordering for every new log entry.",
+  outcome: "Implemented presentation-layer reversal using [...entries].reverse() inside LabPanel before mapping. Preserved source array integrity and avoided mutating labEntries.",
+  takeaway: "Data order should remain stable; rendering order belongs to the UI layer. Small architectural decisions reduce long-term maintenance friction."
+},
+
+{
+  title: "Energy Management — Real-World Disruption Handling",
+  goal: "Maintain forward momentum on portfolio development despite unexpected physical setback.",
+  issue: "Sustained a minor injury at work (mechanical alignment incident), resulting in headache and reduced cognitive bandwidth during evening development.",
+  outcome: "Shifted to lower-complexity UI refinements (Lab ordering + navigation fixes) instead of attempting high-load architectural refactors.",
+  takeaway: "Engineering progress requires adaptive task selection. When cognitive capacity drops, pivot to controlled improvements rather than forcing deep work."
+},
 
 ];

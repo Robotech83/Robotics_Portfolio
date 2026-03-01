@@ -12,9 +12,9 @@ export default function LabPanel({ entries }: Props) {
       <LabTopbar />
 
       <div className="lab-entries">
-        {entries.map((e) => (
-          <LabEntryCard key={e.title} entry={e} />
-        ))}
+        {[...entries].reverse().map((e) => (
+  <LabEntryCard key={e.title} entry={e} />
+))}
       </div>
 
       <div className="lab-footer">
