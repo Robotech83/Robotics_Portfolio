@@ -293,5 +293,25 @@ export const labEntries: LabEntry[] = [
   outcome: "Resolved display instability by switching from vc4-kms-v3d to vc4-fkms-v3d. Confirmed OV5647 sensor registration and correct pipeline initialization under libcamera. Identified high-speed CSI ribbon length as primary instability factor.",
   takeaway: "High-speed interfaces (MIPI DSI/CSI) are highly sensitive to signal integrity. Detection at the control layer does not guarantee stable data streaming. Hardware-layer validation must precede higher-level vision development.",
 },
-
+{
+  title: "OV5647 Reality Check — 'It Worked Yesterday' Doesn’t Count",
+  goal: "Get a stable camera feed on Pi 4 so facial tracking isn’t built on quicksand.",
+  issue: "OV5647 repeatedly times out during streaming (dequeue expired → camera frontend timeout → restart attempts). Failures persist even with short cables and multiple camera boards; brief moments of valid output are followed by crashes.",
+  outcome: "Camera enumeration and pipeline init succeed, but sustained streaming is unreliable. Root cause is still under investigation, with strongest suspects being power integrity/noise (GPIO loads), connector sensitivity, and clone-module quality.",
+  takeaway: "Robotics is systems engineering. If the camera isn’t deterministic, everything above it (face tracking, recognition, automation) becomes impossible to debug. Reliability first—features later.",
+},
+{
+  title: "OV5647 Regression — Stream-On Timeout Persists",
+  goal: "Stabilize OV5647 CSI streaming on Raspberry Pi 4 for offline vision and facial tracking.",
+  issue: "Repeated stream start failures: `Failed to start streaming: Connection timed out` during `libcamera-hello -t 500/1000` despite successful sensor registration and format selection.",
+  outcome: "Pipeline init confirmed stable; failure isolated to stream-on. GPIO fan load previously contributed to instability; ongoing failures suggest additional power/noise or connector sensitivity issues remain.",
+  takeaway: "Next: run camera in a minimal hardware configuration (no GPIO loads, minimal USB, HDMI-only) and validate repeatable `libcamera-jpeg -n` capture before resuming vision development.",
+},
+{
+  title: "CSI Camera Failure Analysis — OV5647 I2C Timeout (-110)",
+  goal: "Stabilize OV5647 camera streaming on Pi 4 to unblock offline face tracking development.",
+  issue: "Camera repeatedly fails during stream start with V4L2 timeouts. Kernel logs show repeated `i2c-bcm2835 ... i2c transfer timed out` followed by `ov5647 ... stream start failed: -110` and `unicam ... stream on failed in subdev`, indicating the sensor drops off the I2C control bus during stream-on.",
+  outcome: "Confirmed this is not a detection/overlay problem: pipeline initialization succeeds, but stream start fails when the sensor becomes unresponsive over I2C. Prior investigation identified GPIO-powered accessories as contributors; current evidence points to power/noise/connection instability affecting the OV5647 control channel.",
+  takeaway: "CSI camera stability depends on more than the ribbon cable. If the sensor loses I2C control during stream-on, the entire camera pipeline collapses. The correct approach is systems isolation: remove GPIO/I2C loads, validate power integrity, and reintroduce peripherals one at a time only after stable capture is proven.",
+},
 ];
