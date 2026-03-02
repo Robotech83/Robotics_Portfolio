@@ -286,4 +286,12 @@ export const labEntries: LabEntry[] = [
   takeaway: "Engineering progress requires adaptive task selection. When cognitive capacity drops, pivot to controlled improvements rather than forcing deep work."
 },
 
+{
+  title: "Embedded Systems Debug — DSI & CSI Stabilization",
+  goal: "Restore stable display output and bring OV5647 camera online for facial tracking development.",
+  issue: "DSI panel exhibited post-desktop flickering due to KMS driver conflict. OV5647 camera initially undetected due to extended CSI ribbon causing signal integrity failure. After correction, camera detected but streaming reliability remains inconsistent.",
+  outcome: "Resolved display instability by switching from vc4-kms-v3d to vc4-fkms-v3d. Confirmed OV5647 sensor registration and correct pipeline initialization under libcamera. Identified high-speed CSI ribbon length as primary instability factor.",
+  takeaway: "High-speed interfaces (MIPI DSI/CSI) are highly sensitive to signal integrity. Detection at the control layer does not guarantee stable data streaming. Hardware-layer validation must precede higher-level vision development.",
+},
+
 ];
