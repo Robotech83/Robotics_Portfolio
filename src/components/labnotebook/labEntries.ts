@@ -293,6 +293,7 @@ export const labEntries: LabEntry[] = [
   outcome: "Resolved display instability by switching from vc4-kms-v3d to vc4-fkms-v3d. Confirmed OV5647 sensor registration and correct pipeline initialization under libcamera. Identified high-speed CSI ribbon length as primary instability factor.",
   takeaway: "High-speed interfaces (MIPI DSI/CSI) are highly sensitive to signal integrity. Detection at the control layer does not guarantee stable data streaming. Hardware-layer validation must precede higher-level vision development.",
 },
+
 {
   title: "OV5647 Reality Check — 'It Worked Yesterday' Doesn’t Count",
   goal: "Get a stable camera feed on Pi 4 so facial tracking isn’t built on quicksand.",
@@ -300,6 +301,7 @@ export const labEntries: LabEntry[] = [
   outcome: "Camera enumeration and pipeline init succeed, but sustained streaming is unreliable. Root cause is still under investigation, with strongest suspects being power integrity/noise (GPIO loads), connector sensitivity, and clone-module quality.",
   takeaway: "Robotics is systems engineering. If the camera isn’t deterministic, everything above it (face tracking, recognition, automation) becomes impossible to debug. Reliability first—features later.",
 },
+
 {
   title: "OV5647 Regression — Stream-On Timeout Persists",
   goal: "Stabilize OV5647 CSI streaming on Raspberry Pi 4 for offline vision and facial tracking.",
@@ -307,6 +309,7 @@ export const labEntries: LabEntry[] = [
   outcome: "Pipeline init confirmed stable; failure isolated to stream-on. GPIO fan load previously contributed to instability; ongoing failures suggest additional power/noise or connector sensitivity issues remain.",
   takeaway: "Next: run camera in a minimal hardware configuration (no GPIO loads, minimal USB, HDMI-only) and validate repeatable `libcamera-jpeg -n` capture before resuming vision development.",
 },
+
 {
   title: "CSI Camera Failure Analysis — OV5647 I2C Timeout (-110)",
   goal: "Stabilize OV5647 camera streaming on Pi 4 to unblock offline face tracking development.",
@@ -314,4 +317,132 @@ export const labEntries: LabEntry[] = [
   outcome: "Confirmed this is not a detection/overlay problem: pipeline initialization succeeds, but stream start fails when the sensor becomes unresponsive over I2C. Prior investigation identified GPIO-powered accessories as contributors; current evidence points to power/noise/connection instability affecting the OV5647 control channel.",
   takeaway: "CSI camera stability depends on more than the ribbon cable. If the sensor loses I2C control during stream-on, the entire camera pipeline collapses. The correct approach is systems isolation: remove GPIO/I2C loads, validate power integrity, and reintroduce peripherals one at a time only after stable capture is proven.",
 },
+
+{
+  title: "Portfolio Homepage — Robotics Architecture Refactor",
+  goal: "Restructure the homepage so the portfolio communicates a robotics engineering focus instead of a general software developer site.",
+  issue: "The homepage content did not clearly highlight the Sonny robotics project and navigation contained multiple Control Hub entry points, creating redundant calls to action and visual clutter.",
+  outcome: "Reorganized the homepage flow to highlight Sonny as the flagship robotics system and cleaned up navigation so the Hero remains the primary entry point to the Control Hub.",
+  takeaway: "Robotics portfolios should introduce the system architecture and flagship robot early to communicate engineering focus immediately."
+},
+
+{
+  title: "Flagship Sonny Component Implementation",
+  goal: "Create a homepage section that introduces Sonny as the primary robotics project and system platform.",
+  issue: "The project previously existed only within project listings and did not visually represent the scale or complexity of the robotics system.",
+  outcome: "Implemented a FlagshipSonny component that summarizes the humanoid robot platform, including system badges, capability overview, and links to robotics projects and engineering logs.",
+  takeaway: "Highlighting a flagship system helps frame the rest of the portfolio around engineering depth instead of isolated projects."
+},
+
+{
+  title: "System Architecture Section",
+  goal: "Add a simple system architecture overview to explain how Sonny's hardware and control systems are structured.",
+  issue: "Visitors had no quick way to understand how the robot's computing, control, and actuation layers interact.",
+  outcome: "Implemented a system architecture section showing the relationship between the Raspberry Pi controller, Arduino/ESP32 motion control layer, servo drivers, and physical actuators.",
+  takeaway: "Even a simple architecture overview helps communicate embedded systems understanding and systems thinking."
+},
+
+{
+  title: "Navigation Cleanup — Control Hub Entry",
+  goal: "Reduce navigation redundancy and establish a clear hierarchy of calls to action on the homepage.",
+  issue: "Multiple 'Control Hub' buttons appeared in different sections, including the Hero, Sonny component, and teaser sections.",
+  outcome: "Removed duplicate Control Hub buttons and kept the Hero section as the primary entry point into the Control Hub interface.",
+  takeaway: "Clear navigation hierarchy improves usability and prevents the interface from feeling cluttered or repetitive."
+},
+
+{
+  title: "CSS Structure Correction",
+  goal: "Align new homepage components with the project's existing styling architecture.",
+  issue: "During prototyping, CSS styles were introduced directly inside TSX components, conflicting with the project's external CSS structure.",
+  outcome: "Removed inline styles and consolidated homepage styling into the existing home.css file to maintain consistency across the project.",
+  takeaway: "Separating styling from component logic keeps the project maintainable and consistent with the rest of the codebase."
+},
+
+{
+  title: "Robotics Networking and Public Demonstration",
+  goal: "Practice presenting Sonny and explaining its systems to other engineers and makers.",
+  issue: "Presenting a complex robotics project to unfamiliar audiences can be intimidating, especially when speaking with professionals in the field.",
+  outcome: "The demonstration provided valuable experience explaining Sonny's hardware, software, and control systems to others. Conversations about resumes, job searches, and robotics careers provided useful insight into how to position the project professionally.",
+  takeaway: "Demonstrating robotics projects publicly improves technical communication skills and helps refine how the system is explained to engineers, recruiters, and the broader maker community."
+},
+{
+  title: "Sonny AI Assistant — Persistent Brain Architecture",
+  goal: "Give Sonny the ability to remember information across sessions instead of responding only with hard-coded commands.",
+  issue: "The assistant previously had no persistent memory layer, meaning it could not store facts or learn from user interactions.",
+  outcome: "Implemented a BrainStore system using structured JSON storage to persist memories, conversations, and system metadata. Created directory structure (people, objects, memories, conversations, skills, logs) and integrated it into the chat script.",
+  takeaway: "Even simple file-based storage creates the foundation for long-term robot learning and personalization."
+},
+
+{
+  title: "BrainStore System — Initialization Bug Debug",
+  goal: "Resolve runtime error preventing the BrainStore class from loading.",
+  issue: "The script crashed with AttributeError: 'BrainStore' object has no attribute 'brain_path' due to initialization order problems in the class constructor.",
+  outcome: "Reorganized the BrainStore initialization logic so file paths are defined before being used by the JSON loader. Added safer loading behavior with default values when files do not exist.",
+  takeaway: "Initialization order matters in class design—attributes must exist before dependent functions are called."
+},
+
+{
+  title: "Sonny Learning System — Memory Commands Integration",
+  goal: "Allow Sonny to store and recall user-provided information through voice commands.",
+  issue: "The assistant could respond to questions but could not retain facts like preferences or names.",
+  outcome: "Added command patterns for remembering, recalling, listing, and forgetting information using the BrainStore memory API. Verified persistence by storing facts such as favorite color and retrieving them later.",
+  takeaway: "A robot becomes significantly more interactive once it can remember context about the user."
+},
+
+{
+  title: "Speech Interface — Natural Language Command Handling",
+  goal: "Improve the assistant’s ability to understand conversational commands.",
+  issue: "Early tests revealed confusion between phrases like 'my favorite color' and 'your favorite color', causing incorrect responses.",
+  outcome: "Refined command parsing logic to normalize phrasing and map user statements into consistent memory keys stored by the BrainStore.",
+  takeaway: "Natural language interfaces require normalization so different phrasings resolve to the same stored concept."
+},
+
+{
+  title: "Offline Time Handling — System Clock Reliability",
+  goal: "Prevent Sonny from giving incorrect time and date information when the Raspberry Pi is offline.",
+  issue: "Without internet time synchronization, the Pi sometimes reports an outdated or incorrect system clock value.",
+  outcome: "Implemented logic to detect suspicious system time and fall back to a stored 'last known good time' saved in the BrainStore.",
+  takeaway: "Embedded systems must gracefully handle unreliable hardware states instead of blindly trusting system values."
+},
+
+{
+  title: "Sonny Cognitive Architecture — Simplification Reset",
+  goal: "Reduce complexity after attempting to integrate voice, memory, facial recognition, and tracking simultaneously.",
+  issue: "Working on too many subsystems at once created cognitive overload and made debugging difficult.",
+  outcome: "Paused facial recognition development and refocused solely on stabilizing the BrainStore memory system and voice chat integration.",
+  takeaway: "Complex robotics systems are best developed one subsystem at a time—stability before feature expansion."
+},
+
+{
+  title: "Voice Assistant Development — Testing Strategy Planning",
+  goal: "Define a clear testing workflow for validating Sonny's new memory capabilities.",
+  issue: "Without a structured testing plan it was difficult to confirm whether memory persistence worked correctly across sessions.",
+  outcome: "Created a set of voice test commands (remember, recall, list memories, forget) to verify BrainStore functionality and confirm JSON persistence between runs.",
+  takeaway: "Testing simple repeatable command scenarios is critical when validating conversational AI behaviors."
+},
+
+{
+  title: "AI Assistant Architecture — Future Vision System Integration",
+  goal: "Plan how Sonny’s cognitive memory system will eventually connect with facial recognition and tracking.",
+  issue: "Integrating vision learning alongside conversational learning risked creating tightly coupled scripts and unstable debugging conditions.",
+  outcome: "Established a future architecture where the vision system identifies people while the BrainStore stores contextual information about them.",
+  takeaway: "Separating perception systems (vision) from cognition systems (memory) produces a more maintainable robot architecture."
+},
+
+{
+  title: "Engineering Workflow — Managing Cognitive Load During Development",
+  goal: "Maintain forward progress during an evening of intensive debugging and architecture work.",
+  issue: "Multiple subsystems (voice recognition, persistent memory, time synchronization, facial recognition planning) introduced mental overload.",
+  outcome: "Intentionally simplified the development scope, stabilized the core brain and chat system, and deferred vision work to a future session.",
+  takeaway: "Effective engineering sometimes means intentionally reducing scope to protect clarity and momentum."
+},
+
+{
+  title: "Sonny AI Development — Cognitive System Milestone",
+  goal: "Move Sonny from a scripted assistant toward a learning robotic system.",
+  issue: "Static command systems limit interaction and prevent personalization.",
+  outcome: "Implemented a persistent brain layer capable of storing memories, handling recall, and supporting future integrations with perception systems.",
+  takeaway: "A robot becomes truly interactive once perception, memory, and conversation are connected through a unified cognitive layer."
+},
+
 ];

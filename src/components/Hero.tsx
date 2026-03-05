@@ -15,12 +15,16 @@ export default function Hero() {
 
       {/* Hero content */}
       <h1 className="hero-title rgb-gradient neon-border">
-        Robotics Developer & Python Engineer
+        Keneshia Edwards <br />
+        Robotics & Embedded Systems Developer
       </h1>
 
       <p className="hero-subtitle fade-in-delayed">
-        I build robots that see, talk, and move. Specializing in Python, Linux,
-        Arduino, and computer vision.
+        I design and build robotic systems that integrate embedded firmware,
+        distributed microcontrollers, and real-world electromechanical hardware.
+        
+        Current flagship project: Sonny — a distributed humanoid robotics platform
+        powered by Raspberry Pi, ESP32, and Arduino controllers.
       </p>
 
       {/* Hero button → Control Hub page */}

@@ -1,28 +1,17 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-// Importing components
-import Hero from "./components/Hero";
-import  Dashboard from "./components/Dashboard";
-import { Projects } from "./components/Projects";
-import { Skills } from "./components/Skills";
-import { LabNotebook } from "./components/labnotebook/LabNotebook";
-import { ContactTerminal } from "./components/ContactTerminal";
-import FloatingAboutButton from "./components/FloatingAboutButton";
+
 import ScrollToTop from "./components/ScrollToTop";
 import GlobalWIPBanner from "./components/GlobalWIPBanner";
 
+import HomePage from "./pages/Home";
 
-
-
-
-// Importing pages
+// Pages
 import ControlHub from "./pages/ControlHub";
 import AboutMe from "./pages/AboutMe";
 import VirtualModel from "./pages/modules/VirtualModel";
-//import RobotStudio from "./pages/RobotStudio";
 import AIAssistantPage from "./pages/AIAssistant";
 import ObjectScanner from "./pages/ObjectScanner";
 
-//import PowerPage from "./pages/dashboard/PowerPage";
 import SystemModule from "./pages/modules/SystemModule";
 import NetworkPage from "./pages/dashboard/NetworkPage";
 import MovementModule from "./pages/modules/MovementModule";
@@ -39,126 +28,92 @@ import UnderConstruction from "./pages/UnderConstruction";
 import RobotArm from "./pages/RobotKinematics";
 import RoboticsProjectsPage from "./pages/RoboticsProjectPage";
 
-
-function App() {
+export default function App() {
   return (
     <>
       <GlobalWIPBanner />
       <ScrollToTop />
+
       <Routes>
+        <Route path="/" element={<HomePage />} />
 
-        {/* HOMEPAGE (everything directly inside App.tsx) */}
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <Dashboard />
-              <Projects />
-              <Skills />
-              <LabNotebook />
-              <ContactTerminal />
-              <FloatingAboutButton />
-            </>
-          }
-        />
-
-        {/* Control Hub */}
         <Route path="/control-hub" element={<ControlHub />} />
-
-        {/* Virtual Model Viewer */}
         <Route path="/virtual-model" element={<VirtualModel />} />
-        
-          {/* Robot Studio (Under Construction) */}
-          <Route path="/robot-studio" element={<UnderConstruction />} />
-          <Route path="/robotstudio" element={<Navigate to="/robot-studio" replace />} />
 
-          {/* Robot Arm Kinematics Demo */}
-          <Route path="/robotarm" element={<RobotArm />} />
+        <Route path="/robot-studio" element={<UnderConstruction />} />
+        <Route path="/robotstudio" element={<Navigate to="/robot-studio" replace />} />
 
-      
-        {/* AI Assistant */}
+        <Route path="/robotarm" element={<RobotArm />} />
+
         <Route path="/ai-assistant" element={<AIAssistantPage />} />
-        
-        {/* About Me Page */}
         <Route path="/about" element={<AboutMe />} />
-        
-        {/* Object Scanner */}
         <Route path="/object-scanner" element={<ObjectScanner />} />
-        
-        {/* Dashboard Sub-Pages */}
+
         <Route path="/movement-module" element={<MovementModule />} />
         <Route path="/voice-module" element={<VoiceModule />} />
         <Route path="/power-module" element={<SystemModule />} />
         <Route path="/network-module" element={<NetworkPage />} />
 
-        {/* Voice Module Sub-Pages */}
         <Route path="/voice/wakeword" element={<WakeWordPage />} />
         <Route path="/voice/tts" element={<SpeechOutputPage />} />
         <Route path="/voice/commands" element={<CommandTrainerPage />} />
 
-        {/* SKILL PAGES */  }
-
-          {/* JavaScript Projects Page */}
         <Route path="/js-projects" element={<JSProjectsPage />} />
+        <Route path="/arduino-projects" element={<ArduinoProjectsPage />} />
+        <Route path="/robotics-projects" element={<RoboticsProjectsPage />} />
 
-        {/* Skill Placeholder Pages */}
         <Route
-  path="/python-projects"
-  element={
-    <SkillPlaceholderPage
-      title="Python Projects"
-      description="Automation, robotics scripting, and system tooling projects."
-    />
-  }
-/>
-        {/* Arduino Projects Page */}
-      <Route path="/arduino-projects" element={<ArduinoProjectsPage />} />
+          path="/python-projects"
+          element={
+            <SkillPlaceholderPage
+              title="Python Projects"
+              description="Automation, robotics scripting, and system tooling projects."
+            />
+          }
+        />
 
+        <Route
+          path="/linux-projects"
+          element={
+            <SkillPlaceholderPage
+              title="Linux Projects"
+              description="System setup, automation, and robotics environment tooling."
+            />
+          }
+        />
 
-<Route
-  path="/linux-projects"
-  element={
-    <SkillPlaceholderPage
-      title="Linux Projects"
-      description="System setup, automation, and robotics environment tooling."
-    />
-  }
-/>
+        <Route
+          path="/bash-projects"
+          element={
+            <SkillPlaceholderPage
+              title="Bash Projects"
+              description="Automation scripts and developer workflow tools."
+            />
+          }
+        />
 
-<Route
-  path="/bash-projects"
-  element={
-    <SkillPlaceholderPage
-      title="Bash Projects"
-      description="Automation scripts and developer workflow tools."
-    />
-  }
-/>
-{/* Robotics Projects Page */}
-<Route path="/robotics-projects" element={<RoboticsProjectsPage />} />
+        <Route
+          path="/vision-projects"
+          element={
+            <SkillPlaceholderPage
+              title="Machine Vision Projects"
+              description="Object detection, face tracking, and vision pipelines."
+            />
+          }
+        />
 
-<Route
-  path="/vision-projects"
-  element={
-    <SkillPlaceholderPage
-      title="Machine Vision Projects"
-      description="Object detection, face tracking, and vision pipelines."
-    />
-  }
-/>
-<Route
-  path="/react-projects"
-  element={
-    <SkillPlaceholderPage
-      title="React Projects"
-      description="Frontend web development projects using React and TypeScript."
-    />
-  }
-/>
+        <Route
+          path="/react-projects"
+          element={
+            <SkillPlaceholderPage
+              title="React Projects"
+              description="Frontend web development projects using React and TypeScript."
+            />
+          }
+        />
+
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
   );
 }
-
-export default App;
