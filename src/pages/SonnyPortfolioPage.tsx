@@ -34,27 +34,27 @@ const featureCards = [
 ];
 
 // Milestones
-const milestones = [
-  "Built on Raspberry Pi 4 with Arduino integration for future motion control",
-  "Offline speech stack using Vosk + pyttsx3",
-  "Camera-based facial recognition and person event handling",
-  "JSON-based memory files for known people and interaction state",
-  "Planned upgrades include jaw animation, tracking, and expanded physical motion",
-];
+//const milestones = [
+  //"Built on Raspberry Pi 4 with Arduino integration for future motion control",
+  //"Offline speech stack using Vosk + pyttsx3",
+  //"Camera-based facial recognition and person event handling",
+  //"JSON-based memory files for known people and interaction state",
+  //"Planned upgrades include jaw animation, tracking, and expanded physical motion",
+//];
 
 // Tech stack
-const techStack = [
-  "Python",
-  "Raspberry Pi 4",
-  "Arduino Mega",
-  "OpenCV",
-  "face_recognition",
-  "Vosk",
-  "pyttsx3",
-  "PiCamera2",
-  "JSON",
-  "Linux",
-];
+//const techStack = [
+  //"Python",
+  //"Raspberry Pi 4",
+  //"Arduino Mega",
+  //"OpenCV",
+  //"face_recognition",
+  //"Vosk",
+  //"pyttsx3",
+  //"PiCamera2",
+  //"JSON",
+  //"Linux",
+//];
 
 // Gallery
 const sonnyGallery = [
