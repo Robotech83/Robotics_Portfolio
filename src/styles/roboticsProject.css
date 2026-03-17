@@ -1,3 +1,8 @@
+/* =========================================================
+   ROBOTICS PROJECTS PAGE
+   Used for the main robotics project listing page
+========================================================= */
+
 .robotics-page {
   padding: 2rem;
   color: #d1fae5;
@@ -5,8 +10,8 @@
 
 .robotics-header {
   margin-bottom: 1.5rem;
-  border-left: 3px solid #22c55e;
   padding-left: 12px;
+  border-left: 3px solid #22c55e;
 }
 
 .robotics-header h2 {
@@ -26,10 +31,10 @@
 }
 
 .robotics-card {
-  border: 1px solid rgba(0, 255, 200, 0.35);
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 12px;
   padding: 16px;
+  border: 1px solid rgba(0, 255, 200, 0.35);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .robotics-card-top {
@@ -47,9 +52,9 @@
 
 .robotics-desc {
   margin: 10px 0 0;
+  line-height: 1.3;
   color: #d1fae5;
   opacity: 0.9;
-  line-height: 1.3;
 }
 
 .robotics-actions {
@@ -58,13 +63,11 @@
 
 .robotics-btn {
   display: inline-block;
-  text-decoration: none;
-
-  border: 1px solid #00ffc8;
-  color: #00ffc8;
   padding: 8px 12px;
+  border: 1px solid #00ffc8;
   border-radius: 10px;
-
+  color: #00ffc8;
+  text-decoration: none;
   transition: 0.2s ease;
 }
 
@@ -74,28 +77,266 @@
 }
 
 .robotics-badge {
-  font-size: 0.7rem;
   padding: 2px 8px;
   border-radius: 999px;
   background: #facc15;
   color: #000;
+  font-size: 0.7rem;
   font-weight: 800;
 }
+
 .robotics-back-btn {
-  background: transparent;
-  border: 1px solid #00ffc8;
-  color: #00ffc8;
-
-  padding: 6px 12px;
-  border-radius: 8px;
-
-  cursor: pointer;
   margin-bottom: 1rem;
-
+  padding: 6px 12px;
+  border: 1px solid #00ffc8;
+  border-radius: 8px;
+  background: transparent;
+  color: #00ffc8;
+  cursor: pointer;
   transition: 0.2s ease;
 }
 
 .robotics-back-btn:hover {
   background: #00ffc8;
   color: #000;
+}
+
+
+/* =========================================================
+   SONNY PORTFOLIO PAGE
+   Dedicated page styling for Sonny OS
+========================================================= */
+
+.sonny-page {
+  min-height: 100vh;
+  padding: 40px;
+  background: #050505;
+  color: #e5e5e5;
+  font-family: Arial, sans-serif;
+}
+
+
+/* =========================================================
+   SONNY HERO SECTION
+   Top section with title, summary, buttons, image, status
+========================================================= */
+
+.sonny-hero {
+  margin-bottom: 60px;
+}
+
+.sonny-hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.sonny-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sonny-hero-text h1 {
+  margin: 0;
+  font-size: 48px;
+}
+
+.sonny-hero-text p {
+  margin: 0;
+}
+
+.sonny-badge {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 12px;
+  border: 1px solid rgba(34, 197, 94, 0.45);
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.08);
+  color: #22c55e;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.sonny-subtitle {
+  margin-bottom: 15px;
+  color: #22c55e;
+}
+
+.sonny-description {
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.sonny-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.sonny-btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.sonny-btn.primary {
+  background: #22c55e;
+  color: #000;
+}
+
+.sonny-btn.secondary {
+  border: 1px solid #22c55e;
+  color: #22c55e;
+}
+
+
+/* =========================================================
+   SONNY HERO IMAGE / RIGHT COLUMN
+========================================================= */
+
+.sonny-hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sonny-hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 220px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 255, 200, 0.25);
+  border-radius: 20px;
+  background: #000;
+}
+
+.sonny-hero-image {
+  width: auto;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   SONNY STATUS CARD
+========================================================= */
+
+.sonny-status-card {
+  padding: 20px;
+  border: 1px solid rgba(0, 255, 200, 0.35);
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.sonny-status-card h3 {
+  margin: 0 0 12px;
+  color: #00ffc8;
+}
+
+.sonny-status-card p {
+  margin: 8px 0;
+  color: #d1fae5;
+}
+
+
+/* =========================================================
+   SHARED SONNY SECTIONS
+========================================================= */
+
+.sonny-section {
+  margin-bottom: 60px;
+}
+
+.sonny-section h2 {
+  margin: 0 0 18px;
+  color: #22c55e;
+  font-size: 2rem;
+}
+
+
+/* =========================================================
+   SONNY FEATURE CARDS
+========================================================= */
+
+.sonny-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.sonny-card {
+  padding: 20px;
+  border: 1px solid #1f1f1f;
+  border-radius: 15px;
+  background: #0d0d0d;
+}
+
+.sonny-card h3 {
+  margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   SONNY GALLERY
+========================================================= */
+
+.sonny-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.sonny-gallery-image {
+  width: 100%;
+  max-height: 180px;
+  background: #000;
+  object-fit: contain;
+}
+
+.sonny-card-body {
+  margin-top: 14px;
+}
+
+.sonny-card-body h3 {
+  margin: 0 0 10px;
+  color: #00ffc8;
+}
+
+.sonny-card-body p {
+  margin: 0;
+  line-height: 1.5;
+  color: #d1fae5;
+}
+
+
+/* =========================================================
+   SONNY VIDEO
+========================================================= */
+
+.sonny-video-container video {
+  width: 100%;
+  border-radius: 15px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+  .sonny-page {
+    padding: 24px;
+  }
+
+  .sonny-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sonny-hero-text h1 {
+    font-size: 2.25rem;
+  }
 }

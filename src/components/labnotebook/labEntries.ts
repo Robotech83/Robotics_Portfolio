@@ -445,4 +445,213 @@ export const labEntries: LabEntry[] = [
   takeaway: "A robot becomes truly interactive once perception, memory, and conversation are connected through a unified cognitive layer."
 },
 
+{
+  title: "Sonny Torso Assembly — Lunch Break Mechanical Progress",
+  goal: "Begin structural assembly of the InMoov torso and install core actuator mounts.",
+  issue: "Torso components were still loose parts and difficult to work with while installing the head and neck mechanism.",
+  outcome: "Aligned and assembled the primary torso frame plates and began installing servo mounting points. Partial alignment was intentionally left loose to allow easier access for future head and neck installation.",
+  takeaway: "Early mechanical alignment and dry fitting simplifies later subsystem installation and prevents binding in humanoid robot joints."
+},
+
+{
+  title: "Sonny AI Assistant — Persistent Brain Architecture Implementation",
+  goal: "Give Sonny the ability to remember information between sessions instead of relying on hard-coded responses.",
+  issue: "The assistant previously had no persistent memory layer, preventing it from learning user information or recalling past interactions.",
+  outcome: "Integrated a BrainStore memory system into the voice assistant using JSON-based storage. Created a structured directory system for memories and connected voice commands to memory storage and retrieval.",
+  takeaway: "Persistent storage transforms a scripted assistant into a system capable of learning and personalized interaction."
+},
+
+{
+  title: "BrainStore Debug — Initialization Order Fix",
+  goal: "Resolve runtime crash preventing the BrainStore system from loading.",
+  issue: "The program crashed during startup due to the attribute 'brain_path' being referenced before it was defined in the class constructor.",
+  outcome: "Reorganized the BrainStore initialization order so file paths are defined before being used by the JSON loader. Added safer fallback loading behavior for missing files.",
+  takeaway: "Constructor initialization order is critical in class design—dependencies must exist before being used."
+},
+
+{
+  title: "Sonny Learning System — Voice Memory Commands",
+  goal: "Enable Sonny to learn facts from voice commands and recall them later.",
+  issue: "The assistant could respond to commands but could not store or retrieve user-provided information.",
+  outcome: "Implemented conversational commands such as 'remember', 'what is my', 'forget', and 'what do you know'. Verified that Sonny could store multiple memories including name, favorite color, favorite robot, and favorite tools.",
+  takeaway: "Natural language learning commands dramatically improve the perceived intelligence of a robot assistant."
+},
+
+{
+  title: "Persistent Memory Verification — Reboot Testing",
+  goal: "Confirm that Sonny's memory system persists across system restarts.",
+  issue: "Memory systems that only exist during runtime lose their usefulness after reboot.",
+  outcome: "Rebooted the Raspberry Pi and verified that Sonny successfully reloaded stored memories from disk and listed them through voice commands.",
+  takeaway: "Persistent memory is a foundational capability for long-term human-robot interaction."
+},
+
+{
+  title: "Cognitive Architecture Scope Reset",
+  goal: "Reduce development complexity by stabilizing core systems before adding new features.",
+  issue: "Simultaneously working on voice commands, persistent memory, facial recognition, and tracking created cognitive overload and debugging difficulty.",
+  outcome: "Paused facial recognition development and focused on stabilizing the BrainStore memory system and chat interface.",
+  takeaway: "Complex robotics systems should be developed incrementally—stability before expansion."
+},
+
+{
+  title: "Sonny Cognitive Milestone — First Persistent Robot Memory",
+  goal: "Demonstrate a robot capable of learning and recalling information through conversation.",
+  issue: "Scripted assistants feel static and do not improve interaction over time.",
+  outcome: "Sonny successfully learned and recalled multiple facts through voice commands and retained them after reboot, marking the first working version of Sonny's cognitive memory system.",
+  takeaway: "Adding memory creates the foundation for higher-level capabilities such as recognizing returning users and contextual interaction."
+},
+
+{
+  title: "Sonny Cognitive Milestone — First Learned Conversation",
+  goal: "Verify that Sonny can learn new information through voice interaction and recall it during later conversations.",
+  issue: "Earlier versions of the assistant relied entirely on scripted responses and could not retain information provided by the user.",
+  outcome: "Successfully demonstrated Sonny learning multiple facts through voice commands including the user's name, favorite color, favorite robot, and favorite tool. Sonny was able to recall the stored information during conversation and list all stored memories on request.",
+  takeaway: "The moment a robot can learn from interaction instead of relying on static commands, it shifts from a scripted assistant to a developing cognitive system."
+},
+
+{
+  title: "Persistent Brain Verification — Memory Survives System Reboot",
+  goal: "Confirm that Sonny's BrainStore memory system persists across Raspberry Pi restarts.",
+  issue: "Some memory implementations only store data in runtime variables and lose information when the system shuts down or restarts.",
+  outcome: "After rebooting the Raspberry Pi, Sonny successfully reloaded stored memories from disk and listed them correctly using the 'what do you know' command. This confirmed that the BrainStore JSON storage system persists knowledge across sessions.",
+  takeaway: "Persistent storage is a foundational requirement for long-term learning systems and future features such as face recognition memory."
+},
+
+{
+  title: "Sonny — Face Recognition Architecture",
+  goal: "Design how Sonny’s vision system communicates with the voice assistant without merging both projects.",
+  issue: "Face recognition and SonnyChat were separate systems with no shared memory or communication layer.",
+  outcome: "Designed a shared 'Sonny Brain' directory structure where the vision system writes a vision_event.json file and SonnyChat reads it to trigger greetings and load person profiles.",
+  takeaway: "Separating perception (vision) from interaction (chat) keeps the robot architecture modular and easier to debug."
+},
+
+{
+  title: "Sonny — Face Recognition Architecture",
+  goal: "Design how Sonny’s vision system communicates with the voice assistant without merging both projects.",
+  issue: "Face recognition and SonnyChat were separate systems with no shared memory or communication layer.",
+  outcome: "Designed a shared 'Sonny Brain' directory structure where the vision system writes a vision_event.json file and SonnyChat reads it to trigger greetings and load person profiles.",
+  takeaway: "Separating perception (vision) from interaction (chat) keeps the robot architecture modular and easier to debug."
+},
+
+{
+  title: "SonnyChat Integration — Vision Events",
+  goal: "Allow Sonny to greet recognized individuals automatically.",
+  issue: "SonnyChat only responded to wake words and had no way to react to vision events.",
+  outcome: "Added handle_vision_event() logic to check for a vision_event.json file and trigger contextual greetings.",
+  takeaway: "Event-driven design allows robot subsystems to communicate asynchronously."
+},
+
+{
+  title: "Filesystem Debug — Missing Brain Directories",
+  goal: "Test Sonny’s new face recognition greeting system.",
+  issue: "SonnyChat never detected vision events even though the code was functioning correctly.",
+  outcome: "Discovered the shared SonnyData/sonny_brain/inbox directory did not exist, preventing event detection.",
+  takeaway: "Robotics debugging often comes down to system-level issues like filesystem paths rather than code errors."
+},
+
+{
+  title: "Human-Robot Interaction Design",
+  goal: "Make Sonny less intrusive when recognizing people.",
+  issue: "Storing hobbies or personal information felt too invasive for casual interactions.",
+  outcome: "Shifted toward conversation starters such as 'How has your day been?' or 'Last time I saw you we were working in the lab.'",
+  takeaway: "Designing robot personalities requires balancing usefulness with respect for personal boundaries."
+},
+
+{
+  title: "Human-Robot Interaction Design",
+  goal: "Make Sonny less intrusive when recognizing people.",
+  issue: "Storing hobbies or personal information felt too invasive for casual interactions.",
+  outcome: "Shifted toward conversation starters such as 'How has your day been?' or 'Last time I saw you we were working in the lab.'",
+  takeaway: "Designing robot personalities requires balancing usefulness with respect for personal boundaries."
+},
+
+{
+  title: "Architecture Planning — Sonny Brain",
+  goal: "Define a long-term structure for Sonny’s memory, perception, and conversation systems.",
+  issue: "Multiple subsystems (vision, voice, memory) needed a shared data layer.",
+  outcome: "Created the concept of the 'Sonny Brain' directory to hold inbox events, people profiles, and long-term memory.",
+  takeaway: "Clear system architecture early in a project prevents major integration problems later."
+},
+
+{
+  title: "Sonny — Face Recognition Consent System",
+  goal: "Design a respectful system allowing Sonny to recognize people without violating personal privacy.",
+  issue: "Facial recognition can feel intrusive if the robot stores identity data without explicit permission.",
+  outcome: "Added a consent flag inside each person profile so Sonny only stores and remembers faces when permission has been granted.",
+  takeaway: "Human-robot interaction should include consent mechanisms, even in prototype systems."
+},
+
+{
+  title: "Sonny — Face Recognition Consent System",
+  goal: "Design a respectful system allowing Sonny to recognize people without violating personal privacy.",
+  issue: "Facial recognition can feel intrusive if the robot stores identity data without explicit permission.",
+  outcome: "Added a consent flag inside each person profile so Sonny only stores and remembers faces when permission has been granted.",
+  takeaway: "Human-robot interaction should include consent mechanisms, even in prototype systems."
+},
+
+{
+  title: "Event-Driven Robot Architecture",
+  goal: "Connect Sonny’s vision system to the voice assistant without tightly coupling both programs.",
+  issue: "Face recognition and SonnyChat existed as separate projects with no shared communication layer.",
+  outcome: "Implemented a filesystem event system where the vision module writes a vision_event.json file that SonnyChat reads to trigger greetings and memory lookup.",
+  takeaway: "Loose coupling between robot subsystems improves reliability and makes debugging easier."
+},
+
+{
+  title: "System Debugging — Missing Brain Directory",
+  goal: "Test Sonny’s automatic greeting when a known face is detected.",
+  issue: "SonnyChat never responded to vision events even though the code appeared correct.",
+  outcome: "Discovered the shared Sonny Brain directory structure had not been created on disk, preventing event detection.",
+  takeaway: "Many robotics failures are caused by system configuration issues rather than code logic."
+},
+
+{
+  title: "Sonny — Assistive Household Robot Vision",
+  goal: "Define the long-term purpose of Sonny as an assistive household robot capable of helping with everyday tasks.",
+  issue: "While reviewing other humanoid robotics projects, it initially felt like large companies were already solving the same problems.",
+  outcome: "Refocused the project around a personal mission: building Sonny as a robot that could one day assist my fiancée if her vasculitis progresses and mobility becomes limited.",
+  takeaway: "Personal motivation can drive meaningful engineering projects. Even small prototypes contribute to the larger goal of accessible assistive robotics."
+},
+
+{
+  title: "Household Robotics — Core Capability Planning",
+  goal: "Identify the foundational capabilities required before Sonny can realistically perform household chores.",
+  issue: "Modern humanoid robots shown online appear capable of many tasks, but the underlying systems required were not clearly defined.",
+  outcome: "Identified three foundational systems Sonny must develop first: vision (object recognition), manipulation (arms and motion control), and contextual interaction (voice and memory).",
+  takeaway: "Complex robot behavior emerges from combining smaller reliable subsystems rather than building one massive feature at once."
+},
+
+{
+  title: "Project Perspective — Independent Robotics Development",
+  goal: "Evaluate Sonny’s development path compared to large commercial robotics companies.",
+  issue: "Seeing advanced humanoid robots online created the impression of competing directly with large research teams.",
+  outcome: "Recognized that independent robotics projects serve a different purpose: experimentation, learning, and building meaningful assistive technology at a personal scale.",
+  takeaway: "Innovation in robotics often begins with individual builders exploring ideas long before they become commercial systems."
+},
+
+{
+  title: "Sonny Vision System — Face Recognition + Memory Event Pipeline",
+  goal: "Connect Sonny's face recognition system to the BrainStore memory architecture so the robot can recognize people and greet them by name.",
+  issue: "Initial tests failed due to incorrect filesystem paths and module import errors. SonnyChat could not locate the inbox or people memory files even though they existed, preventing greeting events from triggering.",
+  outcome: "Corrected project directory paths and verified the shared brain directory structure (people, inbox, memories). Face recognition now writes a vision_event.json file that SonnyChat can read to load a person's profile and trigger greeting behavior.",
+  takeaway: "Robotics subsystems must share a consistent filesystem architecture. Once perception (vision) and cognition (memory/chat) communicate through a clean event pipeline, higher-level social behaviors become much easier to build."
+},
+
+{
+  title: "Sonny Interaction Milestone — First Face Recognition Greeting",
+  goal: "Verify that Sonny can recognize a known person and trigger a spoken greeting using the BrainStore memory system.",
+  issue: "Initial tests produced no greeting on startup even though the vision event system was running. Investigation showed that the inbox event file and people memory paths were not aligned with the actual project directory structure, preventing SonnyChat from loading the recognized person's profile.",
+  outcome: "After correcting filesystem paths and confirming that the vision_event.json file was written to the shared brain inbox directory, SonnyChat successfully detected the event, loaded the corresponding person profile, and triggered a greeting response.",
+  takeaway: "This marks Sonny's first working perception → memory → speech loop. When vision, memory, and conversation systems are connected, the robot transitions from a command assistant into a socially aware system capable of recognizing and interacting with individuals."
+},
+
+{
+  title: "Sonny Portfolio Page — Media Layout + CSS Refactor",
+  goal: "Add Sonny as a flagship robotics project page in the portfolio with images, video, and a cleaner presentation.",
+  issue: "The first version used the wrong styling approach for the project, causing oversized images, broken spacing, missing text styling, and confusion between media path issues and unrelated React warnings.",
+  outcome: "Reworked the Sonny portfolio page to use the existing CSS structure instead of Tailwind-style utility classes, corrected media paths for the project base URL, organized the layout into a cleaner hero/gallery/video structure, and stabilized image sizing so the page became usable and visually coherent.",
+  takeaway: "When a project already has an established styling system, matching that architecture is more important than forcing a new one. Clean structure, correct asset paths, and scoped CSS made the Sonny page far easier to debug and polish."
+},
+
+
 ];

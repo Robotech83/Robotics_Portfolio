@@ -38,6 +38,26 @@ export default function RoboticsProjectsPage() {
           </div>
         </div>
 
+        {/* Sonny OS Card */}
+<div className="robotics-card">
+  <div className="robotics-card-top">
+    <h3>Sonny OS — Humanoid AI Platform</h3>
+    <span className="robotics-badge">FLAGSHIP</span>
+  </div>
+
+  <p className="robotics-desc">
+    Offline humanoid robotics platform built on Raspberry Pi.
+    Combines voice interaction, facial recognition, memory, and modular AI systems
+    designed for real-world demos and future motion control.
+  </p>
+
+  <div className="robotics-actions">
+    <Link to="/robotics-projects/sonny-os" className="robotics-btn">
+      View Project →
+    </Link>
+  </div>
+</div>
+
         {/* Add more robotics cards later */}
       </div>
     </section>

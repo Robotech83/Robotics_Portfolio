@@ -27,6 +27,8 @@ import ArduinoProjectsPage from "./pages/ArduinoProjectsPage";
 import UnderConstruction from "./pages/UnderConstruction";
 import RobotArm from "./pages/RobotKinematics";
 import RoboticsProjectsPage from "./pages/RoboticsProjectPage";
+import SonnyPortfolioPage from "./pages/SonnyPortfolioPage";
+
 
 export default function App() {
   return (
@@ -61,7 +63,7 @@ export default function App() {
         <Route path="/js-projects" element={<JSProjectsPage />} />
         <Route path="/arduino-projects" element={<ArduinoProjectsPage />} />
         <Route path="/robotics-projects" element={<RoboticsProjectsPage />} />
-
+        <Route path="/robotics-projects/sonny-os" element={<SonnyPortfolioPage />} />
         <Route
           path="/python-projects"
           element={

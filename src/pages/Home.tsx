@@ -6,8 +6,7 @@ import { LabNotebook } from "../components/labnotebook/LabNotebook";
 import { ContactTerminal } from "../components/ContactTerminal";
 import FloatingAboutButton from "../components/FloatingAboutButton";
 
-import FlagshipSonny from "../components/home/FlagshipSonny";
-import SystemArchitecture from "../components/home/SystemArchitecture";
+
 
 
 import "../styles/home.css";
@@ -17,10 +16,6 @@ export default function HomePage() {
     <main className="homepage">
       <div className="homepage__container">
         <Hero />
-
-        {/* NEW: Robotics-first additions */}
-        <FlagshipSonny />
-        <SystemArchitecture />
         
 
         {/* Existing homepage sections */}
