@@ -58,6 +58,33 @@ export default function RoboticsProjectsPage() {
   </div>
 </div>
 
+<div className="robotics-grid">
+{/* Robot Arm Kinematics Calculator (Python) */}
+<div className="robotics-card">
+  <div className="robotics-card-top">
+    <h3>Robot Arm Kinematics Calculator</h3>
+    <span className="robotics-badge">NEW</span>
+  </div>
+
+  <p className="robotics-desc">
+  Demonstrates forward kinematics used in real robotic systems, including 
+  my humanoid robot project (Sonny OS), bridging mathematical modeling 
+  with physical robot control.
+  </p>
+
+  <div className="robotics-actions">
+    <a
+      href="https://github.com/Robotech83/robot-arm-kinematics-calculator"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="robotics-btn"
+    >
+      View Project →
+    </a>
+  </div>
+</div>
+</div>
+
         {/* Add more robotics cards later */}
       </div>
     </section>
