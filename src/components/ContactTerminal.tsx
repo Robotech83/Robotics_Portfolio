@@ -11,7 +11,8 @@ export function ContactTerminal() {
     "Sonny: Message received...\nSonny: Logging interaction...\nSonny: I will respond shortly.",
     "Sonny: Signal received...\nSonny: Human message stored...\nSonny: Awaiting next interaction.",
     "Sonny: Transmission successful...\nSonny: Reviewing communication...\nSonny: Response pending.",
-    "Sonny: Contact established...\nSonny: Message archived...\nSonny: Stay awesome, human."
+    "Sonny: Contact established...\nSonny: Message archived...\nSonny: Stay awesome, human.",
+    "Sonny: Message received...\nSonny: I am watching.\nSonny: Carefully."
   ];
 
   const typeEffect = (text: string, speed = 30) => {
