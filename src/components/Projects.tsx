@@ -3,7 +3,7 @@ import "../styles/project.css";
 export function Projects() {
   const projects = [
     {
-      name: "InMoov Humanoid Robot",
+      name: "Sonny OS — Humanoid AI Platform",
       github: "https://github.com/Robotech83/Offline-Voice-Assistant",
     },
     {
