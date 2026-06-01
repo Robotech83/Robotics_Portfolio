@@ -4,32 +4,32 @@ import type { LabEntry } from "./types";
 
 export const labEntries: LabEntry[] = [
       {
-      title: "Virtual Robot Arm — Forward Kinematics",
-      goal: "Build a 5-DOF virtual arm using nested transforms.",
-      issue: "Adding wrist joints caused collapse/disappearing geometry.",
-      outcome: "Rebuilt one joint at a time with primitives to verify hierarchy.",
-      takeaway: "FK depends on transform order as much as math.",
-    },
+  title: "Virtual Robot Arm — Forward Kinematics Architecture",
+  goal: "Develop a 5-DOF virtual robotic arm using hierarchical transform chaining.",
+  issue: "Introducing additional wrist joints caused transform instability, resulting in collapsed or disappearing geometry within the render hierarchy.",
+  outcome: "Rebuilt the kinematic chain incrementally using primitive geometry to validate parent-child transform relationships and isolate hierarchy errors.",
+  takeaway: "Forward kinematics depends as heavily on transform hierarchy and rotation order as it does on mathematical calculations."
+},
+   {
+  title: "Portfolio UX — Skills Navigation Redesign",
+  goal: "Improve portfolio usability by simplifying navigation within the Skills section.",
+  issue: "Embedding excessive content directly within the homepage created visual clutter and reduced navigation clarity.",
+  outcome: "Refactored the Skills section into dedicated navigation launch points leading to specialized pages for deeper technical content.",
+  takeaway: "Effective UX design often comes from improving information hierarchy rather than adding additional content."
+},
     {
-      title: "Skills Section — Navigation Redesign",
-      goal: "Make Skills clearer without bloating the homepage.",
-      issue: "Too much embedded content created clutter/confusion.",
-      outcome: "Converted Skills into navigation launchers for dedicated pages.",
-      takeaway: "Good UX often means moving detail out, not adding more.",
-    },
-    {
-      title: "JavaScript Projects — Documentation Cleanup",
-      goal: "Make vanilla JS projects look intentional + professional.",
-      issue: "Inconsistent/minimal READMEs weakened project presentation.",
-      outcome: "Standardized READMEs and added clear demo + repo links.",
-      takeaway: "Documentation can level up a project instantly.",
-    },
-    {
-  title: "Arduino Projects Page — Initial Setup",
-  goal: "Create a dedicated page to showcase Arduino and hardware projects.",
-  issue: "Hardware projects did not fit well within general portfolio sections.",
-  outcome: "Built a new Arduino Projects page with structured cards, status indicators, and room for wiring images and demos.",
-  takeaway: "Dedicated pages make hardware work clearer and more credible.",
+  title: "JavaScript Projects — Documentation Standardization",
+  goal: "Improve the professionalism and presentation consistency of vanilla JavaScript projects.",
+  issue: "Minimal and inconsistent README structures weakened project clarity and reduced overall portfolio cohesion.",
+  outcome: "Standardized project documentation formats and added consistent demo links, repository references, and project summaries.",
+  takeaway: "Well-structured documentation significantly improves the perceived quality and maintainability of technical projects."
+},
+  {
+  title: "JavaScript Projects — Documentation Standardization",
+  goal: "Improve the professionalism and presentation consistency of vanilla JavaScript projects.",
+  issue: "Minimal and inconsistent README structures weakened project clarity and reduced overall portfolio cohesion.",
+  outcome: "Standardized project documentation formats and added consistent demo links, repository references, and project summaries.",
+  takeaway: "Well-structured documentation significantly improves the perceived quality and maintainability of technical projects."
 },
 
     {
@@ -39,19 +39,19 @@ export const labEntries: LabEntry[] = [
   outcome: "Split into header/grid/card/actions/tags/footer components + moved data/types into dedicated files.",
   takeaway: "Consistent page architecture makes adding new projects faster and safer.",
 },
-  {
-  title: "Arduino Projects Page — Component Split + TS Fix",
-  goal: "Break ArduinoProjectsPage into components and make it scalable for more hardware projects.",
-  issue: "Build failed due to importing FilterValue from a component instead of the shared types file.",
-  outcome: "Moved projects into data/, centralized types/, created card/grid/filter components, and fixed imports to use types/arduino.",
-  takeaway: "Import types from the types folder, not component files (prevents TS export errors).",
+ {
+  title: "Arduino Projects Section — Hardware Portfolio Architecture",
+  goal: "Create a dedicated portfolio section for embedded systems and Arduino-based hardware projects.",
+  issue: "Hardware-focused projects did not integrate cleanly within general software-oriented portfolio sections.",
+  outcome: "Implemented a dedicated Arduino Projects page featuring structured project cards, status indicators, and support for wiring diagrams, hardware images, and demonstration media.",
+  takeaway: "Separating embedded systems work from general software projects improves technical clarity and project credibility."
 },
-  {
-    title: "Portfolio Cleanup -Routing & Structure",
-    goal: "Improve project organization and routing for better scalability.",
-    issue: "pages, routes, and links were scattered, making it hard to track what linked where.",
-    outcome: "Intrroduced clearer folder structure, centralized routes, and cleaned up navigation links.",
-    takeaway: "A well-organized project structure simplifies future development and maintenance.",
+{
+  title: "JavaScript Projects Page — Component Architecture Refactor",
+  goal: "Refactor the JavaScript Projects page into a scalable component-based architecture while preserving the existing UI.",
+  issue: "The original implementation combined layout, rendering logic, project data, and UI behavior within a single file, reducing maintainability.",
+  outcome: "Decomposed the page into reusable UI components and centralized project data and type definitions into dedicated modules.",
+  takeaway: "Consistent component architecture improves scalability, maintainability, and long-term project stability."
 },
 {
   title: "Control Hub Refactor — Routing Breakage Investigation",
