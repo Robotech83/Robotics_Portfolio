@@ -155,3 +155,134 @@
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.about-subtitle {
+  text-align: center;
+  color: #8dffb0;
+  margin-top: -0.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2rem;
+  align-items: center;
+  margin: 2rem auto;
+  max-width: 1100px;
+}
+
+.sonny-card,
+.status-panel,
+.tech-stack,
+.architecture,
+.fun-fact {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 255, 120, 0.35);
+  border-radius: 18px;
+  background: rgba(0, 20, 10, 0.75);
+  box-shadow: 0 0 25px rgba(0, 255, 120, 0.15);
+}
+
+.terminal-label {
+  color: #00ff88;
+  letter-spacing: 0.15rem;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.sonny-card h2,
+.status-panel h2,
+.tech-stack h2,
+.architecture h2,
+.fun-fact h2 {
+  color: #00ff88;
+  margin-bottom: 1rem;
+}
+
+.status-grid,
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.75rem;
+}
+
+.status-grid span,
+.tech-grid span {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(0, 255, 120, 0.25);
+  border-radius: 12px;
+  background: rgba(0, 255, 120, 0.08);
+  color: #d8ffe4;
+}
+
+.arch-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  color: #d8ffe4;
+}
+
+.arch-flow div {
+  width: min(420px, 100%);
+  text-align: center;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  background: rgba(0, 255, 120, 0.1);
+  border: 1px solid rgba(0, 255, 120, 0.3);
+}
+
+.arch-flow span {
+  color: #00ff88;
+  font-size: 1.4rem;
+}
+
+.fun-fact p {
+  color: #d8ffe4;
+  line-height: 1.7;
+}
+
+.holo-frame {
+  animation: holoPulse 3s ease-in-out infinite;
+}
+
+@keyframes holoPulse {
+  0%, 100% {
+    box-shadow: 0 0 18px rgba(0, 255, 120, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0, 255, 120, 0.45);
+  }
+}
+
+.stat-chip {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-chip:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 18px rgba(0, 255, 120, 0.35);
+}
+
+.timeline-item {
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.timeline-item:hover {
+  transform: scale(1.03);
+  border-color: #00ff88;
+}
+
+@media (max-width: 800px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .sonny-card {
+    text-align: center;
+  }
+}

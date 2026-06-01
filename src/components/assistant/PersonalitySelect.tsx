@@ -1,4 +1,4 @@
-import type { PersonalityKey, PersonalityOption } from "./types";
+import type { PersonalityKey, PersonalityOption } from "./data/types";
 
 type Props = {
   value: PersonalityKey;

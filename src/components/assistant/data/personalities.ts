@@ -1,8 +1,8 @@
-import { defaultPersonality } from "../../personalities/DefaultBot";
-import { friendlyPersonality } from "../../personalities/FriendlyBot";
-import { sarcasticPersonality } from "../../personalities/SarcasticBot";
-import { robotButlerPersonality } from "../../personalities/RobotButler";
-import { type PersonalityMap, type PersonalityOption } from "../types";
+import { defaultPersonality } from "../personalities/DefaultBot";
+import { friendlyPersonality } from "../personalities/FriendlyBot";
+import { sarcasticPersonality } from "../personalities/SarcasticBot";
+import { robotButlerPersonality } from "../personalities/RobotButler";
+import { type PersonalityMap, type PersonalityOption } from "./types";
 
 export const personalityMap: PersonalityMap = {
   default: defaultPersonality,

@@ -1,9 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import RobotScene from "../components/robotArm/scenes/RobotScene";
 import Controls from "../components/robotArm/controls/Controls";
 import "../styles/robotKinematics.css";
-import { useNavigate } from "react-router-dom";
-
 
 export default function RobotKinematics() {
   const [mode, setMode] = useState<"FK" | "IK">("FK");
@@ -16,23 +15,25 @@ export default function RobotKinematics() {
     wristRoll: 0,
   });
 
-  const navigate = useNavigate();
-
   const [target, setTarget] = useState({ x: 300, y: 0, z: 200 });
 
+  const navigate = useNavigate();
+
   const solveIK = () => {
-    // keep your solver call here if you have it wired in
+    // IK solver will go here when wired in
   };
 
   return (
     <div className="rk-page">
       <div className="rk-header">
-      <button
-  className="back-btn"
-  onClick={() => navigate("/robotics-projects")}
->
-  ← Back
-</button>
+        <button
+          className="back-btn"
+          onClick={() => navigate("/robotics-projects")}
+          aria-label="Go back to robotics projects"
+        >
+          ← Back
+        </button>
+
         <h1>Virtual Robot Arm — FK/IK Studio</h1>
         <p>FK is live. IK is in progress.</p>
       </div>

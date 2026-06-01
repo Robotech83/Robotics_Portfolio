@@ -5,26 +5,26 @@ import "../styles/robotstudio.css";
 import { StudioHeader } from "../components/studio/StudioHeader";
 import { StudioLayout } from "../components/studio/StudioLayout";
 
-// ✅ Lazy-load panels so failures don’t nuke the entire page
-const MovementModule = React.lazy(() => import("../pages/modules/MovementModule"));
-const VirtualModel = React.lazy(() => import("../pages/modules/VirtualModel"));
+const MovementModule = React.lazy(() =>
+  import("../pages/modules/MovementModule")
+);
 
-/**
- * Small wrapper so each side can show a loading state + fallback panel.
- */
-function PanelShell({
-  title,
-  children,
-}: {
+const VirtualModel = React.lazy(() =>
+  import("../pages/modules/VirtualModel")
+);
+
+type PanelShellProps = {
   title: string;
   children: React.ReactNode;
-}) {
+};
+
+function PanelShell({ title, children }: PanelShellProps) {
   return (
-    <section className="studio-panel neon-border">
+    <section className="studio-panel neon-border" aria-label={title}>
       <div className="studio-panel__topbar">
-        <span className="lab-dot red" />
-        <span className="lab-dot yellow" />
-        <span className="lab-dot green" />
+        <span className="lab-dot red" aria-hidden="true" />
+        <span className="lab-dot yellow" aria-hidden="true" />
+        <span className="lab-dot green" aria-hidden="true" />
         <span className="studio-panel__title">{title}</span>
       </div>
 
@@ -33,42 +33,51 @@ function PanelShell({
   );
 }
 
-/**
- * ErrorBoundary catches RUNTIME errors (not TypeScript compile errors).
- * This prevents a “black page” when a panel crashes while rendering.
- */
+type ErrorBoundaryProps = {
+  label: string;
+  children: React.ReactNode;
+};
+
+type ErrorBoundaryState = {
+  hasError: boolean;
+  message: string;
+};
+
 class ErrorBoundary extends React.Component<
-  { label: string; children: React.ReactNode },
-  { hasError: boolean; message?: string }
+  ErrorBoundaryProps,
+  ErrorBoundaryState
 > {
-  constructor(props: { label: string; children: React.ReactNode }) {
+  constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false, message: "" };
   }
 
-  static getDerivedStateFromError(err: unknown) {
+  static getDerivedStateFromError(err: unknown): ErrorBoundaryState {
     const message = err instanceof Error ? err.message : String(err);
     return { hasError: true, message };
   }
 
   componentDidCatch(err: unknown) {
-    // You can keep this for debugging
-    // eslint-disable-next-line no-console
     console.error(`[RobotStudio:${this.props.label}]`, err);
   }
 
   render() {
     if (this.state.hasError) {
       return (
-        <div className="studio-fallback">
+        <div className="studio-fallback" role="alert">
           <div className="studio-fallback__title">
             {this.props.label} crashed
           </div>
+
           <div className="studio-fallback__text">
             This panel hit a runtime error. Robot Studio is still running so you
             can keep working.
           </div>
-          <pre className="studio-fallback__pre">{this.state.message}</pre>
+
+          {this.state.message && (
+            <pre className="studio-fallback__pre">{this.state.message}</pre>
+          )}
+
           <div className="studio-fallback__hint">
             Tip: open DevTools → Console to see the full stack trace.
           </div>
@@ -82,11 +91,11 @@ class ErrorBoundary extends React.Component<
 
 function LoadingPanel({ label }: { label: string }) {
   return (
-    <div className="studio-loading">
+    <div className="studio-loading" aria-live="polite">
       <div className="studio-loading__title">{label}</div>
       <div className="studio-loading__bar" />
       <div className="studio-loading__sub">
-        Loading module… (if this hangs, check asset paths / model loading)
+        Loading module… check asset paths or model loading if this hangs.
       </div>
     </div>
   );
@@ -94,7 +103,7 @@ function LoadingPanel({ label }: { label: string }) {
 
 export default function RobotStudio() {
   return (
-    <div className="robotstudio-wrapper">
+    <main className="robotstudio-wrapper">
       <StudioHeader
         title="Robot Studio"
         subtitle="Virtual InMoov Control Environment"
@@ -120,6 +129,6 @@ export default function RobotStudio() {
           </PanelShell>
         }
       />
-    </div>
+    </main>
   );
 }
