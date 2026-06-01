@@ -63,13 +63,16 @@ export default function AIAssistantPage() {
     setInputText(prompt);
   };
 
-  const { startListening, isListening } = useSpeechRecognition({
-    lang: "en-US",
-    onTranscript: (transcript) => respond(transcript, "voice"),
-    onError: () => {
-      alert("Speech recognition is not supported in this browser.");
-    },
-  });
+  const { startListening, isListening, isSupported } = useSpeechRecognition({
+  lang: "en-US",
+  onTranscript: (transcript) => respond(transcript, "voice"),
+  onError: () => {
+    setMessages((prev) => [
+      ...prev,
+      "AI: Voice recognition is not supported in this browser. Please use the text box instead.",
+    ]);
+  },
+});
 
   return (
     <main className="aiassistant-page">
@@ -135,7 +138,8 @@ export default function AIAssistantPage() {
         onListen={startListening}
         isListening={isListening}
         isSpeaking={isSpeaking}
-      />
+        isSupported={isSupported}
+/>
     </main>
   );
 }
