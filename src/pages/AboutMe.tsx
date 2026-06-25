@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { BackButton } from "../components/BackButton";
 import "../styles/aboutme.css";
 
@@ -60,6 +61,40 @@ export default function AboutMePage() {
         </p>
       </section>
 
+ <div className="knowledge-section">
+
+  <div className="terminal-label">
+    KNOWLEDGE & DOCUMENTATION
+  </div>
+
+  <Link
+    to="/handbook"
+    className="featured-card handbook-feature"
+  >
+    <span className="feature-icon">📘</span>
+
+    <h3>Information Before Chaos</h3>
+
+    <p className="feature-subtitle">
+      Learn robotics through the same engineering journey I'm taking while building Sonny.
+    </p>
+
+    <p>
+      Engineering isn't about memorizing. It's about understanding.
+    </p>
+
+    <p>
+      Follow the lessons, concepts, and engineering mindset I'm using while
+      building Sonny—an offline humanoid robotics platform.
+    </p>
+
+    <span className="feature-link">
+      Read the Handbook →
+    </span>
+
+  </Link>
+
+</div>
       <section className="status-panel">
         <h2>Sonny Build Status</h2>
         <div className="status-grid">
@@ -74,6 +109,8 @@ export default function AboutMePage() {
           <span>⧗ Stable Power System</span>
         </div>
       </section>
+
+     
 
       <section className="tech-stack">
         <h2>Tech Stack</h2>
@@ -103,6 +140,8 @@ export default function AboutMePage() {
           <div>Eyes / Jaw / Neck / Arms</div>
         </div>
       </section>
+
+      
 
       <section className="stats-panel">
         <div className="stat-chip">5+ Robotics Systems Built</div>

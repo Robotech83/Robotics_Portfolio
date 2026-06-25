@@ -1,31 +1,27 @@
-import { useNavigate } from 'react-router-dom';
-import '../styles/backbutton.css';
+import { Link } from "react-router-dom";
+import "../styles/backbutton.css";
 
 interface BackButtonProps {
   target?: string;
   label?: string;
-  variant?: 'default' | 'control-hub' | 'virtual-model' | 'system';
+  variant?: "default" | "control-hub" | "virtual-model" | "system" | "handbook";
   floating?: boolean;
   className?: string;
 }
 
-export function BackButton({ 
-  target = '/', 
-  label = 'Home',
-  variant = 'default',
+export function BackButton({
+  target = "/",
+  label = "Home",
+  variant = "default",
   floating = false,
-  className = ''
+  className = "",
 }: BackButtonProps) {
-  const navigate = useNavigate();
-
-  const buttonClass = `back-button ${variant} ${floating ? 'floating' : ''} ${className}`.trim();
+  const buttonClass =
+    `back-button ${variant} ${floating ? "floating" : ""} ${className}`.trim();
 
   return (
-    <button
-      onClick={() => navigate(target)}
-      className={buttonClass}
-    >
+    <Link to={target} className={buttonClass}>
       {label}
-    </button>
+    </Link>
   );
 }

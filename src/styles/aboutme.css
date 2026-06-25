@@ -286,3 +286,67 @@
     text-align: center;
   }
 }
+.handbook-feature {
+  display: block;
+  max-width: 620px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+
+  text-decoration: none;
+  color: inherit;
+
+  border: 1px solid rgba(0, 255, 156, 0.35);
+  border-radius: 18px;
+  background: rgba(0, 255, 156, 0.05);
+  box-shadow: 0 0 24px rgba(0, 255, 156, 0.08);
+
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.handbook-feature:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 255, 156, 0.75);
+  box-shadow: 0 0 28px rgba(0, 255, 156, 0.22);
+}
+
+.handbook-feature .feature-icon {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 2rem;
+}
+
+.handbook-feature h3 {
+  margin: 0 0 0.35rem;
+  color: #00ff9c;
+}
+
+.handbook-feature .feature-subtitle {
+  margin: 0 0 0.75rem;
+  color: #9fffd2;
+  font-weight: 600;
+}
+
+.handbook-feature p {
+  color: #d6dde4;
+  line-height: 1.6;
+}
+
+.handbook-feature .feature-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: #00ff9c;
+  font-weight: 700;
+}
+.knowledge-section {
+    max-width: 1100px;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.handbook-feature {
+    display: block;
+    width: min(650px, 100%);
+    margin: 0 auto;
+
+    text-align: left;
+}

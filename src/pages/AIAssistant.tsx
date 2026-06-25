@@ -25,7 +25,7 @@ export default function AIAssistantPage() {
   const navigate = useNavigate();
 
   const [messages, setMessages] = useState<string[]>([
-    "AI: Hello! I'm Sonny. Pick a command below or type your own.",
+  "AI: Hello! Ask me questions about Sonny OS and the robotics platform.",
   ]);
 
   const [inputText, setInputText] = useState("");
@@ -123,6 +123,11 @@ export default function AIAssistantPage() {
           <button onClick={() => handlePromptClick("How does your vision work?")}>
             How does your vision work?
           </button>
+
+          <button onClick={() => handlePromptClick("Tell me about offline AI")}>
+            How do the offline features work?
+          </button>
+
         </div>
       </section>
 

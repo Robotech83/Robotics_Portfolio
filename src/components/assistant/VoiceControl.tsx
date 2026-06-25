@@ -29,7 +29,7 @@ export function VoiceControl({
 
       {!isSupported && (
   <span className="voice-warning">
-    Voice input works best in Chrome. Please use text input here.
+   Voice demo works best in Google Chrome. If unavailable, use text input.
   </span>
 )}
       {isSpeaking && <Volume2 size={18} />}

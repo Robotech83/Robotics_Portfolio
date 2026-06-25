@@ -29,6 +29,8 @@ import RobotArm from "./pages/RobotKinematics";
 import RoboticsProjectsPage from "./pages/RoboticsProjectPage";
 import SonnyPortfolioPage from "./pages/SonnyPortfolioPage";
 
+import Handbook from "./pages/Handbook";
+import Chapter01 from "./pages/chapters/Chapter01";
 
 export default function App() {
   return (
@@ -73,6 +75,9 @@ export default function App() {
             />
           }
         />
+        
+        <Route path="/handbook" element={<Handbook />} />
+<Route path="/handbook/chapter-1" element={<Chapter01 />} />
 
         <Route
           path="/linux-projects"
